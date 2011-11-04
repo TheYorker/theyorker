@@ -9,15 +9,11 @@ TheYorker::Application.routes.draw do
 
   get "users/login"
 
-  # get "users/profile"
-
   match 'logout' => 'sessions#destroy', :as => :logout
   match 'login' => 'users#login', :as => :login
 
-  resources :users, :sessions
+  resources :users, :sessions, :articles
 
-  match 'users/:id/profile' => 'users#profile', :as => :user_profile
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
