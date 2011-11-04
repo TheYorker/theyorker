@@ -92,9 +92,14 @@ h1 {
     padding-left: 2%;
 }
 
-#notice, #alert {
+#notice {
     font-size: 75%;
     color: green;
+}
+
+#alert {
+    font-size: 75%;
+    color: red;
 }
 
 .error-messages {
