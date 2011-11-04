@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>TheYorker</title>
-  <%= stylesheet_link_tag    "application" %>
+  <title>The Yorker</title>
+  <%= stylesheet_link_tag    "application", "main" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <p id="notice"><%= notice %></p>
+  <p id="alert"><%= alert %></p>
+
+
+  <div class="account-links">
+    <% if current_user %>
+    <ul>
+      <li>Logged in as
+         <%= current_user.name %>.
+      </li>
+      <li>
+           <%= link_to "My Account", "/users/#{current_user.id}/profile" %></li>
+      <li>
+           <%= link_to "Logout", logout_path %>
+      </li>
+    </ul>
+    <% else %>
+    <ul>
+      <li>Not logged in.</li>
+      <li>
+        <%= link_to "Login/Sign up", login_path %>
+      </li>
+    </ul>
+    <% end %>
+    <br/>
+  </div>
+
+  <h1>The Yorker</h1>
+
+  <div class="toplevel-menu">
+    <ul>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Arts</a></li>
+      <li><a href="#">Sports</a></li>
+      <li><a href="#">Lifestyle</a></li>
+      <li><a href="#">Comment</a></li>
+    </ul>
+    <br/>
+  </div>
 
 <%= yield %>
 

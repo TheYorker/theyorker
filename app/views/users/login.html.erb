@@ -1,0 +1,51 @@
+<div class="login-signup-container">
+  <div class="login-form">
+    <h2>Log In</h2>
+    <%= form_tag sessions_path do %>
+    <div class="field">
+      <%= label_tag :email, "Email Address:" %><br/>
+      <%= text_field_tag :email, params[:email] %>
+    </div>
+    <div class="field">
+      <%= label_tag :password, "Password:" %><br/>
+      <%= password_field_tag :password %>
+    </div>
+    <div class="action"><%= submit_tag "Log in" %></div>
+    <% end %>
+  </div>
+
+  </div>
+
+  <div class="signup-form">
+    <h2>Sign Up</h2>
+    <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+    <div class="error-messages">
+      <h3>Form is invalid</h3>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :email, "Email Address:" %><br/>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :name, "Full Name:" %><br/>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :password, "Password:" %><br/>
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation, "Confirm Password:" %><br/>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="action"><%= f.submit %></div>
+    <% end %>
+  </div>
+</div>

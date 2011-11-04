@@ -1,0 +1,15 @@
+<% if @user %>
+
+<h2>
+  <%= @user.name %>
+</h2>
+
+<div class="user-email">
+  <%= @user.email %>
+</div>
+
+
+<!-- trivial case for non-existence of user -->
+<% else %>
+<h2>No such user</h2>
+<% end %>

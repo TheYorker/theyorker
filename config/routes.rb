@@ -7,6 +7,17 @@ TheYorker::Application.routes.draw do
 
   get "sessions/new"
 
+  get "users/login"
+
+  # get "users/profile"
+
+  match 'logout' => 'sessions#destroy', :as => :logout
+  match 'login' => 'users#login', :as => :login
+
+  resources :users, :sessions
+
+  match 'users/:id/profile' => 'users#profile', :as => :user_profile
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -56,7 +67,7 @@ TheYorker::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'users#login'
 
   # See how all your routes lay out with "rake routes"
 
