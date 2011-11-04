@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  section_id: 1
+  title: MyString
+  body: MyText
+  publish_at: 2011-11-04 16:03:34
+  visibility: 1
+
+two:
+  user_id: 1
+  section_id: 1
+  title: MyString
+  body: MyText
+  publish_at: 2011-11-04 16:03:34
+  visibility: 1
