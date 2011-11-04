@@ -8,9 +8,6 @@
 </head>
 <body>
 
-  <p id="notice"><%= notice %></p>
-  <p id="alert"><%= alert %></p>
-
 
   <div class="account-links">
     <% if current_user %>
@@ -47,6 +44,9 @@
     </ul>
     <br/>
   </div>
+
+  <p id="notice"><%= notice %></p>
+  <p id="alert"><%= alert %></p>
 
 <%= yield %>
 
