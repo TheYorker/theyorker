@@ -16,7 +16,7 @@
          <%= current_user.name %>.
       </li>
       <li>
-           <%= link_to "My Account", "/users/#{current_user.id}/profile" %></li>
+           <%= link_to "My Account", user_path(current_user) %></li>
       <li>
            <%= link_to "Logout", logout_path %>
       </li>
