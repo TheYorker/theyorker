@@ -114,3 +114,25 @@ h1 {
     background-color: red;
     color: #fff;
 }
+
+input#article_title {
+    width: 30em;
+    margin-bottom: 2em;
+    font-size: 120%;
+}
+
+textarea#article_body {
+    width: 40em;
+    height: 50em;
+    font-family: sans-serif;
+    margin-bottom: 2em;
+}
+
+.article .author {
+    color: gray;
+}
+
+.article .body {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}

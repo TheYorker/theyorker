@@ -1,0 +1,24 @@
+<% if @article %>
+
+<div class="article">
+  <h2>
+    <%= @article.title %>
+  </h2>
+
+  <div class="author">
+    <%= @article.user.name %>
+  </div>
+
+  <div class="body">
+    <%= @article.body %>
+  </div>
+
+  <% if current_user && current_user == @article.user %>
+    <%= link_to "Edit this article", edit_article_path(@article) %>
+  <% end %>
+
+  <!-- trivial case for non-existence of article -->
+  <% else %>
+  <h2>No such article</h2>
+  <% end %>
+</div>
