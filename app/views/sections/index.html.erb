@@ -1,0 +1,11 @@
+<h2>Sections</h2>
+
+<ul>
+    <% @toplevel_sections.each do |s| %>
+    <li>
+        <%= render :partial => 'section', :locals => {:section => s} %>
+    </li>
+    <% end %>
+</ul>
+
+<%= link_to "Create New Section", new_section_path %>

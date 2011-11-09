@@ -16,6 +16,12 @@
   <%= f.label :title, "Title:" %><br/>
   <%= f.text_field :title %>
 </div>
+
+<div class="field">
+  <%= f.label :section_id, "Section:"%><br/>
+  <%= f.select :section_id, all_sections_as_text_paths_with_id %>
+</div>
+
 <div class="field">
   <%= f.label :body, "Article Text:" %><br/>
   <%= f.text_area :body %>

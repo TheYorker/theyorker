@@ -117,8 +117,11 @@ h1 {
 
 input#article_title {
     width: 30em;
-    margin-bottom: 2em;
     font-size: 120%;
+}
+
+select#article_section_id {
+    margin-bottom: 2em;
 }
 
 textarea#article_body {
@@ -128,6 +131,12 @@ textarea#article_body {
     margin-bottom: 2em;
 }
 
+input#section_name {
+    width: 20em;
+    margin-bottom: 1em;
+    font-size: 120%;
+}
+
 .article .author {
     color: gray;
 }
@@ -135,4 +144,20 @@ textarea#article_body {
 .article .body {
     margin-top: 2em;
     margin-bottom: 2em;
+}
+
+.article_stub {
+    border: 1px solid black;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    width: 20em;
+}
+
+.article_stub .stub_title {
+    
+}
+
+.article_stub .stub_author {
+    color: gray;
+    font-size: 80%;
 }

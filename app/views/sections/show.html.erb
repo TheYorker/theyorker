@@ -1,0 +1,8 @@
+<h2>
+  <%= @section.name %> 
+</h2>
+
+<% @section.articles.each do |a| %>
+<%= render :partial => 'shared/article', :locals => {:article => a} %>
+<% end %>
+

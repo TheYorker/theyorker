@@ -1,2 +1,29 @@
-<h1>Sections#new</h1>
-<p>Find me in app/views/sections/new.html.erb</p>
+<h2>New Section</h2>
+
+<%= form_for @section do |f| %>
+
+    <% if @section.errors.any? %>
+    <div class="error-messages">
+      <h3>Form is invalid</h3>
+      <ul>
+        <% for message in @section.errors.full_messages %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <%end%>
+
+    <div class="field">
+      <%= f.label :name, "Section Name:" %><br/>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :parent_id, "Parent Section:" %>
+      <%= f.collection_select :parent_id, @potential_parents, :id, :name %>
+    </div>
+
+    <div class="action"><%= f.submit %></div>
+
+
+<% end %>

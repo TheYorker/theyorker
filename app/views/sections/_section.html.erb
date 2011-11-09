@@ -1,0 +1,10 @@
+<%= link_to section.name, section_path(section) %>
+<% if section.children %>
+<ul>
+  <% section.children.each do |child| %>
+  <li>
+    <%= render :partial => 'section', :locals => {:section => child} %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
