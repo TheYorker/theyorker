@@ -1,0 +1,168 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+*/
+body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+}
+
+h1 {
+    font-size: 500%;
+}
+
+.toplevel-menu {
+    width: 100%;
+    background-color: #ddd;
+}
+
+.toplevel-menu ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.toplevel-menu ul li {
+    display: inline;
+}
+
+.toplevel-menu ul li a, .toplevel-menu ul li a:visited {
+    text-decoration: none;
+    background-color: #ddd;
+    color: #333;
+    padding-right: 0.25em;
+    padding-left: 0.25em;
+}
+
+.toplevel-menu ul li a:hover {
+    text-decoration: none;
+    background-color: #fff;
+    color: #000;
+    padding-right: 0.25em;
+    padding-left: 0.25em;
+}
+
+.account-links {
+    width: 100%;
+}
+
+.account-links ul {
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+.account-links ul li {
+    display: inline;
+}
+
+.account-links ul li a, .account-links ul li a:visited {
+    color: #333;
+    display: inline;
+}
+
+.user {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.user-control-links {
+    float: right;
+}
+
+.user-control-links a {
+    float: right;
+}
+
+
+.login-signup-container {
+    padding-top: 5px;
+}
+
+.login-form {
+    width: 46%;
+    float: left;
+}
+
+.signup-form {
+    width: 48%;
+    float: right;
+    border-left: solid 1px #aaa;
+    padding-left: 2%;
+}
+
+#notice {
+    font-size: 75%;
+    color: green;
+}
+
+#alert {
+    font-size: 75%;
+    color: red;
+}
+
+.error-messages {
+    border: solid 1px red;
+    color: red;
+    background-color: #eee;
+    font-size: 75%;
+}
+
+.error-messages h3 {
+    margin-top: 0;
+    background-color: red;
+    color: #fff;
+}
+
+input#article_title {
+    width: 30em;
+    font-size: 120%;
+}
+
+select#article_section_id {
+    margin-bottom: 2em;
+}
+
+textarea#article_body {
+    width: 40em;
+    height: 50em;
+    font-family: sans-serif;
+    margin-bottom: 2em;
+}
+
+input#section_name {
+    width: 20em;
+    margin-bottom: 1em;
+    font-size: 120%;
+}
+
+.article .author {
+    color: gray;
+}
+
+.article .body {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.article_stub {
+    border: 1px solid black;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    width: 20em;
+}
+
+.article_stub .stub_title {
+    
+}
+
+.article_stub .stub_author {
+    color: gray;
+    font-size: 80%;
+}
