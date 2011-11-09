@@ -4,6 +4,7 @@ class CreateArticles < ActiveRecord::Migration
       t.integer :user_id
       t.integer :section_id
       t.string :title
+      t.string :byline
       t.text :body
       t.timestamp :publish_at
       t.integer :visibility
