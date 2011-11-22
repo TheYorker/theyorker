@@ -13,7 +13,7 @@
    
 * [#A] Iteration Ending 22nd November 
 
-** TODO [#A] Dynamic toplevel tabs [1 PD]                            :LAYOUT:
+** DONE [#A] Dynamic toplevel tabs [1 PD]                            :LAYOUT:
 
 ** TODO [#A] Redo bylines [0.5 PD]
 
@@ -48,7 +48,7 @@
 
 * TODO [#C] Migrate Google Analytics [1 PD]
 
-* TODO [#C] Pretty Categorised Sections for GA [4 PD]
+* TODO [#C] Pretty Categorised Sections for Analytics [4 PD]
   Ya just know it's going to be harder than you think
 
 * DONE Markdown markup in article body                               :MARKUP:
