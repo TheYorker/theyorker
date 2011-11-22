@@ -24,7 +24,7 @@
 
 <div class="field">
   <%= f.label :byline, "Byline:" %><br/>
-  <%= f.text_field :byline %>
+  <%= f.text_field :byline, :value => current_user ? current_user.name : "" %>
 </div>
 
 <div class="field">
