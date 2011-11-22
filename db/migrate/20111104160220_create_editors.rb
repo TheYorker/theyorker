@@ -7,4 +7,5 @@ class CreateEditors < ActiveRecord::Migration
       t.timestamps
     end
   end
+
 end

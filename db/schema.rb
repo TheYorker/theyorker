@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20111104160402) do
     t.integer  "user_id"
     t.integer  "section_id"
     t.string   "title"
+    t.string   "byline"
     t.text     "body"
     t.datetime "publish_at"
     t.integer  "visibility"

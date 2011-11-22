@@ -146,10 +146,6 @@ input#article_title {
     font-size: 120%;
 }
 
-select#article_section_id {
-    margin-bottom: 2em;
-}
-
 textarea#article_body {
     width: 40em;
     height: 50em;
