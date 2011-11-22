@@ -2,12 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>The Yorker</title>
-  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "member" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 
   <div class="account_links">
     <% if current_user %>
@@ -36,25 +35,13 @@
 
   <div class="toplevel_menu">
     <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <%= toplevel_sections_list %>
+      <li><%= link_to "Dashboard", "#" %></li>
+      <li><%= link_to "Articles", "#" %></li>
+      <li><%= link_to "Sections", "#" %></li>
+      <li><%= link_to "Comments", "#" %></li>
     </ul>
     <br/>
   </div>
-
-  <div class="priority_content">
-    <div class="headline_image">
-      <br/>
-      <br/>
-      <h3>Image Goes<br/> Here</h3>
-    </div>
-    <div class="top_stories">
-      <br/>
-      <br/>
-      <h3>Top Articles<br/> Go Here</h3>
-    </div>
-  </div>
-  
 
   <p id="notice"><%= notice %></p>
   <p id="alert"><%= alert %></p>
