@@ -3,7 +3,7 @@
 <%= form_for @section do |f| %>
 
     <% if @section.errors.any? %>
-    <div class="error-messages">
+    <div class="error_messages">
       <h3>Form is invalid</h3>
       <ul>
         <% for message in @section.errors.full_messages %>

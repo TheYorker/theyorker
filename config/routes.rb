@@ -14,6 +14,8 @@ TheYorker::Application.routes.draw do
 
   resources :users, :sessions, :articles, :sections
 
+  match 'users/:id/dashboard' => 'users#dashboard'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

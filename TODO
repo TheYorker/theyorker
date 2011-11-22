@@ -1,15 +1,62 @@
 -*-org-*-
+#+STARTUP: hidestars
+
+* [#A] Iteration Priority
+* [#B] Beta Priority
+* [#C] Launch Priority
+* [Untagged] Subsequent Priority
+
 
 * TODO [#A] HTML Mockups for Ross
 
-* TODO [#A] Dynamic toplevel tabs                                    :LAYOUT:
+** TODO [#A] 
+   
+* [#A] Iteration Ending 22nd November 
 
-* TODO [#A] Redo bylines
+** TODO [#A] Dynamic toplevel tabs [1 PD]                            :LAYOUT:
 
-* TODO [#A] Textile markup in article body                           :MARKUP:
+** TODO [#A] Redo bylines [0.5 PD]
 
-* TODO [#A] Image upload                                             :MARKUP:
+** TODO [#A] Article Tagging [2 PD]
 
-* TODO [#A] Article Tagging
+* [#B] Iteration Ending 30th November
 
-* TODO [#A] Basic formatting buttons                                 :MARKUP:
+* TODO [#B] Create Member Layout [1 PD]
+
+* TODO [#B] Minimal Section Tree [2 PD]
+
+* TODO [#B] Privilege Requests [2 PD]
+
+* TODO [#B] Mailers [2 PD]
+
+* TODO [#B] Password Reset [4 PD]
+
+* TODO [#B] Unauthenticated Commenting [2 PD]
+
+* TODO [#B] Comment Authentication [1 PD]
+
+* TODO [#B] Authorised Member Management [4 PD]
+  Ask Alan about when membership runs out
+
+* TODO [#B] Article Ticker [4 PD]
+
+* TODO [#C] Article Reparenting on Section Deletion [2 PD]
+
+* TODO [#B] Related Articles [4 PD]
+
+* TODO [#C] Image upload                                             :MARKUP:
+
+* TODO [#C] Migrate Google Analytics [1 PD]
+
+* TODO [#C] Pretty Categorised Sections for GA [4 PD]
+  Ya just know it's going to be harder than you think
+
+* DONE Markdown markup in article body                               :MARKUP:
+
+* TODO Article Versioning
+
+* TODO Live JS Preview                                               :MARKUP:
+
+* TODO Basic formatting buttons                                      :MARKUP:
+
+* TODO More flexible embedding                                       :MARKUP:

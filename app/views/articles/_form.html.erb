@@ -1,7 +1,7 @@
 <%= form_for @article do |f| %>
 
     <% if @article.errors.any? %>
-    <div class="error-messages">
+    <div class="error_messages">
       <h3>Form is invalid</h3>
       <ul>
         <% for message in @article.errors.full_messages %>

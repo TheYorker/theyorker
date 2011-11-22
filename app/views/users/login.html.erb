@@ -1,5 +1,5 @@
-<div class="login-signup-container">
-  <div class="login-form">
+<div class="login_signup_container">
+  <div class="login_form">
     <h2>Log In</h2>
     <%= form_tag sessions_path do %>
     <div class="field">
@@ -14,11 +14,11 @@
     <% end %>
   </div>
 
-  <div class="signup-form">
+  <div class="signup_form">
     <h2>Sign Up</h2>
     <%= form_for @user do |f| %>
     <% if @user.errors.any? %>
-    <div class="error-messages">
+    <div class="error_messages">
       <h3>Form is invalid</h3>
       <ul>
         <% for message in @user.errors.full_messages %>

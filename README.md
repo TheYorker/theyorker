@@ -23,10 +23,25 @@ Structure
 This is a fairly standard rails application.
 
 
+Glossary
+--------
+
+
+* **Article**: A rich-text document created by a *writer*
+* **Editor**:
+* **Publish**: An *editor*, making an *article* written by a *writer* publicly available
+* **Section**:
+* **Submit**: A *writer*, making an *article* available to an *editor*
+* **Withdraw**: An *editor* or a *writer* making an *article* unavailable.
+* **Writer**:
+
+
+
 Key Models
 ----------
 
 ### User
+
 
 Represents users (writers and commenters)
 
@@ -55,4 +70,44 @@ Should we model relationships between authors and articles?
 ### Visibility?
 
 Should we model visibilty of articles
+
+Public-Facing Views
+-------------------
+
+* Article
+* Section
+
+Internal-Facing Views
+---------------------
+
+
+
+
+
+Article Pipeline
+-----------------
+
+### Top Level
+
+Writer: Create -> Edit -> Submit
+Editor: Read -> Edit -> Comment -> Request Revision
+Writer: Revise -> Submit
+Editor: Read -> Publish
+
+
+
+
+Workflows
+---------
+
+
+Patterns
+--------
+
+**Ubiquitous Search**
+
+**Low Barriers To Entry**
+
+**Ad-Hoc Organisation**
+
 

@@ -9,7 +9,7 @@
 <body>
 
 
-  <div class="account-links">
+  <div class="account_links">
     <% if current_user %>
     <ul>
       <li>Logged in as
@@ -34,7 +34,7 @@
 
   <h1>The Yorker</h1>
 
-  <div class="toplevel-menu">
+  <div class="toplevel_menu">
     <ul>
       <li><a href="#">News</a></li>
       <li><a href="#">Arts</a></li>
@@ -45,10 +45,26 @@
     <br/>
   </div>
 
+  <div class="priority_content">
+    <div class="headline_image">
+      <br/>
+      <br/>
+      <h3>Image Goes<br/> Here</h3>
+    </div>
+    <div class="top_stories">
+      <br/>
+      <br/>
+      <h3>Top Articles<br/> Go Here</h3>
+    </div>
+  </div>
+  
+
   <p id="notice"><%= notice %></p>
   <p id="alert"><%= alert %></p>
 
-<%= yield %>
+  <div class="content_container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

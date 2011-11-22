@@ -10,14 +10,15 @@
   </div>
 
   <div class="body">
-    <%= @article.body %>
+           <%= Sanitize.clean(markdown(@article.body), Sanitize::Config::RELAXED.merge({:transformers => @youtube_transformer})).html_safe %>
+           <%#= markdown(@article.body) %>
   </div>
 
   <% if current_user && current_user == @article.user %>
     <%= link_to "Edit this article", edit_article_path(@article) %>
   <% end %>
 
-  <!-- trivial case for non-existence of article -->
+  <%# trivial case for non-existence of article %>
   <% else %>
   <h2>No such article</h2>
   <% end %>

@@ -4,15 +4,15 @@
   <%= @user.name %>
 </h2>
 
-<div class="user-email">
+<div class="user_email">
   <%= @user.email %>
 </div>
 
-<div class="new-article-link">
-  
+<div class="new_article_link">
+  <%= link_to "Create Article", new_article_path %>
 </div>
 
-<!-- trivial case for non-existence of user -->
+<%# trivial case for non-existence of user %>
 <% else %>
 <h2>No such user</h2>
 <% end %>
