@@ -1,4 +1,4 @@
--*-org-*-
+-*-org-*-pp
 #+STARTUP: hidestars
 
 * [#A] Iteration Priority
@@ -19,11 +19,14 @@
 
 ** DONE Markdown markup in article body [4 PD]                       :MARKUP:
 
+** DONE Article Tagging [1 PD]
+
 * TODO [#A] Iteration Ending 30th November
 
 ** TODO [#A] Authorised Member Management [4 PD]
    Ask Alan about when membership runs out, and how we want to handle
-   expiry
+   expiry (maybe grace period? or allow editing list of future
+   members? immortal members?)
 
 ** TODO [#A] Editor Privs [2 PD]
 
@@ -31,7 +34,9 @@
 
 ** TODO [#A] Minimal Section Tree [2 PD]
 
-* TODO [#B] Article Tagging [2 PD]
+* TODO [#B] Image upload                                             :MARKUP:
+
+* TODO [#B] Headline images
 
 * TODO [#B] Mailers [2 PD]
 
@@ -40,6 +45,7 @@
 * TODO [#B] Top Articles [2 PD]
 
 * TODO [#B] Article Ticker [4 PD]
+  How do articles get into/out of the ticker? Is it just top articles?
 
 * TODO [#C] Session Expiry [2 PD]
 
@@ -48,8 +54,6 @@
 * TODO [#C] Related Articles [4 PD]
 
 * TODO [#C] Article Reparenting on Section Deletion [2 PD]
-
-* TODO [#C] Image upload                                             :MARKUP:
 
 * TODO [#C] Migrate Google Analytics [1 PD]
 
