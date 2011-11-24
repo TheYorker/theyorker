@@ -60,6 +60,7 @@
 * TODO [#C] Related Articles [4 PD]
 
 * TODO [#C] Article Reparenting on Section Deletion [2 PD]
+  Could possibly replace with some sort of 'soft delete'
 
 * TODO [#C] Migrate Google Analytics [1 PD]
 
