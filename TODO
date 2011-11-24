@@ -24,15 +24,30 @@
 * TODO [#A] Iteration Ending 30th November
 
 ** TODO [#A] Authorised Member Management [4 PD]
-   Ask Alan about when membership runs out, and how we want to handle
-   expiry (maybe grace period? or allow editing list of future
-   members? immortal members?)
+   allow editing list of future members; immortal members
+
+*** MembershipList Model
+
+**** [list] <- current_members 
+
+*** member? boolean on User Model
 
 ** TODO [#A] Editor Privs [2 PD]
 
+*** Relationships on Editor model
+
+*** Inheritance
+
 ** TODO [#A] Commenting [2 PD]
 
-** TODO [#A] Minimal Section Tree [2 PD]
+*** Comment Model
+
+** TODO [#A] Section Tree [2 PD]
+
+*** Sensitive to Editor Privs
+
+** TODO [#A] Users List [1 PD]
+
 
 * TODO [#B] Image upload                                             :MARKUP:
 
@@ -49,8 +64,6 @@
 
 * TODO [#C] Session Expiry [2 PD]
 
-* TODO [#C] User Search [1 PD]
-
 * TODO [#C] Related Articles [4 PD]
 
 * TODO [#C] Article Reparenting on Section Deletion [2 PD]
@@ -59,6 +72,8 @@
 
 * TODO [#C] Pretty Categorised Sections for Analytics [4 PD]
   Ya just know it's going to be harder than you think
+
+* TODO User Search [1 PD]
 
 * TODO Privilege Requests [2 PD]
 
