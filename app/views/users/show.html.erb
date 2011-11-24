@@ -8,6 +8,8 @@
   <%= @user.email %>
 </div>
 
+<% if @user == current_user %>
+
 <div>
   <%= (@user.member ? "Congratulations, you're a full member of The Yorker" : "You're not a full member of The Yorker. If you'd like to write for The Yorker, please contact <a href='mailto://editor@theyorker.co.uk'>the editor</a>.").html_safe %>
 </div>
@@ -15,6 +17,8 @@
 <div class="new_article_link">
   <%= link_to "Create Article", new_article_path %>
 </div>
+
+<% end %>
 
 <%# trivial case for non-existence of user %>
 <% else %>

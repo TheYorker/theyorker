@@ -25,6 +25,8 @@
 
 ** DONE [#A] Authorised Member Management [4 PD]
 
+** DONE [#A] Users List [1 PD]
+
 ** TODO [#A] Editor Privs [2 PD]
 
 *** Relationships on Editor model
@@ -38,8 +40,6 @@
 ** TODO [#A] Section Tree [2 PD]
 
 *** Sensitive to Editor Privs
-
-** TODO [#A] Users List [1 PD]
 
 
 * TODO [#B] Image upload                                             :MARKUP:

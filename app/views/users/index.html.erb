@@ -1,0 +1,11 @@
+<table>
+<tr><td><b>Name</b></td><td><b>Email</b></td></tr>
+<% @users.each do |u| %>
+
+<tr>
+  <td><%= link_to u.name, user_path(u) %></td>
+  <td><%= u.email %></td>
+</tr>
+
+<% end %> 
+</table>
