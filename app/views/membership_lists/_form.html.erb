@@ -18,7 +18,8 @@
 
     <div class="field">
       <%= f.label :end_date, "End Date:" %><br/>
-      <%= f.date_select :end_date, :default => Time.now + 6.years %>
+      <%= f.date_select :end_date, :default => Time.now + 6.years,
+                                   :end_year => Time.now.year + 100 %>
     </div>
 
     <div class="field">
