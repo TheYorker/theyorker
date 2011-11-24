@@ -1,5 +1,15 @@
 TheYorker::Application.routes.draw do
 
+  get "membership_lists/create"
+
+  get "membership_lists/show"
+
+  get "membership_lists/edit"
+
+  get "membership_lists/update"
+
+  get "membership_lists/new"
+
   root :to => 'sections#show', :id => 1
 
   get "sections/new"

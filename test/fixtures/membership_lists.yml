@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start_date: 2011-11-24 16:00:05
+  end_date: 2011-11-24 16:00:05
+  addresses: MyText
+
+two:
+  start_date: 2011-11-24 16:00:05
+  end_date: 2011-11-24 16:00:05
+  addresses: MyText
