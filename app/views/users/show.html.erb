@@ -9,10 +9,7 @@
 </div>
 
 <div>
-  <%= @user.member ? "Member" : "Non-member" %>
-  <%#= (@user.member)
-       ? ("Congratulations, you're a full member of The Yorker")
-       : ("You're not a full member of The Yorker. If you'd like to write for The Yorker, please contact <a href='mailto://editor@theyorker.co.uk'>the editor</a>.") %>
+  <%= (@user.member ? "Congratulations, you're a full member of The Yorker" : "You're not a full member of The Yorker. If you'd like to write for The Yorker, please contact <a href='mailto://editor@theyorker.co.uk'>the editor</a>.").html_safe %>
 </div>
 
 <div class="new_article_link">

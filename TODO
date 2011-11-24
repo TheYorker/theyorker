@@ -23,14 +23,7 @@
 
 * TODO [#A] Iteration Ending 30th November
 
-** TODO [#A] Authorised Member Management [4 PD]
-   allow editing list of future members; immortal members
-
-*** MembershipList Model
-
-**** [list] <- current_members 
-
-*** member? boolean on User Model
+** DONE [#A] Authorised Member Management [4 PD]
 
 ** TODO [#A] Editor Privs [2 PD]
 

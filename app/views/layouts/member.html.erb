@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>The Yorker</title>
+  <title>Members Area - The Yorker</title>
   <%= stylesheet_link_tag "member" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+  <div class="top_container">
   <div class="account_links">
     <% if current_user %>
     <ul>
@@ -31,7 +32,7 @@
     <br/>
   </div>
 
-  <h1>The Yorker</h1>
+  <h1>Members Area - The Yorker</h1>
 
   <div class="toplevel_menu">
     <ul>
@@ -45,6 +46,8 @@
 
   <p id="notice"><%= notice %></p>
   <p id="alert"><%= alert %></p>
+
+  </div>
 
   <div class="content_container">
     <%= yield %>

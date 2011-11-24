@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  layout :member_layout
+
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -19,6 +21,17 @@ class UsersController < ApplicationController
 
   def dashboard
     
+  end
+
+  private
+  
+  def member_layout
+
+    if current_user && current_user.member?
+      "member"
+    else
+      "application"
+    end
   end
 
 end
