@@ -1,31 +1,11 @@
 TheYorker::Application.routes.draw do
 
-  get "membership_lists/create"
-
-  get "membership_lists/show"
-
-  get "membership_lists/edit"
-
-  get "membership_lists/update"
-
-  get "membership_lists/new"
-
   root :to => 'sections#show', :id => 1
-
-  get "sections/new"
-
-  get "articles/new"
-
-  get "users/new"
-
-  get "sessions/new"
-
-  get "users/login"
 
   match 'logout' => 'sessions#destroy', :as => :logout
   match 'login' => 'users#login', :as => :login
 
-  resources :users, :sessions, :articles, :sections
+  resources :users, :sessions, :articles, :sections, :membership_lists
 
   match 'users/:id/dashboard' => 'users#dashboard'
 
