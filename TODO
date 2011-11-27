@@ -27,19 +27,13 @@
 
 ** DONE [#A] Users List [1 PD]
 
+** DONE [#A] Section Tree [2 PD]
+
 ** TODO [#A] Editor Privs [2 PD]
-
-*** Relationships on Editor model
-
-*** Inheritance
 
 ** TODO [#A] Commenting [2 PD]
 
 *** Comment Model
-
-** TODO [#A] Section Tree [2 PD]
-
-*** Sensitive to Editor Privs
 
 
 * TODO [#B] Image upload                                             :MARKUP:

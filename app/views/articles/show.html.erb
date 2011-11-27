@@ -10,7 +10,7 @@
   </div>
 
   <div class="body">
-           <%= Sanitize.clean(markdown(@article.body), Sanitize::Config::RELAXED.merge({:transformers => @youtube_transformer})).html_safe %>
+    <%= @article.render %>
            <%#= markdown(@article.body) %>
   </div>
 

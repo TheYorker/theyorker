@@ -1,0 +1,8 @@
+<table>
+  <% @user.pending_articles.each do |a| %>
+  <tr>
+    <td><%= link_to a.title, edit_article_path(a) %></td>
+    <td><%= visibility_as_text(a.visibility) %></td>
+  </tr>
+  <% end %>
+</table>

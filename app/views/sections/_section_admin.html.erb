@@ -1,0 +1,14 @@
+<div class='<%= section.number_for_review > 0 ? "section_with_pending" : "section" %>'>
+
+<span class="pending_count">
+  [<%= section.number_for_review %>]
+</span>
+<span class="section_name">
+  <%= link_to section.name, edit_section_path(section) %>
+</span>
+</div>
+<ul>
+  <% section.children.each do |s| %>
+    <li><%= render :partial => 'sections/section_admin', :locals => {:section => s} %></li>
+  <% end %>
+</ul>

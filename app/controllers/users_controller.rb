@@ -27,6 +27,15 @@ class UsersController < ApplicationController
     
   end
 
+  def sections
+    @user = User.find(params[:id])
+    @sections = Section.toplevels(@user.sections)
+  end
+
+  def articles
+    @user = User.find(params[:id])
+  end
+
   private
   
   def member_layout

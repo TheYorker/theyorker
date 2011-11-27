@@ -1,8 +1,0 @@
-class Section < ActiveRecord::Base
-
-  has_many :articles
-
-  has_one :parent
-  belongs_to :child, :class_name => 'Section'
-
-end

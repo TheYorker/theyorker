@@ -53,3 +53,7 @@
     color: #333;
     display: inline;
 }
+
+.section_with_pending {
+    font-weight: bold;
+}

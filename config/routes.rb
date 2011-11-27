@@ -5,9 +5,23 @@ TheYorker::Application.routes.draw do
   match 'logout' => 'sessions#destroy', :as => :logout
   match 'login' => 'users#login', :as => :login
 
-  resources :users, :sessions, :articles, :sections, :membership_lists
+  resources :sessions, :sections, :membership_lists
+
+  resources :articles do
+    member do
+      get 'review'
+    end
+  end
+
+  resources :users do
+    member do
+      get 'sections'
+      get 'articles'
+    end
+  end
 
   match 'users/:id/dashboard' => 'users#dashboard'
+  match 'users/:id/sections' => 'users#sections'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

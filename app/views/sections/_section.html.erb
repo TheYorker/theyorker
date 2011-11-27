@@ -7,5 +7,10 @@
       <%= render :partial => 'shared/article', :locals => {:article => a} %>
     <% end %>
   </div>
+
+    <% section.children.each do |s| %>
+       <%= render s %>
+    <% end %>
+
 </div>
 

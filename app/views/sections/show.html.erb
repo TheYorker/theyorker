@@ -2,11 +2,14 @@
   <%= @section.name %> 
 </h2>
 
-
+<div class="article_list">
 <% @section.articles.each do |a| %>
 <%= render :partial => 'shared/article', :locals => {:article => a} %>
 <% end %>
+<br/>
+</div>
+
 
 <% @section.children.each do |s| %>
-  <%= render s %>
+  <%= render s %><br/>
 <% end %>

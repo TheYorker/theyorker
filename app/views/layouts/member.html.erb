@@ -32,14 +32,12 @@
     <br/>
   </div>
 
-  <h1>Members Area - The Yorker</h1>
+  <h1>Members Area - <%= link_to "The Yorker", root_path %></h1>
 
   <div class="toplevel_menu">
     <ul>
-      <li><%= link_to "Dashboard", "#" %></li>
-      <li><%= link_to "Articles", "#" %></li>
-      <li><%= link_to "Sections", "#" %></li>
-      <li><%= link_to "Comments", "#" %></li>
+      <li><%= link_to "Articles", articles_user_path(current_user) %></li>
+      <li><%= link_to "Sections", sections_user_path(current_user) %></li>
     </ul>
     <br/>
   </div>

@@ -171,11 +171,12 @@ input#section_name {
     border: 1px solid black;
     margin-top: 2px;
     margin-bottom: 2px;
-    width: 20em;
+    width: 16em;
     max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
     padding: 3px;
+    float: left;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .article_stub.pending {
@@ -191,8 +192,14 @@ input#section_name {
     font-size: 80%;
 }
 
+.article_list {
+    overflow: auto;
+}
+
 .section_stub {
     border: 3px #ddd solid;
+    overflow: auto;
+    width: auto;
 }
 
 .section_stub .section_name {
@@ -205,6 +212,7 @@ input#section_name {
     padding-bottom: 0.5em;
     padding-left: 0;
     padding-right: 0;
+    overflow: auto;
 }
 
 .article_column .column_footer_link {

@@ -37,14 +37,11 @@
   <%= f.text_field :tag %>
 </div>
 
-<h3>Editor Comments:</h3>
-<div class="editor_comments">
-  <%= @article.editor_comments || "No comments yet." %>
+<div class="field">
+  <%= f.label :editor_comments, "Editor Comments:" %><br/>
+  <%= f.text_area :editor_comments %>
 </div>
 
-<div class="action">
-  <%= f.submit %>
-  <%= f.submit "Preview", :name => 'preview_button' %>
-</div>
+<div class="action"><%= f.submit %></div>
 
 <% end %>

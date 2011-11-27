@@ -23,5 +23,10 @@ class SectionsController < ApplicationController
   def index
     @toplevel_sections = Section.find_all_by_parent_id(1);
   end
-  
+
+  def edit
+    @section = Section.find(params[:id])
+    render :layout => 'member'
+  end
+
 end

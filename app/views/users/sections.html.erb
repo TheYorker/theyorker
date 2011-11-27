@@ -1,0 +1,7 @@
+<h2><%= @user.name %>'s Sections</h2>
+
+<ul>
+  <% @sections.each do |s| %>
+  <li><%= render :partial => "sections/section_admin", :locals => {:section => s} %></li>
+  <% end %>
+</ul>

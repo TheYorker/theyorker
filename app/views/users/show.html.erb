@@ -5,7 +5,7 @@
 </h2>
 
 <div class="user_email">
-  <%= @user.email %>
+  <%= mail_to @user.email %>
 </div>
 
 <% if @user == current_user %>
