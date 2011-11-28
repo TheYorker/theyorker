@@ -29,12 +29,17 @@
 
 ** DONE [#A] Section Tree [2 PD]
 
-** TODO [#A] Editor Privs [2 PD]
+** DONE [#A] Editor Privs [2 PD]
 
 ** TODO [#A] Commenting [2 PD]
 
 *** Comment Model
 
+** TODO [#A] Publish Articles [1 PD]
+
+** TODO [#A] Submit Articles for Review [1 PD] 
+
+** TODO [#A] Delete and Pull Articles [1 PD]
 
 * TODO [#B] Image upload                                             :MARKUP:
 
@@ -43,6 +48,8 @@
 * TODO [#B] Mailers [2 PD]
 
 * TODO [#B] Password Reset [2 PD]
+
+* TODO [#B] 'Soft' Section deletion
 
 * TODO [#B] Top Articles [2 PD]
 
