@@ -18,8 +18,20 @@ class Article < ActiveRecord::Base
     self.save
   end
 
+  def withdraw
+    self.visibility = 1
+    self.save
+  end
+
   def publish
     self.visibility = 3         # horrible magic number for 'Public'
+    self.save
+  end
+
+  def withdraw_from_publication
+    if self.visibility == 3
+      self.visibility = 2
+    end
     self.save
   end
 
