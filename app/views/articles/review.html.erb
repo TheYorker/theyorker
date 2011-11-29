@@ -46,7 +46,12 @@
 
 <div class="action">
   <%= f.submit %>
+  <% if @article.visibility < 3 %>
   <%= f.submit "Publish", :name => 'publish_button', :confirm => 'Are you sure you want to publish this article' %>
+  <% else %>
+    <%= f.submit "Withdraw Article", :name => 'withdraw_from_publication_button', :confirm => 'Are you sure you want to withdraw this article' %>
+  <% end %>
+
 </div>
 
 <% end %>

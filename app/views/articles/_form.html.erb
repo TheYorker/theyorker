@@ -46,6 +46,9 @@
   <%= f.submit %>
   <%= f.submit "Preview", :name => 'preview_button' %>
   <%= f.submit "Submit for Review", :name => 'submit_for_review_button' %>
+  <% if @article.visibility > 1 %>
+    <%= f.submit "Withdraw Article", :name => 'withdraw_button' %>
+  <% end %>
 </div>
 
 <% end %>
