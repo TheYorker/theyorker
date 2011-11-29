@@ -43,14 +43,19 @@ class ArticlesController < ApplicationController
       flash.now.notice = "Article saved successfully"
       if params[:publish_button]
         @article.publish
-      elsif params[:submit_for_review_button]
-        @article.submit_for_review
-      elsif params[:withdraw_button]
-        @article.withdraw
+        redirect_to edit_section_path(@article.section)
       elsif params[:withdraw_from_publication_button]
         @article.withdraw_from_publication
+        redirect_to edit_section_path(@article.section)
+      elsif params[:submit_for_review_button]
+        @article.submit_for_review
+        redirect_to articles_user_path(current_user)
+      elsif params[:withdraw_button]
+        @article.withdraw
+        redirect_to articles_user_path(current_user)
+      else
+        redirect_to article_path(@article)
       end
-      redirect_to article_path(@article)
     else
       flash.now.alert = "Unable to save article"
       render view_to_render(params)
