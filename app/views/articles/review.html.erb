@@ -42,6 +42,15 @@
   <%= f.text_area :editor_comments %>
 </div>
 
+<%= f.hidden_field :review, :value => 'review' %>
+
 <div class="action"><%= f.submit %></div>
 
 <% end %>
+
+<hr/>
+
+<div class="preview">
+  <h2><%= @article.title %></h2>
+  <%= @article.render %>
+</div>

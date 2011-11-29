@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.attributes = params[:article]
     if params[:preview_button]
-      render "edit"
+      render view_to_render(params)
       return
     end
     if @article.save
@@ -43,12 +43,16 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article)
     else
       flash.now.alert = "Unable to save article"
-      render "edit"
+      render view_to_render(params)
     end
   end
 
   def review
     @article = Article.find(params[:id])
+  end
+
+  def view_to_render(params)
+    params[:review] ? 'review' : 'edit'
   end
 
 end
