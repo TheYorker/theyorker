@@ -40,6 +40,9 @@ class ArticlesController < ApplicationController
     end
     if @article.save
       flash.now.notice = "Article saved successfully"
+      if params[:publish_button]
+        @article.publish
+      end
       redirect_to article_path(@article)
     else
       flash.now.alert = "Unable to save article"
@@ -50,7 +53,9 @@ class ArticlesController < ApplicationController
   def review
     @article = Article.find(params[:id])
   end
-
+  
+  #private
+  
   def view_to_render(params)
     params[:review] ? 'review' : 'edit'
   end

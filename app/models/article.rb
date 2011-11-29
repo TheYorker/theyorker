@@ -13,6 +13,11 @@ class Article < ActiveRecord::Base
     Article.where(:section_id => section.id, :visibility => 2)
   end
 
+  def publish
+    self.visibility = 3         # horrible magic number for 'Public'
+    self.save
+  end
+
   def render
     youtube_transformer = lambda do |env|
       node      = env[:node]
