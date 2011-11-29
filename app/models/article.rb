@@ -13,6 +13,11 @@ class Article < ActiveRecord::Base
     Article.where(:section_id => section.id, :visibility => 2)
   end
 
+  def submit_for_review
+    self.visibility = 2         # horrible magic number for 'Editorial Review'
+    self.save
+  end
+
   def publish
     self.visibility = 3         # horrible magic number for 'Public'
     self.save
