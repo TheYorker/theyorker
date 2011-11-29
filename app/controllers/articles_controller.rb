@@ -42,6 +42,8 @@ class ArticlesController < ApplicationController
       flash.now.notice = "Article saved successfully"
       if params[:publish_button]
         @article.publish
+      elsif params[:submit_for_review_button]
+        @article.submit_for_review
       end
       redirect_to article_path(@article)
     else
