@@ -31,6 +31,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  # we really need to refactor this
   def update
     @article = Article.find(params[:id])
     @article.attributes = params[:article]
@@ -44,6 +45,10 @@ class ArticlesController < ApplicationController
         @article.publish
       elsif params[:submit_for_review_button]
         @article.submit_for_review
+      elsif params[:withdraw_button]
+        @article.withdraw
+      elsif params[:withdraw_from_publication_button]
+        @article.withdraw_from_publication
       end
       redirect_to article_path(@article)
     else
