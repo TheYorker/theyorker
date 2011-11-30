@@ -30,3 +30,4 @@ class SectionsController < ApplicationController
   end
 
 end
+
