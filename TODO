@@ -45,35 +45,38 @@
 
 ** DONE [#A] List of published articles on users articles page [0.25 PD]
 
+* TODO [#A] Iteration Ending 7th December
+
+** TODO [#A] Login users automatically at signup [0.25 PD]
+
 ** TODO [#A] Article publication time [1 PD]
 
-* TODO [#B] Iteration Ending 7th December
+** TODO [#A] Solid user validation [4 PD]
 
-** TODO [#B] Solid user validation [4 PD]
+** TODO [#A] Users in comment models [0.5 PD]
 
-** TODO [#B] Users in comment models [0.5 PD]
+** TODO [#A] Mailers [2 PD]
 
-** TODO [#B] Mailers [2 PD]
+** TODO [#A] Password Reset [1 PD]
 
-** TODO [#B] Password Reset [1 PD]
+** TODO [#A] Admin Access Level [1 PD]
+   For now, just add an extra boolean
 
-** TODO [#B] 'Director' Access Level [1 PD]
+** TODO [#A] Pretty + Time-relevant layout of section pages [4 PD]
+   rank = importance - 0.006 * hours_since_publication^1.5
 
-** TODO [#B] Pretty + Time-relevant layout of section pages [4 PD]
-
-* TODO [#B] 'Soft' Section deletion
-  I guess articles should just appear in the closest visible
-  parent. Or should they just be hidden?
+** TODO [#B] 'Soft' Section deletion [1 PD]
+   For now, articles will just become unreachable
 
 * TODO [#B] Headline images
 
-* TODO [#B] Top Articles [4 PD]
-
 * TODO [#C] Related Articles [4 PD]
-  How do 'related' and 'top' articles interact
+  rank = editor_blessedness - 0.004 * hours_since_publication^1.5
 
 * TODO [#B] Article Ticker [4 PD]
   How do articles get into/out of the ticker? Is it just top articles?
+
+* TODO [#C] Featured Articles [2 PD]
  
 * TODO [#C] Comment show/hide [1 PD]
 
