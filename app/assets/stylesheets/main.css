@@ -287,6 +287,8 @@ input#section_name {
 .comment {
     border: 1px solid gray;
     padding: 3px;
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 .comment_byline {
