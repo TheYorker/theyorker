@@ -75,7 +75,9 @@ class Article < ActiveRecord::Base
       # to whitelist the current node.
       {:node_whitelist => [node]}
     end
-    Sanitize.clean(BlueCloth.new(self.body).to_html, Sanitize::Config::RELAXED.merge({:transformers => youtube_transformer})).html_safe
+    html = Sanitize.clean(BlueCloth.new(self.body).to_html, Sanitize::Config::RELAXED.merge({:transformers => youtube_transformer}))
+    # increase heading levels of markdown output by 2
+    html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
   end
 
 end
