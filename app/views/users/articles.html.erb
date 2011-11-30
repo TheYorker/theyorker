@@ -6,3 +6,13 @@
   </tr>
   <% end %>
 </table>
+
+<hr/>
+
+<div class="user_articles_list">
+  <% @user.published_articles.each do |a| %>
+    <div class="article">
+      <%= link_to a.title, article_path(a) %>
+    </div>
+  <% end %>
+</div>

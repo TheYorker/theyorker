@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
     Article.pending_articles_for_user(self)
   end
 
+  def published_articles
+    Article.published_articles_for_user(self)
+  end
+
 end

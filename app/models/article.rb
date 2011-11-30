@@ -11,8 +11,16 @@ class Article < ActiveRecord::Base
     Article.where(:user_id => user.id, :visibility => 1..2)
   end
 
+  def self.published_articles_for_user(user)
+    Article.where(:user_id => user.id, :visibility => 3)
+  end
+
   def self.for_review_by_section(section)
     Article.where(:section_id => section.id, :visibility => 2)
+  end
+
+  def self.published_by_section(section)
+    Article.where(:section_id => section.id, :visibility => 3)
   end
 
   def submit_for_review

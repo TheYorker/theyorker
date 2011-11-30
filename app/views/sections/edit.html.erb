@@ -1,32 +1,51 @@
 <h2><%= @section.name %></h2>
 
-<h3>Editors</h3>
-<ul>
-<% @section.users.each do |e| %>
-  <li><%= link_to e.name, user_path(e) %></li>
-<% end %>
-</ul>
+<div class="editors">
+
+  <h3>Editors</h3>
+  <ul>
+    <% @section.users.each do |e| %>
+      <li><%= link_to e.name, user_path(e) %></li>
+    <% end %>
+  </ul>
+  
+</div>
 
 <hr/>
 
 <h3>Articles for Editorial Review</h3>
 
-<ul>
-  <% @section.articles_for_review.each do |a| %>
-  <li><%= link_to a.title, review_article_path(a) %></li>
-  <% end %>
-</ul>
+<div class="review_articles">
+  <ul>
+    <% @section.articles_for_review.each do |a| %>
+      <li><%= link_to a.title, review_article_path(a) %></li>
+    <% end %>
+  </ul>
+</div>
+
 
 <hr/>
 
 <h3>Articles Scheduled for Publication</h3>
 
-<ul>
-</ul>
+<div class="queued_articles">
+  <ul>
+  </ul>
+</div>
 
 <hr/>
 
 <h3>Published Articles</h3>
+
+<div class="published_articles_list">
+
+  <% @section.published_articles.each do |a| %>
+    <div class="article">
+      <%= link_to a.title, review_article_path(a) %>
+    </div>
+  <% end %>
+
+</div>
 
 <ul>
 </ul>

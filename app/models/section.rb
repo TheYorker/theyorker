@@ -61,4 +61,8 @@ class Section < ActiveRecord::Base
     articles_for_review.length
   end
 
+  def published_articles
+    Article.published_by_section(self)
+  end
+
 end
