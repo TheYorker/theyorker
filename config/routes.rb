@@ -10,6 +10,7 @@ TheYorker::Application.routes.draw do
   resources :articles do
     member do
       get 'review'
+      get 'comments'
     end
   end
 
@@ -22,6 +23,13 @@ TheYorker::Application.routes.draw do
 
   match 'users/:id/dashboard' => 'users#dashboard'
   match 'users/:id/sections' => 'users#sections'
+
+  # post "articles/:id/comments"
+  # get "comments/:id/hide"
+  # get "comments/:id/unhide"
+
+  match 'articles/:id/comments' => 'comments#create'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -273,3 +273,36 @@ input#section_name {
     color: #4b4;
 }
 
+.comment_form {
+    background-color: #ddd;
+    border: 1px solid grey;
+    padding: 6px;
+}
+
+.comment_form * textarea#body {
+    width: 30em;
+    height: 8em;
+}
+
+.comment {
+    border: 1px solid gray;
+    padding: 3px;
+}
+
+.comment_byline {
+    font-weight: bold;
+    float: left;
+    display: inline;
+}
+
+.comment_time {
+    color: #333;
+    float: right;
+    display: inline;
+}
+
+.comment_header {
+    overflow: auto;
+    margin-bottom: 6px;
+}
+

@@ -3,6 +3,8 @@ class Article < ActiveRecord::Base
   belongs_to :user
   belongs_to :section
 
+  has_many :comments
+
   validates :user_id, :presence => true
 
   def self.pending_articles_for_user(user)

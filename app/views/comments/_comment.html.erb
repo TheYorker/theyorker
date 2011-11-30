@@ -1,0 +1,18 @@
+<div class="comment">
+
+  <div class="comment_header">
+    <div class="comment_byline">
+      <%= comment.byline %>
+    </div>
+
+    <div class="comment_time">
+      <%= time_ago_in_words(comment.created_at) %> ago
+    </div>
+
+  </div>
+
+  <div class="comment_body">
+    <%= comment.body %>
+  </div>
+  
+</div>

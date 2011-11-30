@@ -1,25 +1,68 @@
 <% if @article %>
 
-<div class="article">
-  <h2>
-    <%= @article.title %>
-  </h2>
+  <div class="article">
+    <h2>
+      <%= @article.title %>
+    </h2>
 
-  <div class="author">
-    <%= @article.byline %>
-  </div>
+    <div class="author">
+      <%= @article.byline %>
+    </div>
 
-  <div class="body">
-    <%= @article.render %>
-           <%#= markdown(@article.body) %>
-  </div>
+    <div class="body">
+      <%= @article.render %>
+      <%#= markdown(@article.body) %>
+    </div>
 
-  <% if current_user && current_user == @article.user %>
-    <%= link_to "Edit this article", edit_article_path(@article) %>
-  <% end %>
+    <% if current_user && current_user == @article.user %>
+      <%= link_to "Edit this article", edit_article_path(@article) %>
+    <% end %>
 
-  <%# trivial case for non-existence of article %>
+    <hr/>
+
+    <% @article.comments.each do |c| %>
+
+      <%= render c %>
+
+    <% end %>
+
+    <hr/>
+
+    <% if current_user %>
+      
+      <div class="comment_form">
+
+        <h4>Write a Comment</h4>
+
+        <%= form_tag article_comments_path(@article) do %>
+
+        <div class="field">
+          <%= label_tag :byline, "Name:" %><br/>
+          <%= text_field_tag :byline, nil, :name => 'comment[byline]' %>
+        </div>
+
+        <div class="field">
+          <%= label_tag :body, "Comment:" %><br/>
+          <%= text_area_tag :body, nil, :name => 'comment[body]' %>
+        </div>
+
+        <div class="action">
+          <%= submit_tag "Comment" %>
+        </div>
+        
+    <% end %>
+    </div>
+
   <% else %>
-  <h2>No such article</h2>
-  <% end %>
+
+    You must be logged in to post a comment
+
+<% end %>
+
+
 </div>
+
+<%# trivial case for non-existence of article %>
+<% else %>
+  <h2>No such article</h2>
+<% end %>
