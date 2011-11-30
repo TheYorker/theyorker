@@ -5,7 +5,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to root_url, :notice => "Signup successful!"
+      session[:user_id] = @user.id
+      @user.update_attributes(:member => MembershipList.member?(@user.email))
+      redirect_to user_path(@user), :notice => "Signup successful!"
     else
       render "login"
     end
