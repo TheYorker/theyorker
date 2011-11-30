@@ -31,9 +31,7 @@
 
 ** DONE [#A] Editor Privs [2 PD]
 
-** TODO [#A] Commenting [2 PD]
-
-*** Comment Model
+** DONE [#A] Commenting [2 PD]
 
 ** DONE [#A] Submit Articles for publication [1 PD]
 
@@ -43,37 +41,49 @@
 
 ** DONE [#A] Withdraw Articles [1 PD]
 
-** TODO [#A] List of published articles on edit_section page [0.25 PD]
+** DONE [#A] List of published articles on edit_section page [0.25 PD]
 
-** TODO [#A] List of published articles on users articles page [0.25 PD]
+** DONE [#A] List of published articles on users articles page [0.25 PD]
 
-** TODO [#A] Article publication time setting [1 PD]
-* TODO [#B] Image upload                                             :MARKUP:
+** TODO [#A] Article publication time [1 PD]
+
+* TODO [#B] Iteration Ending 7th December
+
+** TODO [#B] Solid user validation [4 PD]
+
+** TODO [#B] Users in comment models [0.5 PD]
+
+** TODO [#B] Mailers [2 PD]
+
+** TODO [#B] Password Reset [1 PD]
+
+** TODO [#B] 'Director' Access Level [1 PD]
+
+** TODO [#B] Pretty + Time-relevant layout of section pages [4 PD]
+
+* TODO [#B] 'Soft' Section deletion
+  I guess articles should just appear in the closest visible
+  parent. Or should they just be hidden?
 
 * TODO [#B] Headline images
 
-* TODO [#B] Mailers [2 PD]
+* TODO [#B] Top Articles [4 PD]
 
-* TODO [#B] Password Reset [2 PD]
-
-* TODO [#B] 'Soft' Section deletion
-
-* TODO [#B] Top Articles [2 PD]
+* TODO [#C] Related Articles [4 PD]
+  How do 'related' and 'top' articles interact
 
 * TODO [#B] Article Ticker [4 PD]
   How do articles get into/out of the ticker? Is it just top articles?
+ 
+* TODO [#C] Comment show/hide [1 PD]
 
 * TODO [#C] Session Expiry [2 PD]
 
-* TODO [#C] Related Articles [4 PD]
+* TODO [#C] Migrate Google Analytics [0.5 PD]
 
-* TODO [#C] Article Reparenting on Section Deletion [2 PD]
-  Could possibly replace with some sort of 'soft delete'
+* TODO [#C] Pretty Categorised Sections for Analytics [0.5 PD]
 
-* TODO [#C] Migrate Google Analytics [1 PD]
-
-* TODO [#C] Pretty Categorised Sections for Analytics [4 PD]
-  Ya just know it's going to be harder than you think
+* TODO Image upload                                                  :MARKUP:
 
 * TODO User Search [1 PD]
 
