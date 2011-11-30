@@ -1,3 +1,5 @@
+<h3>Articles in Progress</h3>
+
 <table>
   <% @user.pending_articles.each do |a| %>
   <tr>
@@ -9,10 +11,18 @@
 
 <hr/>
 
+<h3>Published Articles</h3>
+
 <div class="user_articles_list">
   <% @user.published_articles.each do |a| %>
     <div class="article">
       <%= link_to a.title, article_path(a) %>
     </div>
   <% end %>
+</div>
+
+<hr/>
+
+<div class="new_article_link">
+  <%= link_to "Create Article", new_article_path %>
 </div>
