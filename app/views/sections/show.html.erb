@@ -3,8 +3,8 @@
 </h2>
 
 <div class="article_list">
-<% @section.articles.each do |a| %>
-<%= render :partial => 'shared/article', :locals => {:article => a} %>
+<% @section.published_articles.each do |a| %>
+  <%= render :partial => 'shared/article', :locals => {:article => a} %>
 <% end %>
 <br/>
 </div>
