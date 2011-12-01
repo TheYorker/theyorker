@@ -6,7 +6,7 @@
     </h2>
 
     <div class="author">
-      <%= @article.byline %>
+      <%= link_to @article.byline, user_path(@article.user) %>
     </div>
 
     <div class="body">
