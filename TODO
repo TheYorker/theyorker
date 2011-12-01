@@ -49,17 +49,13 @@
 
 ** TODO [#A] Login users automatically at signup [0.25 PD]
 
-<<<<<<< HEAD
 ** TODO [#A] Article publication time [1 PD]
 
 ** TODO [#A] Solid user validation [4 PD]
-=======
-** TODO [#B] Don't show sections tab if not a section editor [0.1 PD]
 
-** TODO [#B] Solid user validation [4 PD]
+** TODO [#A] Don't show sections tab if not a section editor [0.1 PD]
 
-** TODO [#B] Users in comment models; name should be drop-down [0.5 PD]
->>>>>>> 849b1907e05d9d924122db6b89cf216f4f3ace3d
+** TODO [#A] Users in comment models; name should be drop-down [0.5 PD]
 
 ** TODO [#A] Users in comment models [0.5 PD]
 
@@ -70,24 +66,22 @@
 ** TODO [#A] Admin Access Level [1 PD]
    For now, just add an extra boolean
 
-<<<<<<< HEAD
 ** TODO [#A] Pretty + Time-relevant layout of section pages [4 PD]
    rank = importance - 0.006 * hours_since_publication^1.5
-=======
-** TODO [#B] Rename title to headline on articles [1 PD]
 
-** TODO [#B] Add blurb/tagline field to articles [0.5 PD]
+** TODO [#A] Rename title to headline on articles [1 PD]
 
-** TODO [#B] Rename 'Create article' and 'Update Article' to 'Save' [0.1 PD]
+** TODO [#A] Add blurb/tagline field to articles [0.5 PD]
 
-** TODO [#B] 'Submit for Review' should also create
+** TODO [#A] Rename 'Create article' and 'Update Article' to 'Save' [0.1 PD]
 
-** TODO [#B] Investigate "" title attribute bug in markdown
+** TODO [#A] 'Submit for Review' should also create
+
+** TODO [#A] Investigate "" title attribute bug in markdown
 
 * TODO [#B] 'Soft' Section deletion
   I guess articles should just appear in the closest visible
   parent. Or should they just be hidden?
->>>>>>> 849b1907e05d9d924122db6b89cf216f4f3ace3d
 
 ** TODO [#B] 'Soft' Section deletion [1 PD]
    For now, articles will just become unreachable
