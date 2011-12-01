@@ -3,7 +3,7 @@
     <%= link_to section.name, section_path(section) %>
   </div>
   <div class="article_list">
-    <% section.articles.each do |a| %>
+    <% section.published_articles.each do |a| %>
       <%= render :partial => 'shared/article', :locals => {:article => a} %>
     <% end %>
   </div>
