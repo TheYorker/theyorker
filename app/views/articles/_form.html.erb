@@ -26,10 +26,42 @@
   <%= f.label :byline, "Byline:" %><br/>
   <%= f.text_field :byline, :value => @article.byline || (current_user ? current_user.name : "") %>
 </div>
-
-<div class="field">
-  <%= f.label :body, "Article Text:" %><br/>
-  <%= f.text_area :body %>
+<div class="body_edit">
+  <div class="field">
+    <%= f.label :body, "Article Text:" %><br/>
+    <%= f.text_area :body %>
+  </div>
+  <!-- this should really be dynamic -->
+  <div class="markdown_help">
+    <h5>Quick Guide to Markdown</h5>
+    <table>
+      <tr>
+        <td><tt>This is a heading<br/>
+            =================</tt>
+        </td>
+        <td><h3>This is a heading</h3></td>
+      </tr>
+      <tr>
+        <td><tt>This is a lower heading<br/>
+                -----------------------</tt>
+        </td>
+        <td><h4>This is a lower heading</h4></td>
+      </tr>
+      <tr>
+        <td><tt>This is some _italic text_</tt></td>
+        <td>This is some <i>italic text</i></td>
+      </tr>
+      <tr>
+        <td><tt>This is some **bold text**</tt></td>
+        <td>This is some <b>bold text</b></td>
+      </tr>
+      <tr>
+        <td><tt>This is a [link to google](http://www.google.com)</tt></td>
+        <td>This is a <a href="http://www.google.com">link to google</a></td>
+      </tr>
+    </table>
+  </div>
+  
 </div>
 
 <div class="field">

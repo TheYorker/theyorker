@@ -21,6 +21,35 @@ input#section_name {
     font-size: 120%;
 }
 
+.body_edit {
+    overflow: auto;
+}
+
+.body_edit .field {
+    float: left;
+}
+
+.body_edit .markdown_help {
+    float: right;
+    width: 48%;
+}
+
+.markdown_help table {
+    border-width: 1px;
+    border-spacing: 0px;
+    border-style: solid;
+    border-color: gray;
+    border-collapse: collapse;
+}
+
+.markdown_help table tr td {
+    border-width: 1px;
+    border-spacing: 0px;
+    border-style: solid;
+    border-color: gray;
+    padding: 1px;
+}
+
 .article .author {
     color: gray;
 }
