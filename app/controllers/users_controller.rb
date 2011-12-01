@@ -19,6 +19,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if current_user && current_user != @user
+      render :layout => "application"
+      return true
+    end
   end
 
   def index
@@ -41,7 +45,6 @@ class UsersController < ApplicationController
   private
   
   def member_layout
-
     if current_user && current_user.member?
       "member"
     else
