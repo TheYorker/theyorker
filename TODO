@@ -49,9 +49,11 @@
 
 * TODO [#B] Iteration Ending 7th December
 
+** TODO [#B] Don't show sections tab if not a section editor [0.1 PD]
+
 ** TODO [#B] Solid user validation [4 PD]
 
-** TODO [#B] Users in comment models [0.5 PD]
+** TODO [#B] Users in comment models; name should be drop-down [0.5 PD]
 
 ** TODO [#B] Mailers [2 PD]
 
@@ -60,6 +62,16 @@
 ** TODO [#B] 'Director' Access Level [1 PD]
 
 ** TODO [#B] Pretty + Time-relevant layout of section pages [4 PD]
+
+** TODO [#B] Rename title to headline on articles [1 PD]
+
+** TODO [#B] Add blurb/tagline field to articles [0.5 PD]
+
+** TODO [#B] Rename 'Create article' and 'Update Article' to 'Save' [0.1 PD]
+
+** TODO [#B] 'Submit for Review' should also create
+
+** TODO [#B] Investigate "" title attribute bug in markdown
 
 * TODO [#B] 'Soft' Section deletion
   I guess articles should just appear in the closest visible
