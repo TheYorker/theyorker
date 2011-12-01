@@ -75,8 +75,8 @@
 </div>
 
 <div class="action">
-  <%= f.submit %>
   <%= f.submit "Preview", :name => 'preview_button' %>
+  <%= f.submit "Save" %>
   <% if @article.visibility > 1 %>
     <%= f.submit "Withdraw Article", :name => 'withdraw_button' %>
   <% else %>
