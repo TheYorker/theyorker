@@ -1,3 +1,53 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+input#article_title {
+    width: 30em;
+    font-size: 120%;
+}
+
+textarea#article_body {
+    width: 40em;
+    height: 50em;
+    font-family: sans-serif;
+}
+
+input#section_name {
+    width: 20em;
+    margin-bottom: 1em;
+    font-size: 120%;
+}
+
+.article .author {
+    color: gray;
+}
+
+.article .author a:visited,
+.article .author a {
+    text-decoration: none;
+    color: gray;
+}
+
+.article .body {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+blockquote {
+    float: right;
+    border: 1px solid grey;
+    background-color: #eee;
+    padding: 6px;
+    max-width: 18em;
+}
+
+blockquote blockquote {
+    color: #333;
+    font-size: 10pt;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
