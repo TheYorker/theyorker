@@ -47,13 +47,13 @@
 
 * TODO [#A] Iteration Ending 7th December
 
+** DONE [#A] Don't show sections tab if not a section editor [0.1 PD]
+
 ** TODO [#A] Login users automatically at signup [0.25 PD]
 
 ** TODO [#A] Article publication time [1 PD]
 
 ** TODO [#A] Solid user validation [4 PD]
-
-** TODO [#A] Don't show sections tab if not a section editor [0.1 PD]
 
 ** TODO [#A] Users in comment models; name should be drop-down [0.5 PD]
 
