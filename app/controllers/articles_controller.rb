@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 
+  layout "member", :except => :show
+
   def new
     @article = Article.new
   end
@@ -25,6 +27,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    render :layout => "application"
   end
   
   def edit
