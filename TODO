@@ -47,13 +47,13 @@
 
 * TODO [#A] Iteration Ending 7th December
 
+** DONE [#A] Login users automatically at signup [0.25 PD]
+
 ** DONE [#A] Don't show sections tab if not a section editor [0.1 PD]
 
 ** DONE [#A] Don't render sections recursively
 
 ** TODO [#A] Look recursively through sections to find most recent articles
-
-** TODO [#A] Login users automatically at signup [0.25 PD]
 
 ** TODO [#A] Article publication time [1 PD]
 
