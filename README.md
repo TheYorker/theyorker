@@ -27,3 +27,10 @@ Glossary
 * **Admin**: A *member* with broad-ranging authority to more-or-less modify anything dynamic.
 * **Article**: A rich-text document created by a *writer*
 * **Editor**:
+* **Writer**:
+* **User**:
+* **Section**:
+* **Member**:
+* **Publish**:
+* **Editorial Review**:
+* **Visitor**:
