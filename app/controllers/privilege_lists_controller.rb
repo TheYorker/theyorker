@@ -1,5 +1,7 @@
 class PrivilegeListsController < ApplicationController
 
+  before_filter :admin_access
+
   def create
     @privilege_list = PrivilegeList.new(params[:privilege_list])
     if @privilege_list.save
