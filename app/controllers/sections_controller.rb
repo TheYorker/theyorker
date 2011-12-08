@@ -1,5 +1,7 @@
 class SectionsController < ApplicationController
 
+  before_filter :member_access, :except => ['show', 'index']
+
   def new
     @potential_parents = Section.all
     @section = Section.new

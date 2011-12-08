@@ -2,6 +2,10 @@ class ArticlesController < ApplicationController
 
   layout "member", :except => :show
 
+  before_filter :find_article, :only => ['show', 'edit', 'update', 'review']
+  before_filter :owner_access, :only => ['edit']
+
+
   def new
     @article = Article.new
   end
@@ -26,17 +30,14 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
     render :layout => "application"
   end
   
   def edit
-    @article = Article.find(params[:id])
   end
 
   # we really need to refactor this
   def update
-    @article = Article.find(params[:id])
     @article.attributes = params[:article]
     if params[:preview_button]
       render view_to_render(params)
@@ -66,13 +67,22 @@ class ArticlesController < ApplicationController
   end
 
   def review
-    @article = Article.find(params[:id])
   end
-  
-  #private
   
   def view_to_render(params)
     params[:review] ? 'review' : 'edit'
+  end
+
+  def find_article
+    @article = Article.find(params[:id])
+  end
+
+  def owner_access
+    (current_user && @article && @article.user == current_user) || render_403
+  end
+
+  def editor_access
+    
   end
 
 end
