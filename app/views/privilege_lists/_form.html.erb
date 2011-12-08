@@ -22,6 +22,11 @@
                                    :end_year => Time.now.year + 100 %>
     </div>
 
+    <div class="type">
+      <%= f.label :type %><br/>
+      <%= f.select :type, [['Member', 1], ['Admin', 2]] %>
+    </div>
+
     <div class="field">
       <%= f.label :addresses, "Email Addresses:" %><br/>
       <%= f.text_area :addresses %>
