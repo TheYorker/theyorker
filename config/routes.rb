@@ -30,6 +30,8 @@ TheYorker::Application.routes.draw do
 
   match 'articles/:id/comments' => 'comments#create'
 
+  post 'editors/create'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
