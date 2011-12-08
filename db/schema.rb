@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111208193411) do
+ActiveRecord::Schema.define(:version => 20111208195709) do
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20111208193411) do
     t.text     "addresses"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "type"
   end
 
   create_table "sections", :force => true do |t|
