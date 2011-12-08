@@ -4,6 +4,9 @@ class ArticlesController < ApplicationController
 
   before_filter :find_article, :only => ['show', 'edit', 'update', 'review']
   before_filter :owner_access, :only => ['edit']
+  before_filter :editor_access, :only => ['review']
+  before_filter :owner_or_editor_access, :only => ['update']
+  before_filter :check_visibility, :only => ['show']
 
 
   def new
@@ -36,6 +39,9 @@ class ArticlesController < ApplicationController
   def edit
   end
 
+  def review
+  end
+
   # we really need to refactor this
   def update
     @article.attributes = params[:article]
@@ -66,9 +72,8 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def review
-  end
-  
+  private
+
   def view_to_render(params)
     params[:review] ? 'review' : 'edit'
   end
@@ -77,12 +82,30 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def is_owner
+    (current_user && @article && @article.user == current_user)
+  end
+
+  def is_editor
+    (current_user && @article && current_user.editor_for(@article.section))
+  end
+
   def owner_access
-    (current_user && @article && @article.user == current_user) || render_403
+    is_owner || render_403
   end
 
   def editor_access
-    
+    is_editor || render_403
+  end
+
+  def owner_or_editor_access
+    is_owner || is_editor || render_403
+  end
+
+  def check_visibility
+    is_owner && return
+    is_editor && @article.visibility >= 2 && return
+    @article.visibility < 3 && render_403
   end
 
 end
