@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      @user.update_attributes(:member => MembershipList.member?(@user.email))
+      @user.update_attributes(:member => PrivilegeList.member?(@user.email))
       redirect_to user_path(@user), :notice => "Signup successful!"
     else
       render "login"

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      user.update_attributes(:member => MembershipList.member?(user.email))
+      user.update_attributes(:member => PrivilegeList.member?(user.email))
       
       redirect_to user_path(user), :notice => "#{user.name} logged in successfully"
     else

@@ -1,10 +1,10 @@
-<%= form_for @membership_list do |f| %>
+<%= form_for @privilege_list do |f| %>
 
-    <% if @membership_list.errors.any? %>
+    <% if @privilege_list.errors.any? %>
     <div class="error_messages">
       <h3>Form is invalid</h3>
       <ul>
-        <% for message in @membership_list.errors.full_messages %>
+        <% for message in @privilege_list.errors.full_messages %>
         <li><%= message %></li>
         <% end %>
       </ul>
