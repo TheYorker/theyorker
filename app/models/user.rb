@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
     Article.published_articles_for_user(self)
   end
 
+  def editor_for(section)
+    self.sections.any? {|s| s.ancestor? section}
+  end
+
 end
