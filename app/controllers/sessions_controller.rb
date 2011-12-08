@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       user.update_attributes(:member => PrivilegeList.member?(user.email))
-      
+      user.update_attributes(:admin => PrivilegeList.admin?(user.email))
       redirect_to user_path(user), :notice => "#{user.name} logged in successfully"
     else
       flash.now.alert = "Invalid email or password"
