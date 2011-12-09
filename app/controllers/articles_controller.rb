@@ -2,9 +2,9 @@ class ArticlesController < ApplicationController
 
   layout "member", :except => :show
 
-  before_filter :find_article, :only => ['show', 'edit', 'update', 'review']
+  before_filter :find_article, :only => ['show', 'edit', 'update', 'review', 'publish']
   before_filter :owner_access, :only => ['edit']
-  before_filter :editor_access, :only => ['review']
+  before_filter :editor_access, :only => ['review', 'publish']
   before_filter :owner_or_editor_access, :only => ['update']
   before_filter :check_visibility, :only => ['show']
 
@@ -51,7 +51,9 @@ class ArticlesController < ApplicationController
     end
     if @article.save
       flash.now.notice = "Article saved successfully"
-      if params[:publish_button]
+      if params[:confirm_publication_button]
+        redirect_to publish_article_path(@article)
+      elsif params[:publish_button]
         @article.publish
         redirect_to edit_section_path(@article.section)
       elsif params[:withdraw_from_publication_button]
@@ -70,6 +72,9 @@ class ArticlesController < ApplicationController
       flash.now.alert = "Unable to save article"
       render view_to_render(params)
     end
+  end
+
+  def publish
   end
 
   private

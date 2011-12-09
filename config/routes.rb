@@ -11,6 +11,7 @@ TheYorker::Application.routes.draw do
     member do
       get 'review'
       get 'comments'
+      get 'publish'
     end
   end
 

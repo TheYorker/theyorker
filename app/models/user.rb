@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     self.sections.any? {|s| s.ancestor? section}
   end
 
+  def toplevel_editor?
+    self.editor_for(Section.find(1))
+  end
+
   def suspend
     self.suspended = true
     self.save
