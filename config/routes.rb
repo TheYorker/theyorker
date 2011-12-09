@@ -23,7 +23,8 @@ TheYorker::Application.routes.draw do
   end
 
   match 'users/:id/dashboard' => 'users#dashboard'
-  match 'users/:id/sections' => 'users#sections'
+  match 'users/:id/suspend' => 'users#suspend'
+  match 'users/:id/unsuspend' => 'users#unsuspend'
 
   # post "articles/:id/comments"
 

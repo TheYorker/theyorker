@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Permission Denied (403)</title>
+  <title>User Suspended</title>
   <style type="text/css">
     body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
     div.dialog {
@@ -17,10 +17,12 @@
 </head>
 
 <body>
-  <!-- This file lives in public/403.html -->
+  <!-- This file lives in public/suspended.html -->
   <div class="dialog">
-    <h1>Permission Denied</h1>
-    <p>You are not logged in as a user with access to this page</p>
+    <h1>User Suspended</h1>
+    <p>This user account has been suspended. If you believe that this
+      has been done in error, please contact the
+      <%= mail_to "webmaster@theyorker.co.uk", "webmaster" %></p>
     <p><a href="/login">Login</a></p>
   </div>
 </body>

@@ -4,6 +4,12 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:email])
+
+    if user && user.suspended
+      render :file => "#{Rails.root}/public/suspended.html", :layout => false
+      return
+    end
+
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       user.update_attributes(:member => PrivilegeList.member?(user.email))

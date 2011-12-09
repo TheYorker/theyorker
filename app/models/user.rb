@@ -20,4 +20,14 @@ class User < ActiveRecord::Base
     self.sections.any? {|s| s.ancestor? section}
   end
 
+  def suspend
+    self.suspended = true
+    self.save
+  end
+
+  def unsuspend
+    self.suspended = false
+    self.save
+  end
+
 end

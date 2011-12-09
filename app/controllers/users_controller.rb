@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
-  before_filter :admin_access, :only => ['admin']
+  before_filter :admin_access, :only => ['admin', 'suspend', 'unsuspend']
+  before_filter :find_user, :except => ['create', 'login', 'index']
 
   layout :member_layout
 
@@ -20,7 +21,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     if current_user && current_user != @user
       render :layout => "application"
       return true
@@ -36,16 +36,23 @@ class UsersController < ApplicationController
   end
 
   def sections
-    @user = User.find(params[:id])
     @sections = Section.toplevels(@user.sections)
   end
 
   def articles
-    @user = User.find(params[:id])
   end
 
   def admin
-    @user = User.find(params[:id])
+  end
+
+  def suspend
+    @user.suspend
+    redirect_to user_path(@user)
+  end
+
+  def unsuspend
+    @user.unsuspend
+    redirect_to user_path(@user)
   end
 
   private
@@ -56,6 +63,10 @@ class UsersController < ApplicationController
     else
       "application"
     end
+  end
+
+  def find_user
+    @user = User.find(params[:id])
   end
 
 end

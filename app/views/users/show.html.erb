@@ -10,13 +10,28 @@
 
 <% if @user == current_user %>
 
-<div>
-  <%= (@user.member ? "Congratulations, you're a full member of The Yorker" : "You're not a full member of The Yorker. If you'd like to write for The Yorker, please contact <a href='mailto://editor@theyorker.co.uk'>the editor</a>.").html_safe %>
-</div>
+  <% if @user.member? %>
+    Congratulations, you're a full member of The Yorker.
+    <div class="new_article_link">
+      <%= link_to "Create Article", new_article_path %>
+    </div>
+  <% else %>
+    You're not a full member of The Yorker. If you'd like to write for The Yorker,
+    please contact <%= mail_to "editor@theyorker.co.uk", "the editor" %>.
+  <% end %>
 
-<div class="new_article_link">
-  <%= link_to "Create Article", new_article_path %>
-</div>
+<% elsif current_user && current_user.admin? %>
+
+  <hr/>
+
+  <div class="suspend_control">
+    <% if @user.suspended? %>
+      <%= link_to "Unsuspend", {:controller => "users", :action => "unsuspend", :id => @user.id} %>
+    <% else %>
+      <%= link_to "Suspend", {:controller => "users", :action => "suspend", :id => @user.id} %>
+    <% end %>
+  </div>
+
 
 <% end %>
 
