@@ -45,6 +45,14 @@ class Article < ActiveRecord::Base
     self.save
   end
 
+  def rank
+    self.importance - age_in_days
+  end
+
+  def feature_rank
+    self.featuredness - age_in_days
+  end
+
   def render
     youtube_transformer = lambda do |env|
       node      = env[:node]
@@ -78,6 +86,12 @@ class Article < ActiveRecord::Base
     html = Sanitize.clean(BlueCloth.new(self.body).to_html, Sanitize::Config::RELAXED.merge({:transformers => youtube_transformer}))
     # increase heading levels of markdown output by 2
     html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
+  end
+
+  private
+
+  def age_in_days
+    (Time.now - self.publish_at) / 1.day
   end
 
 end
