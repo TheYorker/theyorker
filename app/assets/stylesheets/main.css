@@ -151,6 +151,7 @@ h1 {
     float: left;
     margin-left: 3px;
     margin-right: 3px;
+    overflow: auto;
 }
 
 .article_stub.pending {
@@ -158,13 +159,25 @@ h1 {
 }
 
 .article_stub .stub_title {
-    
+    padding-bottom: 3px;
 }
+
+
+.article_stub .stub_tagline {
+    font-size: 80%;
+    color: #333;
+    display: inline;
+    float: left;
+}
+
 
 .article_stub .stub_author {
     color: gray;
     font-size: 80%;
+    float: right;
+    display: inline;
 }
+
 
 .article_list {
     overflow: auto;

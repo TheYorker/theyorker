@@ -9,6 +9,10 @@
       <%= link_to @article.byline, user_path(@article.user) %>
     </div>
 
+    <div class="tagline">
+      <%= @article.tagline %>
+    </div>
+
     <div class="body">
       <%= @article.render %>
       <%#= markdown(@article.body) %>

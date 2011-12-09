@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111209113309) do
+ActiveRecord::Schema.define(:version => 20111209115103) do
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20111209113309) do
     t.datetime "updated_at"
     t.string   "tag"
     t.text     "editor_comments"
+    t.string   "tagline"
   end
 
   create_table "comments", :force => true do |t|

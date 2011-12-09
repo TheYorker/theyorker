@@ -26,6 +26,12 @@
   <%= f.label :byline, "Byline:" %><br/>
   <%= f.text_field :byline, :value => @article.byline || (current_user ? current_user.name : "") %>
 </div>
+
+<div class="field">
+  <%= f.label :tagline, "Tagline:" %><br/>
+  <%= f.text_field :tagline %>
+</div>
+
 <div class="body_edit">
   <div class="field">
     <%= f.label :body, "Article Text:" %><br/>
