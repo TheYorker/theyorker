@@ -39,22 +39,16 @@ h1 {
     padding-left: 0.25em;
 }
 
-
-.priority_content {
-    width: 100%;
-    overflow: auto;
-}
-
-.priority_content .headline_image {
+.headline_image {
     width: 70%;
     color: white;
     background-color: black;
     height: 200px;
     text-align: center;
-    float: left;
+    /* float: left; */
 }
 
-.priority_content .top_stories {
+.top_stories {
     width: 29%;
     float: right;
     height: 198px;

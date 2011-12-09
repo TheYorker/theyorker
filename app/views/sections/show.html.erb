@@ -1,12 +1,19 @@
+<div class="headline_image">
+  <br/>
+  <br/>
+  <h3>Image Goes<br/> Here</h3>
+</div>
+
+
 <h2>
   <%= @section.name %> 
 </h2>
 
 <div class="article_list">
-<% @section.published_articles.each do |a| %>
-  <%= render :partial => 'shared/article', :locals => {:article => a} %>
-<% end %>
-<br/>
+  <% @section.published_articles.each do |a| %>
+    <%= render :partial => 'shared/article', :locals => {:article => a} %>
+  <% end %>
+  <br/>
 </div>
 
 
