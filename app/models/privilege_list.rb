@@ -23,5 +23,15 @@ class PrivilegeList < ActiveRecord::Base
   def self.admin?(address)
     PrivilegeList.current_admins.include? address
   end
-  
+
+  def level_as_string
+    if self.level == 1
+      return "Member"
+    elsif self.level == 2
+      return "Admin"
+    else
+      return "Unknown"
+    end
+  end
+
 end

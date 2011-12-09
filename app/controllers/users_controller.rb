@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_filter :admin_access, :only => ['admin']
+
   layout :member_layout
 
   def create
@@ -39,6 +41,10 @@ class UsersController < ApplicationController
   end
 
   def articles
+    @user = User.find(params[:id])
+  end
+
+  def admin
     @user = User.find(params[:id])
   end
 

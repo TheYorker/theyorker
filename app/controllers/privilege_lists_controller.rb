@@ -1,5 +1,7 @@
 class PrivilegeListsController < ApplicationController
 
+  layout "member"
+
   before_filter :admin_access
 
   def create
@@ -9,6 +11,10 @@ class PrivilegeListsController < ApplicationController
     else
       render "new"
     end
+  end
+
+  def index
+    @privilege_lists = PrivilegeList.all
   end
 
   def show

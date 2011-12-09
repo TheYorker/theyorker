@@ -18,6 +18,7 @@ TheYorker::Application.routes.draw do
     member do
       get 'sections'
       get 'articles'
+      get 'admin'
     end
   end
 

@@ -1,0 +1,15 @@
+<%= link_to "New", new_privilege_list_path %>
+<hr/><hr/>
+
+<% @privilege_lists.each do |l| %>
+  <div class="privilege_list_stub">
+    <%= link_to "Start Date: #{l.start_date.to_date}<br/>
+          End Date: #{l.end_date.to_date}<br/>
+          Level: #{l.level_as_string}".html_safe,
+        privilege_list_path(l) %>
+  </div>
+  <hr/>
+<% end %>
+
+<hr/>
+<%= link_to "New", new_privilege_list_path %>
