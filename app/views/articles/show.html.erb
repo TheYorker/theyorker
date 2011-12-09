@@ -36,10 +36,7 @@
 
         <%= form_tag article_comments_path(@article) do %>
 
-        <div class="field">
-          <%= label_tag :byline, "Name:" %><br/>
-          <%= text_field_tag :byline, nil, :name => 'comment[byline]' %>
-        </div>
+          <p>Comment As:</p>
 
         <div class="field">
           <%= label_tag :body, "Comment:" %><br/>
