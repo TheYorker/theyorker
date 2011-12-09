@@ -67,4 +67,16 @@ class Section < ActiveRecord::Base
     Article.published_by_section(self)
   end
 
+  def latest_articles
+    Article.latest_published_by_section(self)
+  end
+
+  def latest_articles_from_children
+    articles = self.latest_articles
+    self.children.each do |s|
+      articles += s.latest_articles_from_children
+    end
+    articles
+  end
+
 end

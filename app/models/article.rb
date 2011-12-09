@@ -23,6 +23,11 @@ class Article < ActiveRecord::Base
     Article.where(:section_id => section.id, :visibility => 3)
   end
 
+  def self.latest_published_by_section(section, limit=5)
+    Article.where(:section_id => section.id,
+                  :visibility => 3).where("publish_at <= ?", Time.now).limit(limit)
+  end
+
   def submit_for_review
     self.visibility = 2         # horrible magic number for 'Editorial Review'
     self.save
