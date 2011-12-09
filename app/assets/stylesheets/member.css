@@ -9,7 +9,7 @@
 
 .toplevel_menu {
     width: 100%;
-    background-color: #ddd;
+    background-color: orange;
 }
 
 .toplevel_menu ul {
@@ -24,7 +24,7 @@
 
 .toplevel_menu ul li a, .toplevel_menu ul li a:visited {
     text-decoration: none;
-    background-color: #ddd;
+    background-color: orange;
     color: #333;
     padding-right: 0.25em;
     padding-left: 0.25em;
