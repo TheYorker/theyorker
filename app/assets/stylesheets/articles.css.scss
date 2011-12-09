@@ -2,7 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.article {
+    width: 70%;
+    float: left;
+}
 
+.sidebar {
+    width: 29%;
+    float: right;
+    padding-top: 60px;
+}
+
+.sidebar .story_list {
+    border: 1px solid black;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+.sidebar .story_list .story_list_title {
+    background-color: orange;
+    font-weight: bold;
+}
+
+.sidebar .story_list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .story_list ul li {
+    padding: 6px 6px 6px 6px;
+    border-top: 2px solid gray;
+}
 
 input#article_title {
     width: 30em;
