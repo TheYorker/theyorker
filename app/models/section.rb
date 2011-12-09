@@ -44,7 +44,9 @@ class Section < ActiveRecord::Base
 
   # is this section the ancestor of _child_
   def ancestor?(child)
-    if child.parent == self
+    if self.id == 1
+      return true
+    elsif child.parent == self
       return true
     elsif child.id == 1
       return false
