@@ -1,4 +1,5 @@
-<div class="comment">
+<% if !comment.hidden? || is_admin? %>
+<%= "<div class=\"comment#{comment.hidden? ? ' hidden_comment' : ''}\">".html_safe %>
 
   <div class="comment_header">
     <div class="comment_byline">
@@ -14,5 +15,16 @@
   <div class="comment_body">
     <%= comment.body %>
   </div>
-  
+
+  <% if is_admin? %>
+    <div class="hide_controls">
+      <% if comment.hidden? %>
+        <%= link_to "Unhide", {:controller => "comments", :action => "unhide", :id => comment.id} %>
+      <% else %>
+        <%= link_to "Hide", {:controller => "comments", :action => "hide", :id => comment.id} %>
+      <% end %>
+    </div>
+  <% end %>
+
 </div>
+<% end %>

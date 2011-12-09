@@ -8,4 +8,14 @@ class Comment < ActiveRecord::Base
     end
   end
 
+  def hide
+    self.hidden = true
+    self.save
+  end
+
+  def unhide
+    self.hidden = false
+    self.save
+  end
+
 end

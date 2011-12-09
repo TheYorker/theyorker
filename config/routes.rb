@@ -25,10 +25,10 @@ TheYorker::Application.routes.draw do
   match 'users/:id/sections' => 'users#sections'
 
   # post "articles/:id/comments"
-  # get "comments/:id/hide"
-  # get "comments/:id/unhide"
 
   match 'articles/:id/comments' => 'comments#create'
+  match 'comments/:id/hide' => 'comments#hide'
+  match 'comments/:id/unhide' => 'comments#unhide'
 
   post 'editors/create'
 

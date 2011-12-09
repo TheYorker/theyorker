@@ -283,3 +283,15 @@ h1 {
     margin-bottom: 6px;
 }
 
+.hidden_comment {
+    color: #666;
+    background-color: #eee;
+}
+
+.hidden_comment .comment_time {
+    color: #666;
+}
+
+.comment .hide_controls a:visited {
+    color: blue;
+}

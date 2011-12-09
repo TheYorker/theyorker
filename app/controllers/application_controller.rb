@@ -6,6 +6,11 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def is_admin?
+    current_user && current_user.admin?
+  end
+  helper_method :is_admin?
+
   def member_access
     (current_user && current_user.member?) || render_403
   end

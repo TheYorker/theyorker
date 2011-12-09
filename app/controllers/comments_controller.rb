@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_filter :is_admin, :only => ['hide', 'unhide']
+  before_filter :admin_access, :only => ['hide', 'unhide']
 
   def create
     article = Article.find(params[:id])
@@ -9,9 +9,15 @@ class CommentsController < ApplicationController
   end
 
   def hide
+    comment = Comment.find(params[:id])
+    comment.hide
+    redirect_to article_path(comment.article)
   end
 
   def unhide
+    comment = Comment.find(params[:id])
+    comment.unhide
+    redirect_to article_path(comment.article)
   end
 
 end
