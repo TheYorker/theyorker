@@ -3,7 +3,10 @@
 
   <div class="comment_header">
     <div class="comment_byline">
-      <%= comment.user.name %>
+      <%= comment.anonymous? ? "Anonymous" : comment.user.name %>
+      <% if is_admin? && comment.anonymous %>
+        <%= "[#{comment.user.name}]" %>
+      <% end %>
     </div>
 
     <div class="comment_time">

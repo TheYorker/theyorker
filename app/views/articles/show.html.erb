@@ -37,17 +37,25 @@
         <%= form_tag article_comments_path(@article) do %>
 
           <p>Comment As:</p>
+          <div class="field">
+            <%= radio_button_tag :anonymous, "false", true, :name => 'comment[anonymous]' %>
+            <%= label_tag :anonymous_false, current_user.name %>
+            <br/>
+            <%= radio_button_tag :anonymous, "true", false, :name => 'comment[anonymous]' %>
+            <%= label_tag :anonymous_true, "Anonymous (admins will still be able to identify you)" %>
+          </div>
+          <br/>
 
-        <div class="field">
-          <%= label_tag :body, "Comment:" %><br/>
-          <%= text_area_tag :body, nil, :name => 'comment[body]' %>
-        </div>
-
-        <div class="action">
-          <%= submit_tag "Comment" %>
-        </div>
+          <div class="field">
+            <%= label_tag :body, "Comment:" %><br/>
+            <%= text_area_tag :body, nil, :name => 'comment[body]' %>
+          </div>
+          
+          <div class="action">
+            <%= submit_tag "Comment" %>
+          </div>
         
-    <% end %>
+        <% end %>
     </div>
 
   <% else %>

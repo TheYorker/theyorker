@@ -9,9 +9,10 @@ class CommentsController < ApplicationController
       return
     end
     article = Article.find(params[:id])
-    comment = article.comments.create(params[:comment])
-    comment.user = current_user
-    comment.save
+    anon = params[:comment][:anonymous] == "true"
+    comment = article.comments.create(:user => current_user,
+                                      :anonymous => anon,
+                                      :body => params[:comment][:body])
     redirect_to article_path(article)
   end
 
