@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   end
 
   def editor_for(section)
-    self.sections.any? {|s| s.ancestor? section}
+    self.sections.any? {|s| s.ancestor?(section) || s == section}
   end
 
   def toplevel_editor?
