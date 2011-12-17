@@ -6,6 +6,7 @@
     <%= f.datetime_select :publish_at %>
   </div>
 
+  <!--
   <div class="field">
     <%= f.label :importance, "Importance:" %><br/>
     <%= f.select :importance, options_for_select(1..10, @article.importance) %>
@@ -17,6 +18,8 @@
       <%= f.select :featuredness, options_for_select(1..10, @article.featuredness) %>
     </div>
   <% end %>
+
+  -->
 
   <div class="action">
     <%= f.submit "Publish", :name => 'publish_button', :confirm => 'Are you sure you want to publish this article?' %>
