@@ -1,11 +1,21 @@
 <div class="article">
-  <h2>
-    <%= @article.title %>
-  </h2>
 
-  <div class="author">
-    <%= link_to @article.byline, user_path(@article.user) %>
+  <div class="header">
+    <div class="authorpic">
+      <%= image_tag 'authorpic.png' %>
+      <div class="author">
+        <%= link_to @article.byline, user_path(@article.user) %>
+      </div>
+    </div>
+    <h2>
+      <%= @article.title %>
+    </h2>
+    <div class="date">
+      <%= @article.publish_at.to_date %>
+    </div>
   </div>
+
+
 
   <div class="tagline">
     <%= @article.tagline %>
@@ -22,85 +32,57 @@
 
   <hr/>
 
-  <% @article.comments.each do |c| %>
+  <div class="footer">
+    <h3>Comments</h3>
+    <div class="comments">
 
-    <%= render c %>
+      <% @article.comments.each do |c| %>
 
-  <% end %>
+        <%= render c %>
 
-  <hr/>
-
-  <% if current_user %>
-    
-    <div class="comment_form">
-
-      <h4>Write a Comment</h4>
-
-      <%= form_tag article_comments_path(@article) do %>
-
-        <p>Comment As:</p>
-        <div class="field">
-          <%= radio_button_tag :anonymous, "false", true, :name => 'comment[anonymous]' %>
-          <%= label_tag :anonymous_false, current_user.name %>
-          <br/>
-          <%= radio_button_tag :anonymous, "true", false, :name => 'comment[anonymous]' %>
-          <%= label_tag :anonymous_true, "Anonymous (admins will still be able to identify you)" %>
-        </div>
-        <br/>
-
-        <div class="field">
-          <%= label_tag :body, "Comment:" %><br/>
-          <%= text_area_tag :body, nil, :name => 'comment[body]' %>
-        </div>
-        
-        <div class="action">
-          <%= submit_tag "Comment" %>
-        </div>
-        
       <% end %>
+
+      <hr/>
+
+      <% if current_user %>
+        
+        <div class="comment_form">
+
+          <h4>Write a Comment</h4>
+
+          <%= form_tag article_comments_path(@article) do %>
+
+            <p>Comment As:</p>
+            <div class="field">
+              <%= radio_button_tag :anonymous, "false", true, :name => 'comment[anonymous]' %>
+              <%= label_tag :anonymous_false, current_user.name %>
+              <br/>
+              <%= radio_button_tag :anonymous, "true", false, :name => 'comment[anonymous]' %>
+              <%= label_tag :anonymous_true, "Anonymous (admins will still be able to identify you)" %>
+            </div>
+            <br/>
+
+            <div class="field">
+              <%= label_tag :body, "Comment:" %><br/>
+              <%= text_area_tag :body, nil, :name => 'comment[body]' %>
+            </div>
+            
+            <div class="action">
+              <%= submit_tag "Comment" %>
+            </div>
+            
+          <% end %>
+        </div>
+
+      <% else %>
+
+        You must be <%= link_to "logged in", "/login" %> to post a comment
+
+      <% end %>
+
+      
     </div>
-
-  <% else %>
-
-    You must be <%= link_to "logged in", "/login" %> to post a comment
-
-  <% end %>
-
-</div>
-
-<div class="sidebar">
-
-  <div class="story_list top_stories">
-    <div class="story_list_title">
-      Top Stories
-    </div>
-    <ul>
-      <li>Item</li>
-      <li>Item</li>
-      <li>Item</li>
-    </ul>
   </div>
 
-  <div class="story_list featured_articles">
-    <div class="story_list_title">
-      Featured Articles
-    </div>
-    <ul>
-      <li>Item</li>
-      <li>Item</li>
-      <li>Item</li>
-    </ul>
-  </div>
-
-  <div class="story_list related_articles">
-    <div class="story_list_title">
-      Related Articles
-    </div>
-    <ul>
-      <li>Item</li>
-      <li>Item</li>
-      <li>Item</li>
-    </ul>
-  </div>
 
 </div>
