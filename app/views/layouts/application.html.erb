@@ -1,53 +1,87 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <title>The Yorker</title>
-  <%= stylesheet_link_tag "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>The Yorker</title>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
 
 
-  <div class="account_links">
-    <% if current_user %>
-    <ul>
-      <li>Logged in as
-         <%= current_user.name %>.
-      </li>
-      <li>
-           <%= link_to "My Account", user_path(current_user) %></li>
-      <li>
-           <%= link_to "Logout", logout_path %>
-      </li>
-    </ul>
-    <% else %>
-    <ul>
-      <li>Not logged in.</li>
-      <li>
-        <%= link_to "Login/Sign up", login_path %>
-      </li>
-    </ul>
-    <% end %>
-    <br/>
-  </div>
+    <div class="account_links">
+      <% if current_user %>
+        <ul>
+          <li>Logged in as
+            <%= current_user.name %>.
+          </li>
+          <li>
+            <%= link_to "My Account", user_path(current_user) %></li>
+          <li>
+            <%= link_to "Logout", logout_path %>
+          </li>
+        </ul>
+      <% else %>
+        <ul>
+          <li>Not logged in.</li>
+          <li>
+            <%= link_to "Login/Sign up", login_path %>
+          </li>
+        </ul>
+      <% end %>
+      <br/>
+    </div>
 
-  <h1>The Yorker</h1>
+    <div class="banner_top">
+      <h1></h1>
+      <%= image_tag('titlebanner.png', :width => '100%') %>
+    </div>
 
-  <div class="toplevel_menu">
-    <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <%= toplevel_sections_list %>
-    </ul>
-    <br/>
-  </div>
+    <div class="toplevel_menu">
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <%= toplevel_sections_list %>
+      </ul>
 
-  <p id="notice"><%= notice %></p>
-  <p id="alert"><%= alert %></p>
+      <div class="socialmedia">
+        <ul>
+          <li>Follow us on</li>
+          <li><a href="http://www.facebook.com/theyorker?ref=ts">Facebook</a></li>
+          <li>and</li>
+          <li><a href="http://twitter.com/#!/theyorkeruk">Twitter</a></li>
+        </ul>
+        <br/>
+      </div>
 
-  <div class="content_container">
-    <%= yield %>
-  </div>
+    </div>
 
-</body>
+
+
+    <p id="notice"><%= notice %></p>
+    <p id="alert"><%= alert %></p>
+
+    <div class="content_container">
+      <%= yield %>
+    </div>
+
+
+    <div class="footer">
+      <div class="footerlinks">
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Join</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Advertising</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="copynotice">
+        Copyright 2007-2011 The Yorker Ltd. 
+      </div>
+    </div>
+    
+
+  </body>
 </html>
