@@ -5,10 +5,6 @@
 </div>
 
 
-<h2>
-  <%= @section.name %> 
-</h2>
-
 <div class="article_list">
   <% @section.published_articles.each do |a| %>
     <%= render :partial => 'shared/article', :locals => {:article => a} %>
