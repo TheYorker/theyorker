@@ -15,7 +15,7 @@ module SectionsHelper
   def toplevel_sections_list
     toplevel_sections = Section.find_all_by_parent_id(1);
     toplevel_sections.map do |s|
-      ["<li>", link_to(s.name, section_path(s)), "</li>"].join
+      ["<li>", link_to(s.name.upcase, section_path(s)), "</li>"].join
     end.join.html_safe
   end
   
