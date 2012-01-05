@@ -6,6 +6,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :picture, "Image File:"%>
+    <%= f.file_field :picture %>
+  </div>
+
+  <div class="field">
     <%= f.label :description, "Description:" %><br/>
     <%= f.text_area :description %>
   </div>

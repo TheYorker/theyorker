@@ -1,13 +1,17 @@
 <h4><%= @image.title %></h4>
 
 <p>
+  <%= image_tag @image.picture.url :medium %>
+</p>
+
+<p>
   <%= @image.description %>
 </p>
+
 <p>
   <b>Tags:</b>
   <%= @image.tags %>
 </p>
-
 
 <p>
   <b>Source:</b>

@@ -41,4 +41,4 @@ gem 'bluecloth'
 
 gem 'sanitize'
 
-gem 'paperclip'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
