@@ -427,6 +427,9 @@ input#section_name {
     font-size: 120%;
 }
 
+.article {
+    overflow: auto;
+}
 
 .article a{
 	color: #ff6c07;
@@ -495,6 +498,7 @@ input#section_name {
     margin-top: 1em;
     margin-bottom: 2em;
     margin-left: 5px;
+    overflow: auto;
 }
 
 .article .body img {
