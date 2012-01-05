@@ -40,3 +40,5 @@ gem 'pg'
 gem 'bluecloth'
 
 gem 'sanitize'
+
+gem 'paperclip'
