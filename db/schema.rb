@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111209133658) do
+ActiveRecord::Schema.define(:version => 20120105154721) do
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id"
@@ -44,6 +44,19 @@ ActiveRecord::Schema.define(:version => 20111209133658) do
   create_table "editors", :force => true do |t|
     t.integer  "user_id"
     t.integer  "section_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "tags"
+    t.string   "source_url"
+    t.string   "copyright_owner"
+    t.text     "copyright_justification"
+    t.string   "image_credit"
+    t.boolean  "checked"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
