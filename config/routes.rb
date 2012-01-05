@@ -5,7 +5,7 @@ TheYorker::Application.routes.draw do
   match 'logout' => 'sessions#destroy', :as => :logout
   match 'login' => 'users#login', :as => :login
 
-  resources :sessions, :sections, :privilege_lists
+  resources :sessions, :sections, :privilege_lists, :images
 
   resources :articles do
     member do

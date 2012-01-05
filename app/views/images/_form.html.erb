@@ -1,0 +1,49 @@
+<%= form_for @image do |f| %>
+
+  <div class="field">
+    <%= f.label :title, "Title:" %><br/>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, "Description:" %><br/>
+    <%= f.text_area :description %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :tags, "Tags:" %><br/>
+    <%= f.text_field :tags %>
+  </div>
+
+  <div class="field">
+    <%= f.label :source_url, "Source URL:" %><br/>
+    <%= f.text_field :source_url, :value => (@image.source_url || 'http://') %>
+  </div>
+
+  <div class="field">
+    <%= f.label :copyright_owner, "Copyright Owner:" %><br/>
+    <%= f.text_field :copyright_owner %>
+  </div>
+
+  
+  <div class="field">
+    <%= f.label :image_credit, "Image Credit:" %><br/>
+    <%= f.text_field :image_credit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :copyright_justification, "Copyright Justification:" %><br/>
+    <%= f.text_area :copyright_justification %>
+  </div>
+  
+
+  <div class="field">
+    <%= f.label :checked, "Copyright Checked:" %>
+    <%= f.check_box :checked %>
+  </div>
+
+  <div class="action">
+    <%= f.submit "Save" %>
+  </div>
+
+<% end %>

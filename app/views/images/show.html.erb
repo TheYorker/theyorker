@@ -1,0 +1,40 @@
+<h4><%= @image.title %></h4>
+
+<p>
+  <%= @image.description %>
+</p>
+<p>
+  <b>Tags:</b>
+  <%= @image.tags %>
+</p>
+
+
+<p>
+  <b>Source:</b>
+  <%= "<a href='#{@image.source_url}'>#{@image.source_url}</a>".html_safe %>
+</p>
+
+<p>
+  <b>Copyright Owner:</b>
+  <%= @image.copyright_owner %>
+</p>
+
+<p>
+  <b>Image Credit:</b>
+  <%= @image.image_credit %>
+</p>
+
+<p>
+  <b>Copyright Justification:</b>
+  <%= @image.copyright_justification %>
+</p>
+
+<% if @image.checked %>
+  <p>
+    The copyright status of this image has been checked
+  </p>
+<% else %>
+  <p>
+    The copyright status of this image still needs to be checked
+  </p>
+<% end %>
