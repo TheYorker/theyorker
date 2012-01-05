@@ -11,7 +11,7 @@
       <%= @article.title %>
     </h2>
     <div class="date">
-      <%= @article.publish_at.to_date %>
+      <%= @article.publish_at ? @article.publish_at.to_date : "" %>
     </div>
   </div>
 
@@ -26,11 +26,6 @@
     <%#= markdown(@article.body) %>
   </div>
 
-  <% if current_user && current_user == @article.user %>
-    <%= link_to "Edit this article", edit_article_path(@article) %>
-  <% end %>
-
-  <hr/>
 
   <div class="footer">
     <h3>Comments</h3>
@@ -41,8 +36,6 @@
         <%= render c %>
 
       <% end %>
-
-      <hr/>
 
       <% if current_user %>
         
