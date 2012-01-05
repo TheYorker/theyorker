@@ -17,7 +17,7 @@ class PrivilegeList < ActiveRecord::Base
   end
 
   def self.member?(address)
-    PrivilegeList.current_members.include? address
+    PrivilegeList.current_members.include?(address) || PrivilegeList.admin?(address)
   end
   
   def self.admin?(address)
