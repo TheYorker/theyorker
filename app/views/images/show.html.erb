@@ -42,3 +42,53 @@
     The copyright status of this image still needs to be checked
   </p>
 <% end %>
+
+<hr/>
+
+<h4>Embed this image</h4>
+
+<%= form_tag do %>
+  <%= label_tag :caption, "Caption:" %><br/>
+  <%= text_field_tag :caption %>
+<% end %>
+
+<hr/>
+
+<h4>Medium size</h4>
+
+<p>
+  Copy and paste the following code:
+</p>
+
+<p>
+  <tt>
+    &lt;div class='main_image'&gt;&lt;img src='<%= @image.picture.url(:medium) %>' / &gt;&lt;div class='image_caption'&gt;<span class="caption_here"></span> &ampcopy; <%= @image.copyright_owner %><%= @image.image_credit ? " Image Credit: #{@image.image_credit}" : "" %>&lt;/div&gt;&lt;/div&gt;
+  </tt>
+</p>
+
+<hr/>
+
+<h4>Full Size</h4>
+
+<p>
+  Copy and paste the following code:
+</p>
+
+<p>
+  <tt>
+    &lt;div class='big_image'&gt;&lt;img src='<%= @image.picture.url %>' / &gt;&lt;div class='image_caption'&gt;<span class="caption_here"></span> &ampcopy; <%= @image.copyright_owner %><%= @image.image_credit ? " Image Credit: #{@image.image_credit}" : "" %>&lt;/div&gt;&lt;/div&gt;
+  </tt>
+</p>
+
+<%= javascript_tag  do %>
+  (function() {
+  var handler = function() {
+  $('.caption_here').text($('input#caption').val());
+  }
+  $('input#caption').change(handler)
+  $('input#caption').keyup(handler)
+  handler()
+  })()
+<% end -%>
+
+<hr/>
