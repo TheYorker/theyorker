@@ -9,3 +9,17 @@
 unless Section.exists?(1)
   Section.create(name: 'The Yorker')
 end
+
+unless PrivilegeList.exists?(1)
+  PrivilegeList.create(level: 2,
+                       addresses: 'webmaster@theyorker.co.uk',
+                       start_date: Time.now - 5.years,
+                       end_date: Time.now + 100.years)
+end
+
+unless User.exists?(1)
+  User.create(name: 'Webmaster',
+              email: 'webmaster@theyorker.co.uk',
+              password: 'changeme',
+              password_confirmation: 'changeme')
+end
