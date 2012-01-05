@@ -59,6 +59,7 @@ class Article < ActiveRecord::Base
   end
 
   def render
+    config = Sanitize::Config::RELAXED
     youtube_transformer = lambda do |env|
       node      = env[:node]
       node_name = env[:node_name]
@@ -88,7 +89,12 @@ class Article < ActiveRecord::Base
       # to whitelist the current node.
       {:node_whitelist => [node]}
     end
-    html = Sanitize.clean(BlueCloth.new(self.body).to_html, Sanitize::Config::RELAXED.merge({:transformers => youtube_transformer}))
+
+    config[:transformers] = [youtube_transformer]
+    config[:elements] += ['div']
+    config[:attributes][:all] += ['class']
+
+    html = Sanitize.clean(BlueCloth.new(self.body).to_html, config)
     # increase heading levels of markdown output by 2
     html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
   end
