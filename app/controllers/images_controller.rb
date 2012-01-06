@@ -1,5 +1,8 @@
 class ImagesController < ApplicationController
   
+  layout :choose_layout
+  before_filter :flag_nolayout
+
   def new
     @image = Image.new
   end
@@ -28,6 +31,31 @@ class ImagesController < ApplicationController
       redirect_to image_path(@image)
     else
       render 'new'
+    end
+  end
+
+  def index
+    if params[:q]
+      @search = Image.search do
+        keywords(params[:q])
+      end
+    end
+  end
+
+
+  private
+  
+  def choose_layout
+    if params[:layout] == 'false'
+      "minimal"
+    else
+      "member"
+    end
+  end
+
+  def flag_nolayout
+    if params[:layout] == 'false'
+      @nolayout = true
     end
   end
 

@@ -1,0 +1,22 @@
+<h2>Images</h2>
+
+<%= form_tag images_path(:layout => @nolayout ? 'false' : 'true'), :method => 'get' do %>
+<p>
+  <%= text_field_tag :q, params[:q] %>
+  <%= hidden_field_tag :layout, @nolayout ? 'false' : 'true' %>
+  <%= submit_tag "Search", :name => nil %>
+</p>
+<% end %>
+
+
+<% if @search %>
+  <% @search.results.each do |result| %>
+    <p>
+      <%= link_to result.title, image_path(result, :layout => @nolayout ? 'false' : 'true') %>
+    </p>
+  <% end %>
+<% else %>
+  <div class="green_button">
+    <%= link_to "Upload New Image", new_image_path, :class => "green_button" %>
+  </div>
+<% end %>

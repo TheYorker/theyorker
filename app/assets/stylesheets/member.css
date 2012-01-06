@@ -1,6 +1,7 @@
 /*
  *= require_self
  *= require articles
+ *= require colorbox
  */
 
 body {
@@ -142,12 +143,12 @@ h2 {
     padding-top: 24px;
 }
 
-.new_article_link {
+.green_button {
     overflow: auto;
     display: inline;
 }
 
-.new_article_link a {
+.green_button a {
     color: white;
     text-decoration: none;
     border: 1px solid #006633;
@@ -157,7 +158,7 @@ h2 {
     font-size: 120%;
 }
 
-.new_article_link a:visited {
+.green_button a:visited {
     color: white;
 }
 

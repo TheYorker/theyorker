@@ -4,6 +4,7 @@
   <title>Members Area - The Yorker</title>
   <%= stylesheet_link_tag "member" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "/javascripts/colorbox.js" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
@@ -40,6 +41,7 @@
   <div class="toplevel_menu">
     <ul>
       <li><%= link_to "Articles", articles_user_path(current_user) %></li>
+      <li><%= link_to "Images", images_path %></li>
 
       <% if !current_user.sections.empty? %>
         <li><%= link_to "Sections", sections_user_path(current_user) %></li>

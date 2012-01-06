@@ -33,6 +33,16 @@
 </div>
 
 <div class="body_edit">
+
+  <div class="toolbar">
+    <%= link_to "Insert Image", "/images?layout=false", :class => "embed_image" %>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('a.embed_image').colorbox({iframe:true, width: "80%", height: "80%"});
+      })
+    </script>
+  </div>
+
   <div class="field">
     <%= f.label :body, "Article Text:" %><br/>
     <%= f.text_area :body %>
