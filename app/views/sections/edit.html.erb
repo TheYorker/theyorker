@@ -83,11 +83,13 @@
   <div class="published_articles display_area">
     <h3>Published Articles</h3>
     
-    <% @section.published_articles.each do |a| %>
-      <div class="article">
-        <%= link_to a.title, review_article_path(a) %>
-      </div>
-    <% end %>
+    <ul>
+      <% @section.published_articles.each do |a| %>
+        <li>
+          <%= link_to a.title, review_article_path(a) %>
+        </li>
+      <% end %>
+    </ul>
 
   </div>
 
