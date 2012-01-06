@@ -3,13 +3,16 @@
  *= require articles
  */
 
-.top_container {
-    background-color: orange;
+body {
+    font-family: "Open Sans";
+}
+
+.top_container h1 {
+    border-bottom: 3px solid orange;
 }
 
 .toplevel_menu {
     width: 100%;
-    background-color: orange;
 }
 
 .toplevel_menu ul {
@@ -20,6 +23,8 @@
 
 .toplevel_menu ul li {
     display: inline;
+    border: 1px solid orange;
+    border-radius: 3px;
 }
 
 .toplevel_menu ul li a, .toplevel_menu ul li a:visited {
@@ -36,6 +41,7 @@
     color: #000;
     padding-right: 0.25em;
     padding-left: 0.25em;
+    border-radius: 3px;
 }
 
 
@@ -62,6 +68,142 @@
     font-weight: bold;
 }
 
+.display_area {
+    border: 1px solid orange;
+    border-radius: 6px;
+    margin: 3px;
+    padding: 3px;
+}
+
+.display_area h3 {
+    border-bottom: 1px solid orange;
+    padding: 3px;
+    margin: 0;
+}
+
+h2 {
+    border-bottom: 1px solid orange;
+}
+
+.section_admin {
+    overflow: auto;
+}
+
+.section_articles {
+    overflow: auto;
+}
+
+.user_articles {
+    overflow: auto;
+}
+
+.editors {
+    width: 45%;
+    min-width: 20em;
+    float: left;
+    margin-right: 15px;
+}
+
+.subsections {
+    width: 45%;
+    min-width: 20em;
+    float: left;
+}
+
 .editors ul li form {
     display: inline;
+}
+
+.draft_articles {
+    width: 30%;
+    min-width: 20em;
+    float: left;
+}
+
+.review_articles {
+    width: 30%;
+    min-width: 20em;
+    float: left;
+}
+
+.queued_articles {
+    width: 30%;
+    min-width: 20em;
+    float: left;
+}
+
+.published_articles {
+    width: 30%;
+    min-width: 20em;
+    float: left;
+}
+
+.buttons {
+    padding-top: 24px;
+}
+
+.new_article_link {
+    overflow: auto;
+    display: inline;
+}
+
+.new_article_link a {
+    color: white;
+    text-decoration: none;
+    border: 1px solid #006633;
+    border-radius: 12px;
+    background-color: #006633;
+    padding: 6px;
+    font-size: 120%;
+}
+
+.new_article_link a:visited {
+    color: white;
+}
+
+
+input#article_title {
+    width: 30em;
+    font-size: 120%;
+}
+
+textarea#article_body {
+    width: 40em;
+    height: 50em;
+    font-family: sans-serif;
+}
+
+input#section_name {
+    width: 20em;
+    margin-bottom: 1em;
+    font-size: 120%;
+}
+
+.body_edit {
+    overflow: auto;
+}
+
+.body_edit .field {
+    float: left;
+}
+
+.body_edit .markdown_help {
+    float: right;
+    width: 48%;
+}
+
+.markdown_help table {
+    border-width: 1px;
+    border-spacing: 0px;
+    border-style: solid;
+    border-color: gray;
+    border-collapse: collapse;
+}
+
+.markdown_help table tr td {
+    border-width: 1px;
+    border-spacing: 0px;
+    border-style: solid;
+    border-color: gray;
+    padding: 1px;
 }

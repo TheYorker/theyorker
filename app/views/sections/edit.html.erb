@@ -1,93 +1,91 @@
 <h2><%= @section.name %></h2>
 
-<div class="editors">
+<div class="section_admin">
 
-  <h3>Editors</h3>
-  <ul>
-    <% @section.users.each do |e| %>
-      <li>
-        <%= link_to e.name, user_path(e) %>
-        <% if current_user.admin? %>
-          <%= form_tag({:controller => "editors", :action => "destroy"}, :method => "post") do %>
-            <%= hidden_field_tag :section_id, @section.id %>
-            <%= hidden_field_tag :user_id, e.id %>
-            <%= submit_tag "Remove" %>
-          <% end -%>
-        <% end %>
-      </li>      
+  <div class="editors display_area">
+
+    <h3>Editors</h3>
+    <ul>
+      <% @section.users.each do |e| %>
+        <li>
+          <%= link_to e.name, user_path(e) %>
+          <% if current_user.admin? %>
+            <%= form_tag({:controller => "editors", :action => "destroy"}, :method => "post") do %>
+              <%= hidden_field_tag :section_id, @section.id %>
+              <%= hidden_field_tag :user_id, e.id %>
+              <%= submit_tag "Remove" %>
+            <% end -%>
+          <% end %>
+        </li>      
+      <% end %>
+    </ul>
+
+    <h4>Add Editor</h4>
+    <%= form_tag({:controller => "editors", :action => "create"}, :method => "post") do %>
+      <%= label_tag :email, "Email Address:" %>
+      <%= text_field_tag :email %>
+      <%= hidden_field_tag :section_id, @section.id %>
+      <%= submit_tag "Add" %>
     <% end %>
-  </ul>
+    
+  </div>
 
-  <h4>Add Editor</h4>
-  <%= form_tag({:controller => "editors", :action => "create"}, :method => "post") do %>
-    <%= label_tag :email, "Email Address:" %>
-    <%= text_field_tag :email %>
-    <%= hidden_field_tag :section_id, @section.id %>
-    <%= submit_tag "Add" %>
-  <% end %>
-  
-</div>
+  <div class="subsections display_area">
+    
+    <h3>Subsections</h3>
+    
+    <ul>
+      <% @section.children.each do |e| %>
+        <li>
+          <%= link_to e.name, section_path(e) %>
+        </li>
+      <% end %>
+    </ul>
+    
+    <h4>Add Subsection</h4>
 
-<hr/>
-
-<div class="subsections">
-  
-  <h3>Subsections</h3>
-  
-  <ul>
-    <% @section.children.each do |e| %>
-      <li>
-        <%= link_to e.name, section_path(e) %>
-      </li>
+    <%= form_tag({:controller => "sections", :action => "create"}, :method => "post") do %>
+      <%= label_tag :name, "Name:" %>
+      <%= text_field_tag :name, nil, :name => 'section[name]' %>
+      <%= hidden_field_tag :parent_id, @section.id, :name => 'section[parent_id]' %>
+      <%= submit_tag "Add" %>
     <% end %>
-  </ul>
+
+  </div>
+
   
-  <h4>Add Subsection</h4>
-
-  <%= form_tag({:controller => "sections", :action => "create"}, :method => "post") do %>
-    <%= label_tag :name, "Name:" %>
-    <%= text_field_tag :name, nil, :name => 'section[name]' %>
-    <%= hidden_field_tag :parent_id, @section.id, :name => 'section[parent_id]' %>
-    <%= submit_tag "Add" %>
-  <% end %>
-
 </div>
 
-<hr/>
 
-<h3>Articles for Editorial Review</h3>
+<div class="section_articles">
 
-<div class="review_articles">
-  <ul>
-    <% @section.articles_for_review.each do |a| %>
-      <li><%= link_to a.title, review_article_path(a) %></li>
+  <div class="review_articles display_area">
+    <h3>Articles for Editorial Review</h3>
+    <ul>
+      <% @section.articles_for_review.each do |a| %>
+        <li><%= link_to a.title, review_article_path(a) %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="queued_articles display_area">
+    <h3>Articles Scheduled for Publication</h3>
+
+    <ul>
+    </ul>
+  </div>
+
+  <div class="published_articles display_area">
+    <h3>Published Articles</h3>
+    
+    <% @section.published_articles.each do |a| %>
+      <div class="article">
+        <%= link_to a.title, review_article_path(a) %>
+      </div>
     <% end %>
-  </ul>
+
+  </div>
+
+  
 </div>
 
-
-<hr/>
-
-<h3>Articles Scheduled for Publication</h3>
-
-<div class="queued_articles">
-  <ul>
-  </ul>
-</div>
-
-<hr/>
-
-<h3>Published Articles</h3>
-
-<div class="published_articles_list">
-
-  <% @section.published_articles.each do |a| %>
-    <div class="article">
-      <%= link_to a.title, review_article_path(a) %>
-    </div>
-  <% end %>
-
-</div>
-
-<ul>
-</ul>

@@ -1,28 +1,39 @@
-<h3>Articles in Progress</h3>
+<div class="user_articles">
+  
+  <div class="draft_articles display_area">
 
-<table>
-  <% @user.pending_articles.each do |a| %>
-  <tr>
-    <td><%= link_to a.title, edit_article_path(a) %></td>
-    <td><%= visibility_as_text(a.visibility) %></td>
-  </tr>
-  <% end %>
-</table>
+    <h3>Draft Articles</h3>
+    <ul>
+      <% @user.pending_articles.each do |a| %>
+        <li>
+          <%= link_to a.title, edit_article_path(a) %>
+        </li>
+      <% end %>
+    </ul>
 
-<hr/>
+  </div>
 
-<h3>Published Articles</h3>
+  <div class="review_articles display_area">
+    <h3>Articles Under Review</h3>
+  </div>
 
-<div class="user_articles_list">
-  <% @user.published_articles.each do |a| %>
-    <div class="article">
-      <%= link_to a.title, article_path(a) %>
+
+  <div class="published_articles display_area">
+    <h3>Published Articles</h3>
+
+    <div class="user_articles_list">
+      <% @user.published_articles.each do |a| %>
+        <div class="article">
+          <%= link_to a.title, article_path(a) %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
+
 </div>
 
-<hr/>
-
-<div class="new_article_link">
-  <%= link_to "Create Article", new_article_path %>
+<div class="buttons">
+  <div class="new_article_link">
+    <%= link_to "Create Article", new_article_path %>
+  </div>
 </div>
