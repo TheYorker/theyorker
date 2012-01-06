@@ -42,3 +42,9 @@ gem 'bluecloth'
 gem 'sanitize'
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+gem 'sunspot_rails', '~> 1.3.0'
+
+group :development do
+  gem 'sunspot_solr'
+end

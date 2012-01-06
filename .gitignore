@@ -7,3 +7,5 @@ tmp/
 #TODO#
 
 public/system
+solr/
+log/sunspot-solr-development.log.lck
