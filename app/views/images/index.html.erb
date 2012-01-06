@@ -11,12 +11,17 @@
 
 <% if @search %>
   <% @search.results.each do |result| %>
-    <p>
+    <div class="image_entry">
+      <%= image_tag result.picture.url(:small_thumb) %>
       <%= link_to result.title, image_path(result, :layout => @nolayout ? 'false' : 'true') %>
-    </p>
+    </div>
   <% end %>
-<% else %>
-  <div class="green_button">
-    <%= link_to "Upload New Image", new_image_path, :class => "green_button" %>
-  </div>
 <% end %>
+
+<div class="green_button">
+  <%= link_to "Upload New Image", new_image_path, :class => "green_button" %>
+</div>
+
+<p class="upload_caution">
+  Please try to avoid uploading duplicate images!
+</p>

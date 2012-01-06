@@ -56,6 +56,9 @@
       window.parent.$('input#article_image_id').val($('p#image_id').text());
     };
     $('.set_as_article_image_button').click(handler);
+    if (window === window.parent) {
+      $('.set_as_article_image_button').hide();
+    }
   })()
 <% end -%>
 
