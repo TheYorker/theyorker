@@ -55,16 +55,20 @@ class Section < ActiveRecord::Base
     end
   end
 
-  def articles_for_review
-    Article.for_review_by_section(self)
+  def number_for_review
+    review_articles.length
   end
 
-  def number_for_review
-    articles_for_review.length
+  def review_articles
+    Article.review_for_section(self)
+  end
+
+  def queued_articles
+    Article.queued_for_section(self)
   end
 
   def published_articles
-    Article.published_by_section(self)
+    Article.published_for_section(self)
   end
 
   def latest_articles

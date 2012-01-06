@@ -4,7 +4,7 @@
 
     <h3>Draft Articles</h3>
     <ul>
-      <% @user.pending_articles.each do |a| %>
+      <% @user.draft_articles.each do |a| %>
         <li>
           <%= link_to a.title, edit_article_path(a) %>
         </li>
@@ -15,19 +15,27 @@
 
   <div class="review_articles display_area">
     <h3>Articles Under Review</h3>
+    <ul>
+      <% @user.review_articles.each do |a| %>
+        <li>
+          <%= link_to a.title, edit_article_path(a) %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
 
   <div class="published_articles display_area">
     <h3>Published Articles</h3>
 
-    <div class="user_articles_list">
+    <ul>
       <% @user.published_articles.each do |a| %>
-        <div class="article">
-          <%= link_to a.title, article_path(a) %>
-        </div>
+        <li>
+          <%= link_to a.title, edit_article_path(a) %>
+        </li>
       <% end %>
-    </div>
+    </ul>
+
   </div>
 
 </div>

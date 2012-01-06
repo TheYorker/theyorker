@@ -7,20 +7,34 @@ class Article < ActiveRecord::Base
 
   validates :user_id, :presence => true
 
-  def self.pending_articles_for_user(user)
-    Article.where(:user_id => user.id, :visibility => 1..2)
-  end
+  # article types for users
 
-  def self.published_articles_for_user(user)
+  def self.draft_for_user(user)
+    Article.where(:user_id => user.id, :visibility => 1)
+  end
+  
+  def self.review_for_user(user)
+    Article.where(:user_id => user.id, :visibility => 2)
+  end
+  
+  def self.published_for_user(user)
     Article.where(:user_id => user.id, :visibility => 3)
   end
 
-  def self.for_review_by_section(section)
+  # article types for sections
+
+  def self.review_for_section(section)
     Article.where(:section_id => section.id, :visibility => 2)
   end
+  
+  def self.queued_for_section(section)
+    Article.where(:section_id => section.id,
+                  :visibility => 3).where("publish_at > ?", Time.now)
+  end
 
-  def self.published_by_section(section)
-    Article.where(:section_id => section.id, :visibility => 3)
+  def self.published_for_section(section)
+    Article.where(:section_id => section.id,
+                  :visibility => 3).where("publish_at <= ?", Time.now)
   end
 
   def self.latest_published_by_section(section, limit=5)

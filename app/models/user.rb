@@ -8,12 +8,16 @@ class User < ActiveRecord::Base
   has_many :editors
   has_many :sections, :through => :editors
 
-  def pending_articles
-    Article.pending_articles_for_user(self)
+  def draft_articles
+    Article.draft_for_user(self)
+  end
+
+  def review_articles
+    Article.review_for_user(self)
   end
 
   def published_articles
-    Article.published_articles_for_user(self)
+    Article.published_for_user(self)
   end
 
   def editor_for(section)
