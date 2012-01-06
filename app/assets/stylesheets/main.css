@@ -427,9 +427,12 @@ input#section_name {
     font-size: 120%;
 }
 
+<<<<<<< HEAD
 .article {
     overflow: auto;
 }
+=======
+>>>>>>> 11ee58bfc9fd92e88ad3a0ba1e049753007d8c0b
 
 .article a{
 	color: #ff6c07;
@@ -498,7 +501,10 @@ input#section_name {
     margin-top: 1em;
     margin-bottom: 2em;
     margin-left: 5px;
+<<<<<<< HEAD
     overflow: auto;
+=======
+>>>>>>> 11ee58bfc9fd92e88ad3a0ba1e049753007d8c0b
 }
 
 .article .body img {
