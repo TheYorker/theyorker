@@ -1,5 +1,7 @@
 <h4><%= @image.title %></h4>
 
+<p id="image_id"><%= @image.id %></p>
+
 <p>
   <%= image_tag @image.picture.url :medium %>
 </p>
@@ -43,7 +45,20 @@
   </p>
 <% end %>
 
-<hr/>
+
+<div class="set_as_article_image_button green_button">
+  <a href="#">Set as Article Image</a>
+</div>
+
+<%= javascript_tag  do %>
+  (function() {
+    var handler = function() {
+      window.parent.$('input#article_image_id').val($('p#image_id').text());
+    };
+    $('.set_as_article_image_button').click(handler);
+  })()
+<% end -%>
+
 
 <h4>Embed this image</h4>
 
@@ -80,7 +95,7 @@
   </tt>
 </p>
 
-<%= javascript_tag  do %>
+<%= javascript_tag do %>
   (function() {
   var handler = function() {
   $('.caption_here').text($('input#caption').val());

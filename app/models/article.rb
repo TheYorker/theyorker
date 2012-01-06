@@ -5,6 +5,8 @@ class Article < ActiveRecord::Base
 
   has_many :comments
 
+  belongs_to :image
+
   validates :user_id, :presence => true
 
   # article types for users

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120105165135) do
+ActiveRecord::Schema.define(:version => 20120106043752) do
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20120105165135) do
     t.string   "tagline"
     t.integer  "importance",      :default => 5
     t.integer  "featuredness",    :default => 0
+    t.integer  "image_id"
   end
 
   create_table "comments", :force => true do |t|
