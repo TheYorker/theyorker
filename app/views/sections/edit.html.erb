@@ -5,7 +5,16 @@
   <h3>Editors</h3>
   <ul>
     <% @section.users.each do |e| %>
-      <li><%= link_to e.name, user_path(e) %></li>
+      <li>
+        <%= link_to e.name, user_path(e) %>
+        <% if current_user.admin? %>
+          <%= form_tag({:controller => "editors", :action => "destroy"}, :method => "post") do %>
+            <%= hidden_field_tag :section_id, @section.id %>
+            <%= hidden_field_tag :user_id, e.id %>
+            <%= submit_tag "Remove" %>
+          <% end -%>
+        <% end %>
+      </li>      
     <% end %>
   </ul>
 

@@ -61,3 +61,7 @@
 .section_with_pending {
     font-weight: bold;
 }
+
+.editors ul li form {
+    display: inline;
+}
