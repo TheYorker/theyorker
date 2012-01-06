@@ -8,7 +8,7 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = Image.new(params[:image])
+    @image = Image.create(params[:image])
     if @image.save
       redirect_to image_path(@image)
     else
@@ -30,7 +30,7 @@ class ImagesController < ApplicationController
     if @image.save
       redirect_to image_path(@image)
     else
-      render 'new'
+      render 'edit'
     end
   end
 
