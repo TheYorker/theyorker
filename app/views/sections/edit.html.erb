@@ -20,12 +20,37 @@
 
   <h4>Add Editor</h4>
   <%= form_tag({:controller => "editors", :action => "create"}, :method => "post") do %>
-  <%= label_tag :email, "Email Address:" %>
-  <%= text_field_tag :email %>
-  <%= hidden_field_tag :section_id, @section.id %>
-  <%= submit_tag "Add" %>
+    <%= label_tag :email, "Email Address:" %>
+    <%= text_field_tag :email %>
+    <%= hidden_field_tag :section_id, @section.id %>
+    <%= submit_tag "Add" %>
   <% end %>
   
+</div>
+
+<hr/>
+
+<div class="subsections">
+  
+  <h3>Subsections</h3>
+  
+  <ul>
+    <% @section.children.each do |e| %>
+      <li>
+        <%= link_to e.name, section_path(e) %>
+      </li>
+    <% end %>
+  </ul>
+  
+  <h4>Add Subsection</h4>
+
+  <%= form_tag({:controller => "sections", :action => "create"}, :method => "post") do %>
+    <%= label_tag :name, "Name:" %>
+    <%= text_field_tag :name, nil, :name => 'section[name]' %>
+    <%= hidden_field_tag :parent_id, @section.id, :name => 'section[parent_id]' %>
+    <%= submit_tag "Add" %>
+  <% end %>
+
 </div>
 
 <hr/>

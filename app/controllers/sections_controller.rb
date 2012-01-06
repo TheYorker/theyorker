@@ -11,10 +11,10 @@ class SectionsController < ApplicationController
     @section = Section.new(params[:section])
     if @section.save
       flash.now.notice = "Section created"
-      redirect_to sections_path
+      redirect_to edit_section_path(@section.parent)
     else
       flash.now.notice = "Unable to create section"
-      render "new"
+      render edit_section_path(@section.parent)
     end
   end
 
