@@ -34,6 +34,7 @@ TheYorker::Application.routes.draw do
   match 'comments/:id/unhide' => 'comments#unhide'
 
   post 'editors/create'
+  post 'editors/destroy'
 
 
   # The priority is based upon order of creation:
