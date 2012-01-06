@@ -14,6 +14,7 @@ body {
 
 .toplevel_menu {
     width: 100%;
+    background-color: orange;
 }
 
 .toplevel_menu ul {
@@ -24,8 +25,6 @@ body {
 
 .toplevel_menu ul li {
     display: inline;
-    border: 1px solid orange;
-    border-radius: 3px;
 }
 
 .toplevel_menu ul li a, .toplevel_menu ul li a:visited {
@@ -42,7 +41,6 @@ body {
     color: #000;
     padding-right: 0.25em;
     padding-left: 0.25em;
-    border-radius: 3px;
 }
 
 
@@ -146,6 +144,7 @@ h2 {
 .green_button {
     overflow: auto;
     display: inline;
+    margin-top: 24px;
 }
 
 .green_button a {
@@ -159,6 +158,27 @@ h2 {
 }
 
 .green_button a:visited {
+    color: white;
+}
+
+
+.red_button {
+    overflow: auto;
+    display: inline;
+    margin-top: 24px;
+}
+
+.red_button a {
+    color: white;
+    text-decoration: none;
+    border: 1px solid #660033;
+    border-radius: 12px;
+    background-color: #660033;
+    padding: 6px;
+    font-size: 120%;
+}
+
+.red_button a:visited {
     color: white;
 }
 
@@ -208,3 +228,29 @@ input#section_name {
     border-color: gray;
     padding: 1px;
 }
+
+.upload_caution {
+    font-size: 110%;
+}
+
+.image_entry {
+    margin: 3px;
+}
+
+.image_entry img {
+    vertical-align: text-top;
+    border-right: 1px solid gray;
+}
+
+/* input[type="submit"] { */
+/*     font-size: 120%; */
+/*     background-color: orange; */
+/*     font-color: white; */
+/*     border-radius: 12px; */
+/* } */
+
+/* input[type="submit"]:hover { */
+/*     background-color: #ddd; */
+/* } */
+
+

@@ -1,5 +1,3 @@
-<% if @user %>
-
 <h2>
   <%= @user.name %>
 </h2>
@@ -11,14 +9,18 @@
 <% if @user == current_user %>
 
   <% if @user.member? %>
-    Congratulations, you're a full member of The Yorker.
-    <div class="new_article_link">
+    Congratulations, you're a full member of The Yorker.<br/> <br/> 
+    <div class="green_button">
       <%= link_to "Create Article", new_article_path %>
     </div>
   <% else %>
     You're not a full member of The Yorker. If you'd like to write for The Yorker,
     please contact <%= mail_to "editor@theyorker.co.uk", "the editor" %>.
   <% end %>
+
+  <div class="red_button">
+    <%= link_to "Change Password", edit_user_path(@user) %>
+  </div>
 
 <% elsif current_user && current_user.admin? %>
 
@@ -32,10 +34,4 @@
     <% end %>
   </div>
 
-
-<% end %>
-
-<%# trivial case for non-existence of user %>
-<% else %>
-<h2>No such user</h2>
 <% end %>
