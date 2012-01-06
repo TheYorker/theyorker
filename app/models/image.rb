@@ -3,8 +3,4 @@ class Image < ActiveRecord::Base
                                           :large_thumb => '150x150',
                                           :small_thumb => '50x50'}
 
-  searchable do
-    text :title, :description, :tags
-  end
-  
 end

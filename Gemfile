@@ -40,8 +40,3 @@ gem 'sanitize'
 
 gem "paperclip"
 
-gem 'sunspot_rails', '~> 1.3.0'
-
-group :development do
-  gem 'sunspot_solr'
-end
