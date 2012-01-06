@@ -5,6 +5,54 @@ You're browsing the main codebase for the news website 'The Yorker'.
 The purpose of this file is to give you an overview of how the site
 and codebase are structured.
 
+
+Server Configuration
+--------------------
+
+This is correct for Debian 6.0 as of 06/01/12
+
+```bash
+    # too many servers don't install any locales,
+    # so let's supress all those nasty error messages
+    apt-get install locales
+    dpkg-reconfigure locales
+
+    # install basic packages
+    apt-get install build-essential git-core curl zlib1g zlib1g-dev libssl-dev libopenssl-ruby libcurl4-openssl-dev postgresql
+
+    # install rvm
+    bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer )
+    
+    # exit & relogin to pick up rvm
+
+    # install rvm packages
+    rvm pkg install zlib
+    rvm pkg install openssl
+
+    # install ruby
+    rvm install ruby-1.9.2
+    rvm use ruby-1.9.2 --default
+
+    # install passenger
+    gem install passenger
+
+    # if running on a VPS with little memory, something hacky may have
+    # to happen here, like using a different VM for compilation
+    passenger-install-nginx-module
+    
+    # install sphinx
+    cd
+    wget http://sphinxsearch.com/files/sphinx-2.0.3-release.tar.gz
+    tar zxf sphinx-2.0.3-release.tar.gz
+    cd sphinx-2.0.3-release.tar.gz
+    ./configure --with-pgsql=`pg_config --pkgincludedir` --without-mysql
+    make && make install
+    cd
+
+```
+
+
+
 Stack
 -----
 
