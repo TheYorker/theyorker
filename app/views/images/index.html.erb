@@ -9,8 +9,8 @@
 <% end %>
 
 
-<% if @search %>
-  <% @search.results.each do |result| %>
+<% if @images %>
+  <% @images.each do |result| %>
     <div class="image_entry">
       <%= image_tag result.picture.url(:small_thumb) %>
       <%= link_to result.title, image_path(result, :layout => @nolayout ? 'false' : 'true') %>

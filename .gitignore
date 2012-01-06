@@ -9,3 +9,6 @@ tmp/
 public/system
 solr/
 log/sunspot-solr-development.log.lck
+config/*.sphinx.conf
+db/sphinx/
+log/searchd.*.pid

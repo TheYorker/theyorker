@@ -3,4 +3,10 @@ class Image < ActiveRecord::Base
                                           :large_thumb => '150x150',
                                           :small_thumb => '50x50'}
 
+  define_index do
+    indexes title
+    indexes description
+    indexes tags
+  end
+
 end
