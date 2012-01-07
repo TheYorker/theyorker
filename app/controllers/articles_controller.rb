@@ -102,7 +102,11 @@ class ArticlesController < ApplicationController
         @article.withdraw
         redirect_to articles_user_path(current_user)
       else
-        redirect_to edit_article_path(@article)
+        if view_to_render(params) == 'edit'
+          redirect_to edit_article_path(@article)
+        else
+          redirect_to review_article_path(@article)
+        end
       end
     else
       flash.now.alert = "Unable to save article"

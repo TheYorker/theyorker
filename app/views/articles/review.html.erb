@@ -50,7 +50,7 @@
 <%= hidden_field :review, :value => 'review' %>
 
 <div class="action">
-  <%= f.submit %>
+  <%= f.submit "Save" %>
   <% if @article.visibility < 3 %>
   <%= f.submit "Publish", :name => 'confirm_publication_button' %>
   <% else %>
