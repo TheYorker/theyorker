@@ -599,7 +599,7 @@ input#section_name {
 	margin-left: auto;
 }
 
-.section_stub a:link {
+.section_stub a {
     text-decoration: none;
 	color: #ff6c07;
 	}
