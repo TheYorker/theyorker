@@ -1,10 +1,17 @@
 <div class="section_stub">
   <div class="section_name">
-    <%= link_to section.name, section_path(section) %>
+    <%= link_to "[#{section.name}]", section_path(section) %>
   </div>
   <div class="article_list">
-    <% section.published_articles.each do |a| %>
-      <%= render :partial => 'shared/article', :locals => {:article => a} %>
+    <div class="article_stub_top">
+      <%= render :partial => 'shared/article_large',
+                 :locals => {:article => section.top_article_from_children} %>
+    </div>
+    
+    <% section.latest_non_top_articles_from_children.each do |a| %>
+      <div class="article_stub">
+        <%= render :partial => 'shared/article', :locals => {:article => a} %>
+      </div>
     <% end %>
   </div>
 

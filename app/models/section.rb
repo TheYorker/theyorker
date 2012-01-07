@@ -71,16 +71,31 @@ class Section < ActiveRecord::Base
     Article.published_for_section(self)
   end
 
-  def latest_articles
-    Article.latest_published_by_section(self)
+  def latest_articles(limit=5)
+    Article.latest_published_by_section(self,limit)
   end
 
-  def latest_articles_from_children
-    articles = self.latest_articles
+  def latest_articles_from_children(limit=5)
+    articles = self.latest_articles(limit)
     self.children.each do |s|
       articles += s.latest_articles_from_children
     end
-    articles
+    articles.sort! { |a,b| b.publish_at <=> a.publish_at }
+    articles[0..limit-1] || []
+  end
+
+  def latest_articles_from_children_by_rank(limit=5)
+    articles = self.latest_articles_from_children(limit=5)
+    articles.sort! { |a,b| b.rank <=> a.rank }
+    articles || []
+  end
+
+  def top_article_from_children
+    latest_articles_from_children_by_rank[0]
+  end
+
+  def latest_non_top_articles_from_children(limit=5)
+    latest_articles_from_children_by_rank(limit)[1..-1] || []
   end
 
 end
