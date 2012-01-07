@@ -734,8 +734,8 @@ input#section_name {
 
 .footer .footerlinks ul {
     font-family: 'Open Sans', sans-serif;
-    font-size:75%;
-    margin: 0;
+    /* font-size:75%; */
+    /* margin: 0; */
     padding: 0;
     float: right;
     position:relative;
@@ -765,8 +765,8 @@ input#section_name {
 .footer .copynotice {
     font-family: 'Open Sans', sans-serif;
     color: white;
-    font-size:75%;
-    margin: 0;
+    /* font-size:75%; */
+    /* margin: 0; */
     padding: 0;
     float: left;
     position:relative;
