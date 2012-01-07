@@ -118,6 +118,10 @@ class Article < ActiveRecord::Base
   def thumbnail
     self.image ? self.image.picture.url(:large_thumb) : 'ylogo.png'
   end
+  
+  def date_string
+    self.publish_at.to_date.to_formatted_s(:long_ordinal)
+  end
 
   private
 
