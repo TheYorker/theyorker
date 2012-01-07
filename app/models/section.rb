@@ -81,13 +81,13 @@ class Section < ActiveRecord::Base
       articles += s.latest_articles_from_children
     end
     articles.sort! { |a,b| b.publish_at <=> a.publish_at }
-    articles[0..limit-1] || []
+    articles[0,limit] || []
   end
 
   def latest_articles_from_children_by_rank(limit=5)
-    articles = self.latest_articles_from_children(limit=5)
+    articles = self.latest_articles_from_children(limit*5)
     articles.sort! { |a,b| b.rank <=> a.rank }
-    articles || []
+    articles[0,limit] || []
   end
 
   def top_article_from_children
@@ -96,6 +96,14 @@ class Section < ActiveRecord::Base
 
   def latest_non_top_articles_from_children(limit=5)
     latest_articles_from_children_by_rank(limit)[1..-1] || []
+  end
+
+  def headline_articles
+    articles = []
+    children.each do |c|
+      articles << c.top_article_from_children
+    end
+    articles
   end
 
 end

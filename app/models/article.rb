@@ -9,6 +9,13 @@ class Article < ActiveRecord::Base
 
   validates :user_id, :presence => true
 
+  #  featured articles
+  def self.featured(limit=5)
+    recent = Section.find(1).latest_articles_from_children(limit*5)
+    recent.sort! {|a,b| b.feature_rank <=> a.feature_rank}
+    recent[0,limit]
+  end
+
   # article types for users
 
   def self.draft_for_user(user)
