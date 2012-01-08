@@ -657,58 +657,6 @@ input#section_name {
    
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Dashboard (???)                                             *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-.dashboard {
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
-};
-
-.dashboard * {
-    
-}
-
-.dashboard * hr {
-    background: gray;
-    height: 5px;
-    width: 10%;
-}
-
-.dashboard .article_column {
-    background-color: #f4f4f4;
-    margin-bottom: -4000px;
-    padding-bottom: 4000px;
-}
-
-.dashboard h3 {
-    text-align: center;
-}
-
-.dashboard .my_articles {
-    width: 32%;
-    float: left;
-    color: #b44;
-}
-
-.dashboard .section_articles {
-    width: 32%;
-    float: left;
-    color: #e80;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-left: solid 1px gray;
-    border-right: solid 1px gray;
-}
-
-.dashboard .public_articles {
-    width: 32%;
-    float: left;
-    color: #4b4;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Footer at the bottom of the page                            *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
