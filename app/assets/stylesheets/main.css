@@ -432,7 +432,7 @@ input#section_name {
 }
 
 .article {
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .article a{
@@ -495,6 +495,7 @@ input#section_name {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 90%;
 	margin: auto;
+    overflow: visible;
 }
 
 .article .body {
