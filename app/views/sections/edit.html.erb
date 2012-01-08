@@ -37,7 +37,7 @@
     <ul>
       <% @section.children.each do |e| %>
         <li>
-          <%= link_to e.name, section_path(e) %>
+          <%= link_to e.name, edit_section_path(e) %>
         </li>
       <% end %>
     </ul>
