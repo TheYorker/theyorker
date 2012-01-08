@@ -36,7 +36,7 @@ class ImagesController < ApplicationController
 
   def index
     if params[:q]
-      # do some appropriate search
+      @images = Image.search(params[:q])
     end
   end
 
