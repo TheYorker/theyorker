@@ -1,20 +1,22 @@
-<div class="headline_image">
-  <br/>
-  <br/>
-  <h3>Image Goes<br/> Here</h3>
+<div class="breadcrumbs">
+  <% (@section.fullpath || []).each_with_index do |s,i| %>
+    <%= i > 0 ? "&raquo;".html_safe : "" %> <%= link_to s.name, section_path(s) %>
+  <% end %>
 </div>
 
+<div class="headline_image">
+  <h2 class="hl">Image Goes<br/> Here</h2>
+</div>
 
 <div class="article_list">
   <% @section.published_articles.each do |a| %>
     <%= render :partial => 'shared/article', :locals => {:article => a} %>
   <% end %>
-  <br/>
 </div>
 
 
 <% @section.children.each do |s| %>
-  <%= render s %><br/>
+  <%= render s %>
 <% end %>
 
 

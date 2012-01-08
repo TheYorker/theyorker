@@ -216,7 +216,6 @@ blockquote blockquote{
     position:relative;
     top:-50px;
     background-color: white;
-
 }
 
 .content_container .headline_image {
@@ -730,3 +729,25 @@ input#section_name {
     text-align: center;
     border: 0px solid black;
 }
+
+/*--- Breadcrumbs ---*/
+
+.breadcrumbs {
+    padding: auto 6px;
+    margin: auto 6px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    /* font-size: 75%; */
+    width: 69%;
+}
+
+.breadcrumbs a, .breadcrumbs a:visited {
+    color: #ff6c07;
+    text-decoration: none;
+    font-family: "Open Sans";
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
