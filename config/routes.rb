@@ -7,6 +7,8 @@ TheYorker::Application.routes.draw do
 
   resources :sessions, :sections, :privilege_lists, :images
 
+  resources :sections, :only => [:new, :create, :show, :edit]
+
   resources :articles do
     member do
       get 'review'

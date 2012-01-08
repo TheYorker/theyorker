@@ -22,6 +22,7 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
   end
   
+  ## DEPRECATED
   def index
     @toplevel_sections = Section.find_all_by_parent_id(1);
   end
