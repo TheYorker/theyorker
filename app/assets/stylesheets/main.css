@@ -218,7 +218,11 @@ blockquote blockquote{
     background-color: white;
 }
 
-.content_container .headline_image {
+.content_container .headline_container {
+    overflow: auto;
+}
+
+.headline_container .headline_image {
     width: 69%;
     color: white;
     height: 300px;
@@ -227,12 +231,12 @@ blockquote blockquote{
 	overflow: hidden;
 }
 
-.content_container .headline_image a:link {
+.headline_container .headline_image ul li h2 a {
     text-decoration: none;
 	color: white;
 	}
 
-.content_container .headline_image img {
+.headline_container .headline_image ul li img {
 	width:90%;
 	position: relative;
 	top: -10%;
@@ -240,11 +244,12 @@ blockquote blockquote{
 	margin-right: 5%;
 }
 
-.content_container .headline_image h2 {
+.headline_container .headline_image ul li h2 {
 	opacity:0.90;
     filter:alpha(opacity=90); /* For IE8 and earlier */
 	position: absolute;
 	top: 200px;
+    background-color: #ff6c07;
 }
 
 .content_container .more_articles {

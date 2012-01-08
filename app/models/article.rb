@@ -130,6 +130,10 @@ class Article < ActiveRecord::Base
     html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
   end
 
+  def headline_image
+    self.image ? self.image.picture.url(:headline) : 'ylogo_headline.png'
+  end
+
   def thumbnail
     self.image ? self.image.picture.url(:large_thumb) : 'ylogo.png'
   end

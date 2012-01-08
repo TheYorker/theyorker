@@ -1,7 +1,18 @@
 <%= render :partial => 'shared/breadcrumbs', :locals => {:section => @section} %>
 
-<div class="headline_image">
-  <h2 class="hl">Image Goes<br/> Here</h2>
+<div class="headline_container">
+  <div class="headline_image">
+    <ul>
+      <% @section.headline_articles.each do |a| %>
+        <% if a %>
+          <li>
+            <%= image_tag a.headline_image %>
+            <h2><%= link_to a.title, article_path(a) %></h2>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 <div class="article_list">
