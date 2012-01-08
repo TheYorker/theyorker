@@ -1,8 +1,4 @@
-<div class="breadcrumbs">
-  <% (@section.fullpath || []).each_with_index do |s,i| %>
-    <%= i > 0 ? "&raquo;".html_safe : "" %> <%= link_to s.name, section_path(s) %>
-  <% end %>
-</div>
+<%= render :partial => 'shared/breadcrumbs', :locals => {:section => @section} %>
 
 <div class="headline_image">
   <h2 class="hl">Image Goes<br/> Here</h2>

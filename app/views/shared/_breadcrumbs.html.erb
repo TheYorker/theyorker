@@ -1,0 +1,6 @@
+<div class="breadcrumbs">
+  <% (section.fullpath || []).each_with_index do |s,i| %>
+    <%= i > 0 ? " &raquo; ".html_safe : "" %><%= link_to s.name, section_path(s) %>
+  <% end %>
+  <%= detail ? " &raquo; ".html_safe + detail : "" %>
+</div>
