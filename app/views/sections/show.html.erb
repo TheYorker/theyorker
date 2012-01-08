@@ -21,7 +21,7 @@
 <% content_for :sidebar do %>
 
   <div class="top_stories">
-    <h3>Top Stores</h3>
+    <h3>Top Stories</h3>
     <ol>
       <% @section.latest_articles_from_children_by_rank(3).each_with_index do |a,i| %>
         <li>
