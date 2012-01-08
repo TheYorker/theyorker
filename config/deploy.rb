@@ -37,7 +37,5 @@ namespace :deploy do
   end
 end
 
-after :deploy, "searchd:restart"
-
 # clean up old releases after deploying
 after "deploy", "deploy:cleanup"
