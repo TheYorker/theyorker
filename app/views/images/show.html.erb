@@ -2,9 +2,9 @@
 
 <p id="image_id" style="display:none"><%= @image.id %></p>
 
-<p>
+<div class="image_preview">
   <%= image_tag @image.picture.url :medium %>
-</p>
+</div>
 
 <p>
   <%= @image.description %>
@@ -54,6 +54,7 @@
   (function() {
     var handler = function() {
       window.parent.$('input#article_image_id').val($('p#image_id').text());
+      window.parent.$('.article_image_preview').html($('.image_preview').html())
     };
     $('.set_as_article_image_button').click(handler);
     if (window === window.parent) {
