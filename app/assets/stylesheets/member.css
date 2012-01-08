@@ -204,6 +204,7 @@ textarea#article_body {
     width: 40em;
     height: 50em;
     font-family: sans-serif;
+    margin-right: 24px;
 }
 
 input#section_name {
@@ -220,12 +221,17 @@ input#section_name {
     float: left;
 }
 
-.body_edit .markdown_help {
-    float: right;
-    width: 48%;
+.body_edit .edit_sidebar {
+    float: left;
+    width: 40%;
+    min-width: 20em;
 }
 
-.markdown_help table {
+.edit_sidebar .toolbar {
+    padding-top: 18px;
+}
+
+.edit_sidebar table {
     border-width: 1px;
     border-spacing: 0px;
     border-style: solid;
@@ -233,7 +239,7 @@ input#section_name {
     border-collapse: collapse;
 }
 
-.markdown_help table tr td {
+.edit_sidebar table tr td {
     border-width: 1px;
     border-spacing: 0px;
     border-style: solid;

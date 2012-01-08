@@ -53,23 +53,29 @@
     <%= f.text_field :tagline %>
   </div>
 
+  <div class="field">
+      <%= f.label :body, "Article Text:" %><br/>
+  </div>
+
   <div class="body_edit">
 
-    <div class="toolbar">
-      <%= link_to "Insert Image", "/images?layout=false", :class => "embed_image" %>
-      <script type="text/javascript">
-        $(document).ready(function() {
-        $('a.embed_image').colorbox({iframe:true, width: "80%", height: "80%"});
-        })
-      </script>
-    </div>
-
     <div class="field">
-      <%= f.label :body, "Article Text:" %><br/>
       <%= f.text_area :body %>
     </div>
     <!-- this should really be dynamic -->
-    <div class="markdown_help">
+    <div class="edit_sidebar">
+      
+      <div class="toolbar">
+        <div class="green_button">
+          <%= link_to "Insert Image", "/images?layout=false", :class => "embed_image" %>
+        </div>
+        <script type="text/javascript">
+          $(document).ready(function() {
+          $('a.embed_image').colorbox({iframe:true, width: "80%", height: "80%"});
+          })
+        </script>
+      </div>
+
       <h5>Quick Guide to Markdown</h5>
       <table>
         <tr>
@@ -97,6 +103,7 @@
           <td>This is a <a href="http://www.google.com">link to google</a></td>
         </tr>
       </table>
+
     </div>
     
   </div>
