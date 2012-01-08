@@ -20,6 +20,7 @@ set :rvm_ruby_string, "ruby-1.9.2@#{user}"        # Or whatever env you want it 
 load 'deploy/assets'
 
 # bundler
+require 'bundler/capistrano'
 
 set :domain, "qlkzy.net"
 role :web, domain                          # Your HTTP server, Apache/etc
