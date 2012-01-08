@@ -130,7 +130,6 @@ blockquote blockquote{
 
 .toplevel_menu ul li a, .toplevel_menu ul li a:visited {
     text-decoration: none;
-    background-color: none;
     color: white;
     padding:0.2em 0.3em 0.2em 0.3em; 
 }
@@ -702,7 +701,6 @@ input#section_name {
 
 .footer .footerlinks ul li a, .toplevel_menu ul li a:visited {
     text-decoration: none;
-    background-color: none;
     color: white;
     padding:0.25em 0.25em 0.25em 0.25em; 
 }
