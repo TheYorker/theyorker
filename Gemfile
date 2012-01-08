@@ -40,8 +40,6 @@ gem 'sanitize'
 
 gem "paperclip"
 
-gem 'thinking-sphinx', '2.0.10'
-
 gem 'execjs'
 
 gem 'therubyracer'
