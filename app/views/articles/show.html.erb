@@ -1,3 +1,7 @@
+<%= render :partial => 'shared/breadcrumbs',
+           :locals => {:section => @article.section,
+                       :detail => link_to(@article.title, article_path(@article))} %>
+
 <div class="article">
 
   <div class="header">
@@ -11,7 +15,7 @@
       <%= @article.title %>
     </h2>
     <div class="date">
-      <%= @article.publish_at ? @article.publish_at.to_date : "" %>
+      <%= @article.date_string %>
     </div>
   </div>
 

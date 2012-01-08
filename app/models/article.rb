@@ -135,7 +135,7 @@ class Article < ActiveRecord::Base
   end
   
   def date_string
-    self.publish_at.to_date.to_formatted_s(:long_ordinal)
+    self.publish_at ? self.publish_at.to_date.to_formatted_s(:long_ordinal) : ""
   end
 
   private
