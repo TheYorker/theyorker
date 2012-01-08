@@ -1,112 +1,111 @@
 <%= form_for @article do |f| %>
 
-    <% if @article.errors.any? %>
+  <% if @article.errors.any? %>
     <div class="error_messages">
       <h3>Form is invalid</h3>
       <ul>
         <% for message in @article.errors.full_messages %>
-        <li><%= message %></li>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
-    <% end %>
+  <% end %>
 
+  <div class="field">
+    <%= f.label :title, "Headline:" %><br/>
+    <%= f.text_field :title %>
+  </div>
 
-<div class="field">
-  <%= f.label :title, "Headline:" %><br/>
-  <%= f.text_field :title %>
-</div>
+  <%= f.hidden_field :image_id %>
 
-<%= f.hidden_field :image_id %>
-
-<div class="field">
-  <%= f.label :section_id, "Section:" %><br/>
-  <%= f.select :section_id, all_sections_as_text_paths_with_id %>
-</div>
-
-<div class="field">
-  <%= f.label :byline, "Byline:" %><br/>
-  <%= f.text_field :byline, :value => @article.byline || (current_user ? current_user.name : "") %>
-</div>
-
-<div class="field">
-  <%= f.label :tagline, "Tagline:" %><br/>
-  <%= f.text_field :tagline %>
-</div>
-
-<div class="body_edit">
-
-  <div class="toolbar">
-    <%= link_to "Insert Image", "/images?layout=false", :class => "embed_image" %>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('a.embed_image').colorbox({iframe:true, width: "80%", height: "80%"});
-      })
-    </script>
+  <div class="field">
+    <%= f.label :section_id, "Section:" %><br/>
+    <%= f.select :section_id, all_sections_as_text_paths_with_id %>
   </div>
 
   <div class="field">
-    <%= f.label :body, "Article Text:" %><br/>
-    <%= f.text_area :body %>
+    <%= f.label :byline, "Byline:" %><br/>
+    <%= f.text_field :byline, :value => @article.byline || (current_user ? current_user.name : "") %>
   </div>
-  <!-- this should really be dynamic -->
-  <div class="markdown_help">
-    <h5>Quick Guide to Markdown</h5>
-    <table>
-      <tr>
-        <td><tt>This is a heading<br/>
-            =================</tt>
-        </td>
-        <td><h3>This is a heading</h3></td>
-      </tr>
-      <tr>
-        <td><tt>This is a lower heading<br/>
-                -----------------------</tt>
-        </td>
-        <td><h4>This is a lower heading</h4></td>
-      </tr>
-      <tr>
-        <td><tt>This is some _italic text_</tt></td>
-        <td>This is some <i>italic text</i></td>
-      </tr>
-      <tr>
-        <td><tt>This is some **bold text**</tt></td>
-        <td>This is some <b>bold text</b></td>
-      </tr>
-      <tr>
-        <td><tt>This is a [link to google](http://www.google.com)</tt></td>
-        <td>This is a <a href="http://www.google.com">link to google</a></td>
-      </tr>
-    </table>
+
+  <div class="field">
+    <%= f.label :tagline, "Tagline:" %><br/>
+    <%= f.text_field :tagline %>
   </div>
-  
-</div>
 
-<div class="field">
-  <%= f.label :tag, "Tags:" %><br/>
-  <%= f.text_field :tag %>
-</div>
+  <div class="body_edit">
 
-<h3>Editor Comments:</h3>
-<div class="editor_comments">
-  <%= @article.editor_comments || "No comments yet." %>
-</div>
+    <div class="toolbar">
+      <%= link_to "Insert Image", "/images?layout=false", :class => "embed_image" %>
+      <script type="text/javascript">
+        $(document).ready(function() {
+        $('a.embed_image').colorbox({iframe:true, width: "80%", height: "80%"});
+        })
+      </script>
+    </div>
 
-<% if @article.published? %>
-  <div class="editing_published_warning">
-    This article has been published! Please be careful when editing it.
+    <div class="field">
+      <%= f.label :body, "Article Text:" %><br/>
+      <%= f.text_area :body %>
+    </div>
+    <!-- this should really be dynamic -->
+    <div class="markdown_help">
+      <h5>Quick Guide to Markdown</h5>
+      <table>
+        <tr>
+          <td><tt>This is a heading<br/>
+              =================</tt>
+          </td>
+          <td><h3>This is a heading</h3></td>
+        </tr>
+        <tr>
+          <td><tt>This is a lower heading<br/>
+              -----------------------</tt>
+          </td>
+          <td><h4>This is a lower heading</h4></td>
+        </tr>
+        <tr>
+          <td><tt>This is some _italic text_</tt></td>
+          <td>This is some <i>italic text</i></td>
+        </tr>
+        <tr>
+          <td><tt>This is some **bold text**</tt></td>
+          <td>This is some <b>bold text</b></td>
+        </tr>
+        <tr>
+          <td><tt>This is a [link to google](http://www.google.com)</tt></td>
+          <td>This is a <a href="http://www.google.com">link to google</a></td>
+        </tr>
+      </table>
+    </div>
+    
   </div>
-<% end %>
 
+  <div class="field">
+    <%= f.label :tag, "Tags:" %><br/>
+    <%= f.text_field :tag %>
+  </div>
 
-<div class="action">
-  <%= f.submit "Preview", :name => 'preview_button' %>
-  <%= f.submit "Save" %>
-  <% if @article.visibility > 1 %>
-    <%= f.submit "Withdraw Article", :name => 'withdraw_button' %>
-  <% else %>
-    <%= f.submit "Submit for Review", :name => 'submit_for_review_button' %>
+  <h3>Editor Comments:</h3>
+  <div class="editor_comments">
+    <%= @article.editor_comments || "No comments yet." %>
+  </div>
+
+  <% if @article.published? %>
+    <div class="editing_published_warning">
+      This article has been published! Please be careful when editing it.
+    </div>
   <% end %>
-</div>
+
+
+  <div class="action">
+    <%= f.submit "Preview", :name => 'preview_button' %>
+    <%= f.submit "Save" %>
+    <% if @article.visibility > 1 %>
+      <%= f.submit "Withdraw Article", :name => 'withdraw_button' %>
+    <% else %>
+      <%= f.submit "Submit for Review", :name => 'submit_for_review_button' %>
+    <% end %>
+  </div>
 
 <% end %>
