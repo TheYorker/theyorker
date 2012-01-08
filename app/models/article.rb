@@ -55,6 +55,12 @@ class Article < ActiveRecord::Base
                   :visibility => 3).where("publish_at <= ?", Time.now).limit(limit)
   end
 
+  def related_articles(limit=5)
+    query = self.tag.split(/\W/).delete_if(&:empty?).join("|")
+    articles = Article.search(query)
+    articles[0,limit]
+  end
+
   def submit_for_review
     self.visibility = REVIEW
     self.save
