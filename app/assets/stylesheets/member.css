@@ -242,6 +242,11 @@ input#section_name {
     border-right: 1px solid gray;
 }
 
+.editing_published_warning {
+    font-size: 130%;
+    color: red;
+}
+
 /* input[type="submit"] { */
 /*     font-size: 120%; */
 /*     background-color: orange; */

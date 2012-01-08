@@ -1,5 +1,11 @@
 <h2>Edit Article</h2>
 
+<% if @article.published? %>
+  <div class="editing_published_warning">
+    This article has been published! Please be careful when editing it.
+  </div>
+<% end %>
+
 <%= render "form" %>
 
 <hr/>

@@ -92,6 +92,13 @@
   <%= @article.editor_comments || "No comments yet." %>
 </div>
 
+<% if @article.published? %>
+  <div class="editing_published_warning">
+    This article has been published! Please be careful when editing it.
+  </div>
+<% end %>
+
+
 <div class="action">
   <%= f.submit "Preview", :name => 'preview_button' %>
   <%= f.submit "Save" %>

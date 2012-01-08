@@ -1,5 +1,9 @@
 class Article < ActiveRecord::Base
 
+  DRAFT   = 1
+  REVIEW  = 2
+  PUBLISH = 3
+
   belongs_to :user
   belongs_to :section
 
@@ -52,23 +56,27 @@ class Article < ActiveRecord::Base
   end
 
   def submit_for_review
-    self.visibility = 2         # horrible magic number for 'Editorial Review'
+    self.visibility = REVIEW
     self.save
   end
 
   def withdraw
-    self.visibility = 1
+    self.visibility = DRAFT
     self.save
   end
 
   def publish
-    self.visibility = 3         # horrible magic number for 'Public'
+    self.visibility = PUBLISH
     self.save
   end
 
+  def published?
+    self.visibility == PUBLISH
+  end
+
   def withdraw_from_publication
-    if self.visibility == 3
-      self.visibility = 2
+    if self.visibility == PUBLISH
+      self.visibility = REVIEW
     end
     self.save
   end

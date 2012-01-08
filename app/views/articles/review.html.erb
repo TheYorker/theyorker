@@ -1,3 +1,10 @@
+
+<% if @article.published? %>
+  <div class="editing_published_warning">
+    This article has been published! Please be careful when editing it.
+  </div>
+<% end %>
+
 <%= form_for @article do |f| %>
 
     <% if @article.errors.any? %>
@@ -48,6 +55,12 @@
 </div>
 
 <%= hidden_field :review, :value => 'review' %>
+
+<% if @article.published? %>
+  <div class="editing_published_warning">
+    This article has been published! Please be careful when editing it.
+  </div>
+<% end %>
 
 <div class="action">
   <%= f.submit "Save" %>
