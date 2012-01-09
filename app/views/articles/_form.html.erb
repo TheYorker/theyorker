@@ -11,25 +11,7 @@
     </div>
   <% end %>
 
-
-  <div class="article_image_select">
-
-    <div class="article_image_preview">
-      <%= image_tag 'ylogo_medium.png' %>
-    </div>
-
-    <div class="buttons">
-      <div class="green_button">
-        <%= link_to "Select Article Image", "/images?layout=false", :class => "select_image" %>
-        <script type="text/javascript">
-          $(document).ready(function() {
-          $('a.select_image').colorbox({iframe:true, width: "80%", height: "80%"});
-          })
-        </script>
-      </div>
-    </div>
-  </div>
-
+  <%= render :partial => 'article_image_select' %>
 
   <div class="field">
     <%= f.label :title, "Headline:" %><br/>
