@@ -1,0 +1,13 @@
+<div class="articles_list">
+  <% @articles.each do |a| %>
+    <%= render :partial => 'shared/article_entry',
+        :locals => {:article => a} %>
+  <% end %>
+</div>
+
+
+<% content_for :sidebar do %>
+  <div class="top_stories">
+    <h3>Top Stories</h3>
+  </div>
+<% end %>

@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  layout "member", :except => :show
+  layout "member", :except => [:show, :index]
 
   before_filter :find_article, :only => ['show', 'edit', 'update', 'review', 'publish']
   before_filter :owner_access, :only => ['edit']
@@ -46,6 +46,11 @@ class ArticlesController < ApplicationController
   end
 
   def publish
+  end
+
+  def index
+    @articles = Section.find(1).latest_articles_from_children
+    render :layout => 'application'
   end
 
   private
