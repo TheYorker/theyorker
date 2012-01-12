@@ -17,6 +17,26 @@
   <div class="field">
     <%= f.label :title, "Headline:" %><br/>
     <%= f.text_field :title %>
+    <span class="title_character_count"></span>
+    <%= javascript_tag do %>
+      jQuery(function() {
+        var handler = function() {
+          var chars = $('input#article_title').val().length;
+          var remaining = 60-chars;
+          if (remaining < 0) {
+            $('.title_character_count').css('color', 'red');
+            $('input#article_title').css('border', '2px solid red');
+          } else {
+            $('.title_character_count').css('color', 'black');
+            $('input#article_title').css('border', '');
+          }
+          $('.title_character_count').text(chars.toString());
+        };
+        $('input#article_title').change(handler);
+        $('input#article_title').keyup(handler);
+        handler();
+      });
+    <% end %>
   </div>
 
   <%= f.hidden_field :image_id %>
@@ -32,7 +52,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :tagline, "Tagline:" %><br/>
+    <%= f.label :tagline, "Tagline/Summary:" %><br/>
     <%= f.text_field :tagline %>
   </div>
 

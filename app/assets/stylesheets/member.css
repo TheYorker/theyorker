@@ -198,6 +198,18 @@ h2 {
 input#article_title {
     width: 30em;
     font-size: 120%;
+    vertical-align: top;
+}
+
+.title_character_count {
+    font-size: 110%;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-weight: bold;
+}
+
+input#article_tagline {
+    width: 30em;
 }
 
 textarea#article_body {
