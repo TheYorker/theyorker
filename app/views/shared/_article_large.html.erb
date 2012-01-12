@@ -1,9 +1,13 @@
 <% if article %>
-  <div class="stub_title"><%= link_to article.title, article %></div>
-  <div class="topimage">
-    <%= image_tag article.thumbnail %>
-  </div>
-  <div class="stub_author"><%= article.byline %></div>
-  <div class="stub_summary"><%= article.tagline %></div>
-  <div class="stub_date"><%= article.date_string %></div>
+  <a href="<%= article_path(article) %>">
+    <div class="article_stub_top">
+      <div class="stub_title"><%= article.title %></div>
+      <div class="topimage">
+        <%= image_tag article.thumbnail %>
+      </div>
+      <div class="stub_author"><%= article.byline %></div>
+      <div class="stub_summary"><%= article.tagline %></div>
+      <div class="stub_date"><%= article.date_string %></div>
+    </div>
+  </a>
 <% end %>

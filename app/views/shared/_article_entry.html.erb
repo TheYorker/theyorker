@@ -1,23 +1,23 @@
 <% if article %>
   <a href="<%= article_path(article) %>">
-  <div class="article_entry">
-    <div class="article_image">
-      <%= image_tag article.thumbnail %>
+    <div class="article_entry">
+      <div class="article_image">
+        <%= image_tag article.thumbnail %>
+      </div>
+      <div class="article_info">
+        <div class="article_title">
+          <%= article.title %>
+        </div>
+        <div class="article_summary">
+          <%= article.tagline %>
+        </div>
+        <div class="article_author">
+          <%= article.byline %>
+        </div>
+        <div class="article_date">
+          <%= article.date_string %>
+        </div>
+      </div>
     </div>
-    <div class="article_info">
-      <div class="article_title">
-        <%= article.title %>
-      </div>
-      <div class="article_summary">
-        <%= article.tagline %>
-      </div>
-      <div class="article_author">
-        <%= article.byline %>
-      </div>
-      <div class="article_date">
-        <%= article.date_string %>
-      </div>
-    </div>
-  </div>
   </a>
 <% end %>

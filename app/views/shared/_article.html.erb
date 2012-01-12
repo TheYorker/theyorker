@@ -1,3 +1,7 @@
-<div class="stub_title"><%= link_to article.title, article %></div>
-<div class="stub_date"><%= article.date_string %></div>
-<div class="stub_author"><%= article.byline %></div>
+<a href="<%= article_path(article) %>">
+  <div class="article_stub">
+    <div class="stub_title"><%= article.title %></div>
+    <div class="stub_date"><%= article.date_string %></div>
+    <div class="stub_author"><%= article.byline %></div>
+  </div>
+</a>
