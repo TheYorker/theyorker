@@ -1,0 +1,9 @@
+<div class="featured_list featured_5_articles">
+  <h3>Editor's Picks</h3>
+  <div class="article_list">
+    <% Article.featured(5).each do |a| %>
+      <%= render :partial => 'shared/article_small',
+          :locals => {:article => a} %>
+    <% end %>
+  </div>
+</div>

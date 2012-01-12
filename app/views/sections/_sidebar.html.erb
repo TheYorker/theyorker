@@ -1,26 +1,12 @@
-<div class="featured_list featured_3_articles">
-  <h3>Top Stories</h3>
-  <div class="article_list">
-    <% section.latest_articles_from_children_by_rank(3).each do |a| %>
-      <%= render :partial => 'shared/article_small',
-          :locals => {:article => a} %>
-    <% end %>
-  </div>
-</div>
+<%= render :partial 'shared/top_articles_for_section'
+           :locals => {:section => section} %>
+
 
 <div class="adspace1">
   <%= image_tag "adspace250x250.png", :width => "250px" %>
 </div>
 
-<div class="featured_list featured_5_articles">
-  <h3>Editor's Picks</h3>
-  <div class="article_list">
-    <% Article.featured(5).each do |a| %>
-      <%= render :partial => 'shared/article_small',
-          :locals => {:article => a} %>
-    <% end %>
-  </div>
-</div>
+<%= render :partial 'articles/featured' %>
 
 <div class="featured_list featured_5_articles">
   <h3>Recently Commented</h3>
