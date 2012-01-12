@@ -495,15 +495,14 @@ input#section_name {
 	         padding: 6px;
 	         margin-right: -60px;
 	         max-width: 15em
+             blockquote blockquote{
+	             color: $yorker-orange;
+	             font-size: 10pt;
+	             border: none;
+	             padding: 0;
+	             margin: 0;
+             } // blockquote
          } // blockquote 
-
-         blockquote blockquote{
-	         color: $yorker-orange;
-	         font-size: 10pt;
-	         border: none;
-	         padding: 0;
-	         margin: 0;
-         } // blockquote blockquote
 
     } // .body 
 
