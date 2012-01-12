@@ -62,25 +62,6 @@ p  {
 	max-width: 69%;
 } // .hl 
 
-blockquote { 
-	font-family: 'Open Sans', sans-serif;
-	font-size: 90%;
-	float:right;
-	border:0px solid grey;
-	background-color:#eee;
-	padding:6px;
-	margin-right:-60px;
-	max-width:15em
-} // blockquote 
-
-blockquote blockquote{
-	color:$yorker-orange;
-	font-size:10pt;
-	border:none;
-	padding:0;
-	margin:0;
-} // blockquote blockquote
-	
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Banner at the top of the page under log-in                  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -473,32 +454,7 @@ input#section_name {
 
     } // .header 
 
-
-
-    .main_image {
-	    font-family: 'Open Sans', sans-serif;
-	    font-size: 90%;
-	    float:right;
-	    border:0px solid grey;
-	    background-color:#eee;
-	    padding:6px;
-	    margin-left:20px;
-        margin-right:30px;
-
-        img {
-	        max-width:300px
-        } // img 
-
-        .image_caption {
-	        font-family: 'Open Sans', sans-serif;
-	        font-size: 90%;
-	        margin: auto;
-            overflow: visible;
-        } // .image_caption 
-    } // .main_image 
-
     .body {
-        width: 60%;
         margin-top: 1em;
         margin-bottom: 2em;
         margin-left: 5px;
@@ -506,7 +462,51 @@ input#section_name {
          img {
 	         max-width: 110%;
          } // img 
+
+         .main_image {
+	         font-family: 'Open Sans', sans-serif;
+	         font-size: 90%;
+	         float:right;
+	         border:0px solid grey;
+	         background-color:#eee;
+	         padding:6px;
+	         margin-left:20px;
+             margin-right:30px;
+
+             img {
+	             max-width:300px
+             } // img 
+
+             .image_caption {
+	             font-family: 'Open Sans', sans-serif;
+	             font-size: 90%;
+	             margin: auto;
+                 overflow: visible;
+             } // .image_caption 
+         } // .main_image 
+
+         
+         blockquote { 
+	         font-family: 'Open Sans', sans-serif;
+	         font-size: 90%;
+	         float:right;
+	         border:0px solid grey;
+	         background-color:#eee;
+	         padding:6px;
+	         margin-right:-60px;
+	         max-width:15em
+         } // blockquote 
+
+         blockquote blockquote{
+	         color:$yorker-orange;
+	         font-size:10pt;
+	         border:none;
+	         padding:0;
+	         margin:0;
+         } // blockquote blockquote
+
     } // .body 
+
 } // .article 
 
 .article_stub_top {
