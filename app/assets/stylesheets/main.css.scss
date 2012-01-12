@@ -613,7 +613,7 @@ input#section_name {
 	/* width: 34%; */
     width: 48%;
 	float: left;
-	height: 525px;
+	height: 545px;
 	margin-right: auto;
 	margin-left: auto;
 
@@ -774,24 +774,25 @@ input#section_name {
     color: black;
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
+    font-size: 82.5%;
     .article_image {
         border-right: 1px solid #ddd;
         padding-right: 6px;
-        width: 81px;
+        width: 126px;
         float: left;
         clear: both;
-        height: 75px;
-        line-height: 75px;
+        height: 120px;
+        line-height: 120px;
         img {
-            width: 75px;
+            width: 120px;
             vertical-align: middle;
         }
     }
     .article_info {
         margin-left: 6px;
         float: left;
-        width: 500px;
-        height: 80px;
+        width: 380px;
+        height: 120px;
         position: relative;
         .article_title {
             font-size: 120%;
@@ -807,6 +808,7 @@ input#section_name {
             float: left;
         }
         .article_date {
+            color: gray;
             position: absolute;
             bottom: 3px;
             right: 0;
