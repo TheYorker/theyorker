@@ -6,9 +6,10 @@ $yorker_orange: #ff6c07;
 $darkened_orange: #e44f04;
 $yorker_blue: #059BFF;
 $background_shading: lighten($yorker_blue, 40%);
+$light_background_shading: lighten($background-shading, 5%);
 
 body {
-    background-color: lighten($background-shading, 5%);
+    background-color: $light_background_shading;
     /* background-color: #f9f9f9; */
     padding-top: 0;
 }
@@ -557,13 +558,16 @@ input#section_name {
 	background: none;
     margin-top: 2px;
     margin-bottom: 5px;
-    width: 95%;
+    width: 96%;
 	height: 148px;
     margin-left: auto;
     margin-right: auto;
-    padding: 3px;
+    padding: 5px;
 	font-family: 'Open Sans', sans-serif;
     overflow: visible;
+    
+    border-radius: 6px;
+    /* background: $light_background_shading; */
 }
 
 .article_stub_top:hover {
@@ -611,6 +615,9 @@ input#section_name {
     margin-right: auto;
     padding: 5px;
 	font-family: 'Open Sans', sans-serif;
+
+    /* background-color: $light_background_shading; */
+    border-radius: 6px;
 }
 
 .article_stub:hover {
