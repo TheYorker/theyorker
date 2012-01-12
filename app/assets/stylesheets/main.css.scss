@@ -287,7 +287,6 @@ img.twitter_follow {
     margin-top: 0px;
     float: right;
     height: auto;
-    text-align: center;
     border: 0px solid black;
     border-radius: 0px;
 
@@ -300,52 +299,6 @@ img.twitter_follow {
         height: 250px;
         border: 0px solid black;
 	    margin-top: 30px;
-    }
-
-    .top_stories {
-        width: 100%;
-        float: right;
-        height: 198px;
-        text-align: center;
-        border: 0px solid black;
-        border-radius: 0px;
-        background-color: white;
-
-        img {
-            vertical-align:text-top;
-            float: left;
-        }
-
-        ol {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 82.5%;
-            position:relative;
-            top:-25px;
-            margin-top:auto;
-	        margin-bottom:auto;
-            padding:0;
-            overflow:hidden;
-        }
-
-        ol a:link, a:visited {
-            display: block;
-            list-style-type: decimal;
-            width:100%;
-            height: 49px;
-            border-bottom: 1px solid $yorker-orange;
-            color:black;
-            background-color:white;
-            text-align:left;
-            padding:2px;
-	        padding-top:10px;
-            vertical-align:middle;
-            text-decoration: none;
-        }
-
-        a:hover, a:active {
-            color: $yorker-orange;
-        }
-
     }
 
 
@@ -381,8 +334,9 @@ img.twitter_follow {
                     float: left;
                 }
                 .stub_title {
-                    float: left;
                     margin-left: 6px;
+                    width: 175px;
+                    float: left;
                 }
             }
 
