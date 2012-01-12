@@ -15,3 +15,9 @@ production:
     <<: *common
     database: yorker_production
 
+# this is a special environment using sqlite, for people without
+# package managers
+demo:
+    adapter: sqlite3
+    database: db/yorker_demo.sqlite3
+

@@ -32,6 +32,10 @@ group :test do
   gem 'turn', :require => false
 end
 
+group :demo do
+  gem 'sqlite3'
+end
+
 gem 'pg'
 
 gem 'bluecloth'
