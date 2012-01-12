@@ -2,10 +2,26 @@
  * These Apply To Everything                                   *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+$yorker_orange: #ff6c07;
+$darkened_orange: #e44f04;
+$yorker_blue: #059BFF;
+$background_shading: lighten($yorker_blue, 40%);
+
 body {
+    background-color: lighten($background-shading, 5%);
+    /* background-color: #f9f9f9; */
+    padding-top: 0;
+}
+
+.page_container {
     margin-left: auto;
     margin-right: auto;
     width: 55em;
+    background-color: white;
+    margin-top: -9px;
+    padding-left: 24px;
+    padding-right: 24px;
+    opacity: 1;
 }
 
 h1 {
@@ -15,7 +31,7 @@ h1 {
 
 h2 {
     font-family: 'Open Sans', sans-serif;
-	color: #ff6c07;
+	color: $yorker-orange;
 	font-size: 170%;
 }
 
@@ -26,7 +42,7 @@ h3 {
     font-size: 14px;
     width: 100%;
     height: auto;
-    background: #ff6c07;
+    background: $yorker-orange;
     border-radius: 0px;
     position:relative;
     padding:5px 0px 5px 0px; 
@@ -39,7 +55,7 @@ p  {
 }
 
 .hl {
-	background: #ff6c07;
+	background: $yorker-orange;
 	color: white;
 	font-size: 150%;
 	max-width: 69%;
@@ -57,7 +73,7 @@ blockquote {
 	}
 
 blockquote blockquote{
-	color:#ff6c07;
+	color:$yorker-orange;
 	font-size:10pt;
 	border:none;
 	padding:0;
@@ -81,9 +97,13 @@ blockquote blockquote{
 .toplevel_menu {
     width: 100%;
     height: 31px;
-    background: #ff6c07;
+    background: $yorker-orange;
     position:relative;
     top:-50px;
+}
+
+.toplevel_menu .socialmedia {
+    float: right;
 }
 
 .toplevel_menu .socialmedia ul {
@@ -101,10 +121,22 @@ blockquote blockquote{
     border-right: none;
 }
 
+img.f_logo {
+    vertical-align: text-top;
+    height: 24px;
+}
+
+img.twitter_follow {
+    vertical-align: text-top;
+    height: 24px;
+    padding-right: 3px;
+    margin-bottom: 10px;
+}
+
 .toplevel_menu .socialmedia ul li a, .toplevel_menu ul li a:visited {
     text-decoration: none;
-    color: white;
-    padding:0.2em 0.3em 0.2em 0.3em;
+    color: white_;
+    /* padding:0.2em 0.3em 0.2em 0.3em; */
 }
 
 .toplevel_menu ul {
@@ -214,12 +246,12 @@ blockquote blockquote{
 }
 
 .headline_container .headline_image {
-    width: 69%;
     color: white;
     height: 300px;
     float: left;
 	margin-left: 5px;
 	overflow: hidden;
+    width: 600px;
 }
 
 .headline_container .headline_image ul li h2 a {
@@ -240,10 +272,15 @@ blockquote blockquote{
     filter:alpha(opacity=90); /* For IE8 and earlier */
 	position: absolute;
 	top: 200px;
-    background-color: #ff6c07;
+    background-color: $yorker-orange;
 }
 
-.content_container .more_articles {
+.content_container .main_content {
+    float: left;
+    width: 69%;
+}
+
+.content_container .sidebar {
     background: none;
     width: 29%;
     margin-top: 0px;
@@ -254,7 +291,7 @@ blockquote blockquote{
     border-radius: 0px;
 }
 
-.content_container .more_articles .top_stories {
+.content_container .sidebar .top_stories {
     width: 100%;
     float: right;
     height: 198px;
@@ -264,12 +301,12 @@ blockquote blockquote{
     background-color: white;
 }
 
-.content_container .more_articles .top_stories img {
+.content_container .sidebar .top_stories img {
     vertical-align:text-top;
     float: left;
 }
 
-.content_container .more_articles .top_stories ol {
+.content_container .sidebar .top_stories ol {
     font-family: 'Open Sans', sans-serif;
     font-size: 82.5%;
     position:relative;
@@ -280,12 +317,12 @@ blockquote blockquote{
     overflow:hidden;
 }
 
-.content_container .more_articles .top_stories ol a:link, a:visited {
+.content_container .sidebar .top_stories ol a:link, a:visited {
     display: block;
     list-style-type: decimal;
     width:100%;
     height: 49px;
-    border-bottom: 1px solid #ff6c07;
+    border-bottom: 1px solid $yorker-orange;
     color:black;
     background-color:white;
     text-align:left;
@@ -295,11 +332,11 @@ blockquote blockquote{
     text-decoration: none;
 }
 
-.content_container .more_articles .top_stories a:hover, a:active {
-    color: #ff6c07;
+.content_container .sidebar .top_stories a:hover, a:active {
+    color: $yorker-orange;
 }
 
-.content_container .more_articles .adspace1 img {
+.content_container .sidebar .adspace1 img {
     overflow: hidden;
     width: 100%;
     left: 5px;
@@ -309,7 +346,7 @@ blockquote blockquote{
 	margin-top: 30px;
 }
 
-.content_container .more_articles .featured_list {
+.content_container .sidebar .featured_list {
     overflow: hidden;
     width: 100%;
     margin-top: 10px;
@@ -318,14 +355,14 @@ blockquote blockquote{
     text-align: center;
 }
 
-.content_container .more_articles .featured_list img {
+.content_container .sidebar .featured_list img {
     vertical-align:text-top;
     float: left;
 	margin-right: 5px;
 	max-width: 49px;
 }
 
-.content_container .more_articles ol {
+.content_container .sidebar .featured_list ol {
     font-family: 'Open Sans', sans-serif;
     font-size: 82.5%;
     position:relative;
@@ -335,12 +372,16 @@ blockquote blockquote{
     overflow:hidden;
 }
 
-.content_container .more_articles li a:link {
+.featured_list ol :hover {
+    background-color: $background_shading;
+}
+
+.content_container .sidebar .featured_list ol li a:link {
     display: block;
     list-style-type: decimal;
     width:100%;
     height: 49px;
-    border-bottom: 1px solid #ff6c07;
+    border-bottom: 1px solid $yorker-orange;
     color:black;
     background-color:white;
     text-align:left;
@@ -350,9 +391,9 @@ blockquote blockquote{
 	padding-top:10px;
 }
 
-.content_container .more_articles a:hover {
-    color: #ff6c07;
-}
+/* .content_container .sidebar a:hover { */
+/*     color: $yorker-orange; */
+/* } */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Log-in and signup page stuff                                *
@@ -427,7 +468,7 @@ input#section_name {
 }
 
 .article a{
-	color: #ff6c07;
+	color: $yorker-orange;
 }
 
 .article .header {
@@ -502,17 +543,24 @@ input#section_name {
 }
 
 .article_stub_top {
-    border-bottom: 0px solid #ff6c07;
+    border-bottom: 0px solid $yorker-orange;
 	background: none;
     margin-top: 2px;
     margin-bottom: 5px;
     width: 95%;
-	height: 135px;
+	height: 148px;
     margin-left: auto;
     margin-right: auto;
     padding: 3px;
 	font-family: 'Open Sans', sans-serif;
+    overflow: visible;
 }
+
+.article_stub_top:hover {
+    background-color: $background_shading;
+    border-radius: 6px;
+}
+
 
 .article_stub_top .stub_title {
 	font-size: 100%;
@@ -543,7 +591,7 @@ input#section_name {
 }
 
 .article_stub {
-    border-bottom: 0px solid #ff6c07;
+    border-bottom: 0px solid $yorker-orange;
 	background: none;
 	float: left;
     margin-top: 2px;
@@ -553,6 +601,11 @@ input#section_name {
     margin-right: auto;
     padding: 5px;
 	font-family: 'Open Sans', sans-serif;
+}
+
+.article_stub:hover {
+    background-color: $background_shading;
+    border-radius: 6px;
 }
 
 .article_stub.pending {
@@ -581,7 +634,7 @@ input#section_name {
 
 .section_stub .more {
 	font-size: 85%;
-	color: #ff6c07;
+	color: $yorker-orange;
 	float: right;
 	
 }
@@ -589,7 +642,8 @@ input#section_name {
 .section_stub  {
     border: 3px white solid;
 	font-family: 'Open Sans', sans-serif;
-	width: 34%;
+	/* width: 34%; */
+    width: 48%;
 	float: left;
 	height: 525px;
 	margin-right: auto;
@@ -598,18 +652,18 @@ input#section_name {
 
 .section_stub a {
     text-decoration: none;
-	color: #ff6c07;
-	}
+	color: $yorker-orange;
+}
 	
 .section_stub a:hover {
     text-decoration: underline;
-	color: #ff6c07;
-	}
+	color: $yorker-orange;
+}
 
 .section_stub .section_name {
     font-size: 175%;
 	margin-top: -2px;
-	border-bottom: 2px #ff6c07 solid;
+	border-bottom: 2px $yorker-orange solid;
     background-color: white;
 }
 
@@ -667,7 +721,7 @@ input#section_name {
 .footer {
     width: 100%;
     height: 31px;
-    background: #ff6c07;
+    background: $yorker-orange;
     border-radius: 0px;
     position:relative;
     top:-50px;
@@ -726,6 +780,56 @@ input#section_name {
     border: 0px solid black;
 }
 
+
+/*--- Large Article List Entry ---*/
+
+.articles_list a {
+    text-decoration: none;
+}
+
+.article_entry {
+    overflow: auto;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    color: black;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    .article_image {
+        border-right: 1px solid #ddd;
+        padding-right: 12px;
+        width: 162px;
+        float: left;
+        clear: both;
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    .article_info {
+        margin-left: 6px;
+        width: 400px;
+        float: left;
+        .article_title {
+            font-size: 120%;
+            font-weight: bold;
+        }
+        .article_summary {
+            color: #666;
+        }
+        .article_author {
+
+        }
+        .article_date {
+
+        }
+    }
+}
+
+.article_entry:hover {
+    background-color: $background_shading;
+    border-radius: 12px;    
+}
+
 /*--- Breadcrumbs ---*/
 
 .breadcrumbs {
@@ -733,12 +837,11 @@ input#section_name {
     margin: auto 6px;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-    /* font-size: 75%; */
-    width: 69%;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .breadcrumbs a, .breadcrumbs a:visited {
-    color: #ff6c07;
+    color: $yorker-orange;
     text-decoration: none;
     font-family: "Open Sans";
 }

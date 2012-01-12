@@ -10,89 +10,107 @@
   </head>
   <body>
 
-
-    <div class="account_links">
-      <% if current_user %>
-        <ul>
-          <li>Logged in as
-            <%= current_user.name %>.
-          </li>
-          <li>
-            <%= link_to "My Account", user_path(current_user) %></li>
-          <li>
-            <%= link_to "Logout", logout_path %>
-          </li>
-        </ul>
-      <% else %>
-        <ul>
-          <li>Not logged in.</li>
-          <li>
-            <%= link_to "Login/Sign up", login_path %>
-          </li>
-        </ul>
-      <% end %>
-      <br/>
-    </div>
-
-    <div class="banner_top">
-      <h1></h1>
-      <%= link_to image_tag('titlebanner.png', :width => '100%'), root_path %>
-    </div>
-
-    <div class="toplevel_menu">
-      <ul>
-        <li><%= link_to "HOME", root_path %></li>
-        <%= toplevel_sections_list %>
-      </ul>
-
-      <div class="socialmedia">
-        <ul>
-          <li>Follow us on</li>
-          <li><a href="http://www.facebook.com/theyorker?ref=ts">Facebook</a></li>
-          <li>and</li>
-          <li><a href="http://twitter.com/#!/theyorkeruk">Twitter</a></li>
-        </ul>
+    <div class="page_container">
+      <div class="account_links">
+        <% if current_user %>
+          <ul>
+            <li>Logged in as
+              <%= current_user.name %>.
+            </li>
+            <li>
+              <%= link_to "My Account", user_path(current_user) %></li>
+            <li>
+              <%= link_to "Logout", logout_path %>
+            </li>
+          </ul>
+        <% else %>
+          <ul>
+            <li>Not logged in.</li>
+            <li>
+              <%= link_to "Login/Sign up", login_path %>
+            </li>
+          </ul>
+        <% end %>
         <br/>
       </div>
 
-    </div>
-
-    <div class="priority_content">
-      <div class="adspace2">
-        <%= image_tag "adspacetop.png", :width => "728px" %>
-      </div>
-    </div>
-
-
-    <p id="notice"><%= notice %></p>
-    <p id="alert"><%= alert %></p>
-
-    <div class="content_container">
-      
-      <div class="more_articles">
-        <%= yield :sidebar %>
+      <div class="banner_top">
+        <h1></h1>
+        <%= link_to image_tag('titlebanner.png', :width => '100%'), root_path %>
       </div>
 
-      <%= yield %>
-
-    </div>
-    
-
-    <div class="footer">
-      <div class="footerlinks">
+      <div class="toplevel_menu">
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Join</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Advertising</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Privacy Policy</a></li>
+          <li><%= link_to "HOME", root_path %></li>
+          <%= toplevel_sections_list %>
         </ul>
+
+        <div class="socialmedia">
+          <ul>
+            <li>Follow us on</li>
+            <li>
+              <%= image_tag "f_logo.png",
+                            :alt => "Facebook",
+                            :title => "Facebook",
+                            :class => "f_logo" %>
+              <a href="http://www.facebook.com/theyorker?ref=ts">Facebook</a>
+            </li>
+            <li>and</li>
+            <li>
+              <a href="http://twitter.com/#!/theyorkeruk">
+                <%= image_tag "follow_on_twitter.png",
+                              :alt => "Follow us on Twitter",
+                              :title => "Follow us on Twitter",
+                              :class => "twitter_follow"%>
+              </a>
+            </li>
+          </ul>
+          <br/>
+        </div>
+
       </div>
-      <div class="copynotice">
-        Copyright 2007-<%= Time.now.year %> The Yorker Ltd. 
+
+      <div class="priority_content">
+        <div class="adspace2">
+          <%= image_tag "adspacetop.png", :width => "728px" %>
+        </div>
       </div>
+
+
+      <p id="notice"><%= notice %></p>
+      <p id="alert"><%= alert %></p>
+
+      <div class="content_container">
+
+        <div class="main_content">
+          <%= yield %>
+        </div>
+
+        <div class="sidebar">
+          <%= yield :sidebar %>
+        </div>
+      </div>
+      
+
+      <div class="footer">
+        <div class="footerlinks">
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Join</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Advertising</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="copynotice">
+          Copyright 2007-<%= Time.now.year %> The Yorker Ltd. 
+        </div>
+      </div>
+
+      
     </div>
+
     
 
   </body>
