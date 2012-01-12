@@ -140,6 +140,10 @@ class Article < ActiveRecord::Base
     self.image ? self.image.picture.url(:headline) : 'ylogo_headline.png'
   end
 
+  def medium_image
+    self.image ? self.image.picture.url(:medium) : 'ylogo_medium.png'
+  end
+
   def thumbnail
     self.image ? self.image.picture.url(:large_thumb) : 'ylogo.png'
   end

@@ -11,7 +11,8 @@
     </div>
   <% end %>
 
-  <%= render :partial => 'article_image_select' %>
+  <%= render :partial => 'article_image_select',
+             :locals => {:article => @article} %>
 
   <div class="field">
     <%= f.label :title, "Headline:" %><br/>
