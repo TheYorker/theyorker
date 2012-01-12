@@ -20,6 +20,11 @@ class SectionsController < ApplicationController
 
   def show
     @section = Section.find(params[:id])
+    if @section.children == []
+      @articles = @section.latest_articles_from_children(15)
+      render 'show_leaf'
+      return
+    end
   end
   
   ## DEPRECATED

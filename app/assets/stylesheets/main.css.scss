@@ -806,31 +806,38 @@ input#section_name {
     font-family: "Open Sans", sans-serif;
     .article_image {
         border-right: 1px solid #ddd;
-        padding-right: 12px;
-        width: 162px;
+        padding-right: 6px;
+        width: 81px;
         float: left;
         clear: both;
         img {
-            width: 150px;
-            height: 150px;
+            width: 75px;
+            height: 75px;
         }
     }
     .article_info {
         margin-left: 6px;
-        width: 400px;
         float: left;
+        width: 500px;
+        height: 80px;
+        position: relative;
         .article_title {
             font-size: 120%;
             font-weight: bold;
         }
         .article_summary {
             color: #666;
+            padding-bottom: 3px;
         }
         .article_author {
-
+            position: absolute;
+            bottom: 3px;
+            float: left;
         }
         .article_date {
-
+            position: absolute;
+            bottom: 3px;
+            right: 0;
         }
     }
 }

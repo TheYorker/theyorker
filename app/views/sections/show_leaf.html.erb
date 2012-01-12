@@ -1,0 +1,13 @@
+<%= render :partial => 'shared/breadcrumbs', :locals => {:section => @section} %>
+
+<div class="articles_list">
+  <% @articles.each do |a| %>
+    <%= render :partial => 'shared/article_entry',
+        :locals => {:article => a} %>
+  <% end %>
+</div>
+
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'sidebar', :locals => {:section => @section} %>
+<% end %>
