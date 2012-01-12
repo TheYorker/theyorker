@@ -436,80 +436,82 @@ input#section_name {
 
 .article {
     /* overflow: auto; */
-}
 
-.article a{
-	color: $yorker-orange;
-}
+    a {
+	    color: $yorker-orange;
+    }
 
-.article .header {
-    width: 60%;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    margin-left: 5px;
-	height:120px;
-}
+    .header {
+        width: 60%;
+        margin-top: 1em;
+        margin-bottom: 2em;
+        margin-left: 5px;
+	    height:120px;
 
-.article .header .authorpic {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 90%;
-	float:left;
-	border:0px solid grey;
-	padding:0px;
-	margin-left:0px;
-    margin-right:20px;
-	width:120px
-}
+        .authorpic {
+	        font-family: 'Open Sans', sans-serif;
+	        font-size: 90%;
+	        float:left;
+	        border:0px solid grey;
+	        padding:0px;
+	        margin-left:0px;
+            margin-right:20px;
+	        width:120px;
 
-.article .header .authorpic img {
-	max-width:120px;
-}
+            img {
+	            max-width:120px;
+            }
 
-.article .header .authorpic .author {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 90%;
-	margin: auto;
-}
+            .author {
+	            font-family: 'Open Sans', sans-serif;
+	            font-size: 90%;
+	            margin: auto;
+            }
+        }
+        
+        .date {
+	        color: gray;
+	        float:left;
+            font-family: 'Open Sans', sans-serif;
+	        font-size: 13px;
+        }
 
-.article .header  .date {
-	color: gray;
-	float:left;
-    font-family: 'Open Sans', sans-serif;
-	font-size: 13px;
-}
+    }
 
-.article .main_image {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 90%;
-	float:right;
-	border:0px solid grey;
-	background-color:#eee;
-	padding:6px;
-	margin-left:20px;
-    margin-right:30px;
-}
 
-.article .main_image img {
-	max-width:300px
-}
 
-.article .main_image .image_caption {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 90%;
-	margin: auto;
-    overflow: visible;
-}
+    .main_image {
+	    font-family: 'Open Sans', sans-serif;
+	    font-size: 90%;
+	    float:right;
+	    border:0px solid grey;
+	    background-color:#eee;
+	    padding:6px;
+	    margin-left:20px;
+        margin-right:30px;
 
-.article .body {
-    width: 60%;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    margin-left: 5px;
-    overflow: auto;
-}
+        img {
+	        max-width:300px
+        }
 
-.article .body img {
-	max-width: 110%;
+        .image_caption {
+	        font-family: 'Open Sans', sans-serif;
+	        font-size: 90%;
+	        margin: auto;
+            overflow: visible;
+        }
+    }
+
+    .body {
+        width: 60%;
+        margin-top: 1em;
+        margin-bottom: 2em;
+        margin-left: 5px;
+        overflow: auto;
+         img {
+	         max-width: 110%;
+         }
+    }
 }
 
 .article_stub_top {
