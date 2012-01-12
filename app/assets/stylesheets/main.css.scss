@@ -328,10 +328,16 @@ img.twitter_follow {
                 border-bottom: 1px solid $yorker-orange;
                 padding: 2px;
                 padding-top: 10px;
+                height: 56px;
+                
                 .stub_image {
                     width: 50px;
                     height: 50px;
                     float: left;
+                    line-height: 50px;
+                    img {
+                        vertical-align: middle;
+                    }
                 }
                 .stub_title {
                     margin-left: 6px;
@@ -349,11 +355,11 @@ img.twitter_follow {
     }
 
     .featured_3_articles {
-        height: 222px;
+        height: 242px;
     }
 
     .featured_5_articles {
-        height: 350px;
+        height: 378px;
     }
 
 }
