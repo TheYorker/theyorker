@@ -289,111 +289,121 @@ img.twitter_follow {
     text-align: center;
     border: 0px solid black;
     border-radius: 0px;
+
+
+    .adspace1 img {
+        overflow: hidden;
+        width: 100%;
+        left: 5px;
+        float: right;
+        height: 250px;
+        border: 0px solid black;
+	    margin-top: 30px;
+    }
+
+    .top_stories {
+        width: 100%;
+        float: right;
+        height: 198px;
+        text-align: center;
+        border: 0px solid black;
+        border-radius: 0px;
+        background-color: white;
+
+        img {
+            vertical-align:text-top;
+            float: left;
+        }
+
+        ol {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 82.5%;
+            position:relative;
+            top:-25px;
+            margin-top:auto;
+	        margin-bottom:auto;
+            padding:0;
+            overflow:hidden;
+        }
+
+        ol a:link, a:visited {
+            display: block;
+            list-style-type: decimal;
+            width:100%;
+            height: 49px;
+            border-bottom: 1px solid $yorker-orange;
+            color:black;
+            background-color:white;
+            text-align:left;
+            padding:2px;
+	        padding-top:10px;
+            vertical-align:middle;
+            text-decoration: none;
+        }
+
+        a:hover, a:active {
+            color: $yorker-orange;
+        }
+
+    }
+
+
+    .featured_list {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 10px;
+        float: right;
+
+        .article_list {
+
+            font-family: 'Open Sans', sans-serif;
+            font-size: 82.5%;
+            position:relative;
+            top:-25px;
+            margin-top:auto;
+	        margin-bottom:auto;
+
+            
+            a, a:visited {
+                text-decoration: none;
+                color: black;
+            }
+
+            .article_stub_small {
+                overflow: auto;
+                border-bottom: 1px solid $yorker-orange;
+                padding: 2px;
+                padding-top: 10px;
+                .stub_image {
+                    width: 50px;
+                    height: 50px;
+                    float: left;
+                }
+                .stub_title {
+                    float: left;
+                    margin-left: 6px;
+                }
+            }
+
+            .article_stub_small:hover {
+                background-color: $background_shading;
+            }
+
+        }
+
+    }
+
+    .featured_3_articles {
+        height: 222px;
+    }
+
+    .featured_5_articles {
+        height: 350px;
+    }
+
 }
 
-.content_container .sidebar .top_stories {
-    width: 100%;
-    float: right;
-    height: 198px;
-    text-align: center;
-    border: 0px solid black;
-    border-radius: 0px;
-    background-color: white;
-}
 
-.content_container .sidebar .top_stories img {
-    vertical-align:text-top;
-    float: left;
-}
-
-.content_container .sidebar .top_stories ol {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 82.5%;
-    position:relative;
-    top:-25px;
-    margin-top:auto;
-	margin-bottom:auto;
-    padding:0;
-    overflow:hidden;
-}
-
-.content_container .sidebar .top_stories ol a:link, a:visited {
-    display: block;
-    list-style-type: decimal;
-    width:100%;
-    height: 49px;
-    border-bottom: 1px solid $yorker-orange;
-    color:black;
-    background-color:white;
-    text-align:left;
-    padding:2px;
-	padding-top:10px;
-    vertical-align:middle;
-    text-decoration: none;
-}
-
-.content_container .sidebar .top_stories a:hover, a:active {
-    color: $yorker-orange;
-}
-
-.content_container .sidebar .adspace1 img {
-    overflow: hidden;
-    width: 100%;
-    left: 5px;
-    float: right;
-    height: 250px;
-    border: 0px solid black;
-	margin-top: 30px;
-}
-
-.content_container .sidebar .featured_list {
-    overflow: hidden;
-    width: 100%;
-    margin-top: 10px;
-    float: right;
-    height: 350px;
-    text-align: center;
-}
-
-.content_container .sidebar .featured_list img {
-    vertical-align:text-top;
-    float: left;
-	margin-right: 5px;
-	max-width: 49px;
-}
-
-.content_container .sidebar .featured_list ol {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 82.5%;
-    position:relative;
-    top:-25px;
-    margin:0;
-    padding:0;
-    overflow:hidden;
-}
-
-.featured_list ol :hover {
-    background-color: $background_shading;
-}
-
-.content_container .sidebar .featured_list ol li a:link {
-    display: block;
-    list-style-type: decimal;
-    width:100%;
-    height: 49px;
-    border-bottom: 1px solid $yorker-orange;
-    color:black;
-    background-color:white;
-    text-align:left;
-    padding:2px;
-    vertical-align:middle;
-    text-decoration: none;
-	padding-top:10px;
-}
-
-/* .content_container .sidebar a:hover { */
-/*     color: $yorker-orange; */
-/* } */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Log-in and signup page stuff                                *
