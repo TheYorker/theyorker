@@ -32,7 +32,9 @@
 
 
   <div class="footer">
-    <h3>Comments</h3>
+    <div class="comments_title">
+      Comments
+    </div>
     <div class="comments">
 
       <% @article.comments.each do |c| %>
@@ -41,44 +43,44 @@
 
       <% end %>
 
-      <% if current_user %>
-        
-        <div class="comment_form">
-
-          <h4>Write a Comment</h4>
-
-          <%= form_tag article_comments_path(@article) do %>
-
-            <p>Comment As:</p>
-            <div class="field">
-              <%= radio_button_tag :anonymous, "false", true, :name => 'comment[anonymous]' %>
-              <%= label_tag :anonymous_false, current_user.name %>
-              <br/>
-              <%= radio_button_tag :anonymous, "true", false, :name => 'comment[anonymous]' %>
-              <%= label_tag :anonymous_true, "Anonymous (admins will still be able to identify you)" %>
-            </div>
-            <br/>
-
-            <div class="field">
-              <%= label_tag :body, "Comment:" %><br/>
-              <%= text_area_tag :body, nil, :name => 'comment[body]' %>
-            </div>
-            
-            <div class="action">
-              <%= submit_tag "Comment" %>
-            </div>
-            
-          <% end %>
-        </div>
-
-      <% else %>
-
-        You must be <%= link_to "logged in", "/login" %> to post a comment
-
-      <% end %>
-
-      
     </div>
+
+    <% if current_user %>
+      
+      <div class="comment_form">
+
+        <h4>Write a Comment</h4>
+
+        <%= form_tag article_comments_path(@article) do %>
+
+          <div class="field">
+            <p>Comment As:</p>
+            <%= radio_button_tag :anonymous, "false", true, :name => 'comment[anonymous]' %>
+            <%= label_tag :anonymous_false, current_user.name %>
+            <br/>
+            <%= radio_button_tag :anonymous, "true", false, :name => 'comment[anonymous]' %>
+            <%= label_tag :anonymous_true, "Anonymous (admins will still be able to identify you)" %>
+          </div>
+          <br/>
+
+          <div class="field">
+            <%= label_tag :body, "Comment:" %><br/>
+            <%= text_area_tag :body, nil, :name => 'comment[body]' %>
+          </div>
+          
+          <div class="action">
+            <%= submit_tag "Comment" %>
+          </div>
+          
+        <% end %>
+      </div>
+
+    <% else %>
+
+      You must be <%= link_to "logged in", "/login" %> to post a comment
+
+    <% end %>
+
   </div>
 
 
