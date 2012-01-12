@@ -771,9 +771,11 @@ input#section_name {
         width: 81px;
         float: left;
         clear: both;
+        height: 75px;
+        line-height: 75px;
         img {
             width: 75px;
-            height: 75px;
+            vertical-align: middle;
         }
     }
     .article_info {
