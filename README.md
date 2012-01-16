@@ -33,14 +33,6 @@ gem install passenger
 # install nginx
 passenger-install-nginx-module
 
-# install sphinx
-cd
-wget http://sphinxsearch.com/files/sphinx-2.0.3-release.tar.gz
-tar zxf sphinx-2.0.3-release.tar.gz
-cd sphinx-2.0.3-release.tar.gz
-./configure --with-pgsql=`pg_config --pkgincludedir` --without-mysql
-make && make install
-cd
 
 # install postgres
 apt-get install postgresql libpq-dev
@@ -50,15 +42,6 @@ apt-get install postgresql libpq-dev
 Installation
 ------------
 
-
-
-Search Engine Indexing
-----------------------
-
-We currently use [Thinking Sphinx][1] for searching. This requires an
-external service (searchd) which needs to be
-
-[1][http://freelancing-god.github.com/ts/en/]
 
 ---
 
