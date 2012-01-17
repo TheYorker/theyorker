@@ -7,7 +7,7 @@
         <% if a %>
           <li>
             <%= image_tag a.headline_image %>
-            <h2><%= link_to a.title, article_path(a) %></h2>
+            <h2><%= link_to a.title, canonical_article_path(a) %></h2>
           </li>
         <% end %>
       <% end %>

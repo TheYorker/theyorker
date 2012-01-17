@@ -1,5 +1,5 @@
 <% if article %>
-  <a href="<%= article_path(article) %>">
+  <a href="<%= canonical_article_path(article) %>">
     <div class="article_entry">
       <div class="article_image">
         <%= image_tag article.thumbnail %>

@@ -1,6 +1,6 @@
 <%= render :partial => 'shared/breadcrumbs',
            :locals => {:section => @article.section,
-                       :detail => link_to(@article.title, article_path(@article))} %>
+                       :detail => link_to(@article.title, canonical_article_path(@article))} %>
 
 <div class="article">
 
