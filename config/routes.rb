@@ -38,6 +38,8 @@ TheYorker::Application.routes.draw do
   post 'editors/create'
   post 'editors/destroy'
 
+  match '/*section/:id' => 'articles#show', :constraints => {:id => /\d+/}
+  #match '/*section/' => 'sections#show_by_path'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
