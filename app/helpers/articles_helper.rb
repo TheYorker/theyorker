@@ -21,6 +21,10 @@ module ArticlesHelper
   end
 
   def render_sanitized_markdown(input)
+    if !input
+      return ""
+    end
+
     config = Sanitize::Config::RELAXED
     youtube_transformer = lambda do |env|
       node      = env[:node]
