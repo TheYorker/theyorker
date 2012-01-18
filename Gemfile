@@ -43,6 +43,7 @@ gem 'bluecloth'
 gem 'sanitize'
 
 gem "paperclip"
+gem "paperclip-meta"
 
 gem 'execjs'
 

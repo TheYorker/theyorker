@@ -10,6 +10,8 @@ class ImagesController < ApplicationController
   def create
     @image = Image.create(params[:image])
     if @image.save
+      # @image.picture.reprocess!
+      # @image.save
       redirect_to image_path(@image)
     else
       render 'new'
