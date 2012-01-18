@@ -79,5 +79,5 @@
 
 <div class="preview">
   <h2><%= @article.title %></h2>
-  <%= @article.render %>
+  <%= render_sanitized_markdown(@article.body) %>
 </div>

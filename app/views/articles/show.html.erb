@@ -21,7 +21,7 @@
 
 
   <div class="body">
-    <%= @article.render %>
+    <%= render_sanitized_markdown(@article.body) %>
     <%#= markdown(@article.body) %>
   </div>
 
