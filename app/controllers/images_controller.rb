@@ -39,6 +39,8 @@ class ImagesController < ApplicationController
   def index
     if params[:q]
       @images = Image.search(params[:q])
+    else
+      @images = Image.order('created_at DESC').limit(5)
     end
   end
 
