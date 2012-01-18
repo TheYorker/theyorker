@@ -56,7 +56,9 @@ module ArticlesHelper
     config[:elements] += ['div']
     config[:attributes][:all] += ['class']
 
-    html = Sanitize.clean(BlueCloth.new(input).to_html, config)
+    template = ERB.new(input)
+
+    html = Sanitize.clean(BlueCloth.new(template.result(binding)).to_html, config)
     # increase heading levels of markdown output by 2
     html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
   end
