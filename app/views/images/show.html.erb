@@ -66,48 +66,72 @@
 
 <h4>Embed this image</h4>
 
-<%= form_tag do %>
-  <%= label_tag :caption, "Caption:" %><br/>
-  <%= text_field_tag :caption %>
-<% end %>
+<hr/>
+
+<h4>Fit Article Around Image</h4>
+
+<p>
+  Type your desired caption, then copy and paste the code from the
+  grey box into your article at the place where you want the image.
+</p>
+
+<div class="embed_config">
+  <div class="caption_form_box">
+    <%= form_tag do %>
+      <%= text_field_tag :medium_caption, nil, :placeholder => "Type Caption Here" %>
+    <% end %>
+  </div>
+
+  <div class="embed_code">
+    <tt>
+      &lt;%= image_with_caption <%= @image.id %>, &quot;<span class="medium_caption_here"></span>&quot; %&gt;
+    </tt>
+    
+  </div>
+</div>
 
 <hr/>
 
-<h4>Medium size</h4>
+<h4>Full Article Width</h4>
 
 <p>
-  Copy and paste the following code:
+  Type your desired caption, then copy and paste the code from the
+  grey box into your article at the place where you want the image.
 </p>
 
-<p>
-  <tt>
-    &lt;div class='main_image'&gt;&lt;img src='<%= @image.picture.url(:medium) %>' / &gt;&lt;div class='image_caption'&gt;<span class="caption_here"></span> &ampcopy; <%= @image.copyright_owner %><%= @image.image_credit != "" ? " Image Credit: #{@image.image_credit}" : "" %>&lt;/div&gt;&lt;/div&gt;
-  </tt>
-</p>
+<div class="embed_config">
+  <div class="caption_form_box">
+    <%= form_tag do %>
+      <%= text_field_tag :large_caption, nil, :placeholder => "Type Caption Here" %>
+    <% end %>
+  </div>
 
-<hr/>
+  <div class="embed_code">
+    <tt>
+      &lt;%= image_with_caption <%= @image.id %>, &quot;<span class="large_caption_here"></span>&quot;, :original %&gt;
+    </tt>
+  </div>
+  
+</div>
 
-<h4>Full Size</h4>
-
-<p>
-  Copy and paste the following code:
-</p>
-
-<p>
-  <tt>
-    &lt;div class='big_image'&gt;&lt;img src='<%= @image.picture.url %>' / &gt;&lt;div class='image_caption'&gt;<span class="caption_here"></span> &ampcopy; <%= @image.copyright_owner %><%= @image.image_credit != "" ? " Image Credit: #{@image.image_credit}" : "" %>&lt;/div&gt;&lt;/div&gt;
-  </tt>
-</p>
 
 <%= javascript_tag do %>
   (function() {
-  var handler = function() {
-  $('.caption_here').text($('input#caption').val());
-  }
-  $('input#caption').change(handler)
-  $('input#caption').keyup(handler)
-  handler()
-  })()
+  /* man, this is ugly. */
+  var medium_handler = function() {
+    $('.medium_caption_here').text($('input#medium_caption').val());
+  };
+  $('input#medium_caption').change(medium_handler);
+  $('input#medium_caption').keyup(medium_handler);
+  medium_handler();
+
+  var large_handler = function() {
+    $('.large_caption_here').text($('input#large_caption').val());
+  };
+  $('input#large_caption').change(large_handler);
+  $('input#large_caption').keyup(large_handler);
+  large_handler();
+  })();
 <% end -%>
 
 <hr/>

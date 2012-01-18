@@ -289,3 +289,25 @@ input#section_name {
 /* } */
 
 
+
+/*--- Image Show page ---*/
+
+.embed_config {
+    overflow: auto;
+    .caption_form_box {
+        display: inline;
+        float:left;
+        padding-right: 6px;
+        margin-right: 6px;
+        border-right: 1px solid #666;
+    } // .caption_form_box
+    .embed_code {
+        display: inline;
+        max-width: 30em;
+        float:left;
+        background-color: #ddd;
+        padding-left: 3px;
+        padding-right: 3px;
+        border: 1px solid #999;
+    } // .embed_code
+} // .embed_config
