@@ -1,5 +1,8 @@
 class CommentsController < ApplicationController
 
+  # dodgy, but it'll do
+  include ApplicationHelper
+
   before_filter :admin_access, :only => ['hide', 'unhide']
 
   def create
