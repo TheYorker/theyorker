@@ -1,0 +1,9 @@
+<ul>
+  <% Comment.recent.each do |c| %>
+    <li>
+      <span class="username"><%= comment_user(c) %></span>
+      on
+      <%= link_to c.article.title, canonical_article_path(c.article) %>
+    </li>
+  <% end %>
+</ul>
