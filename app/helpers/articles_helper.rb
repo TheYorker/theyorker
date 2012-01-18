@@ -59,6 +59,7 @@ module ArticlesHelper
     config[:transformers] = [youtube_transformer]
     config[:elements] += ['div']
     config[:attributes][:all] += ['class']
+    config[:attributes]['div'] = ['style']
 
     template = ERB.new(input)
 
