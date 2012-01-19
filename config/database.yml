@@ -1,7 +1,6 @@
 common: &common
     adapter: postgresql
     username: <%= ENV['USER'] %>
-    password: <%= ENV['PG_PASS'] %>
 
 development:
     <<: *common
