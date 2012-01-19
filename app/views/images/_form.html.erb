@@ -1,5 +1,17 @@
 <%= form_for @image do |f| %>
 
+  <% if @image.errors.any? %>
+    <div class="error_messages">
+      <h3>Form is invalid</h3>
+      <ul>
+        <% for message in @image.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
   <div class="field">
     <%= f.label :title, "Title:" %><br/>
     <%= f.text_field :title %>
@@ -22,7 +34,8 @@
 
   <div class="field">
     <%= f.label :source_url, "Source URL:" %><br/>
-    <%= f.text_field :source_url, :value => (@image.source_url || 'http://') %>
+    <%= f.text_field :source_url, :value => (@image.source_url || 'http://') %><br/>
+    (optional)
   </div>
 
   <div class="field">
@@ -33,12 +46,14 @@
   
   <div class="field">
     <%= f.label :image_credit, "Image Credit:" %><br/>
-    <%= f.text_field :image_credit %>
+    <%= f.text_field :image_credit %><br/>
+    (optional)
   </div>
 
   <div class="field">
     <%= f.label :copyright_justification, "Copyright Justification:" %><br/>
-    <%= f.text_area :copyright_justification %>
+    <%= f.text_area :copyright_justification %><br/>
+    (optional)
   </div>
   
 

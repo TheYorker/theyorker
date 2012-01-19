@@ -4,4 +4,9 @@ class Image < ActiveRecord::Base
                                           :large_thumb => '150x150',
                                           :small_thumb => '50x50'}
 
+  validates :title, :presence => :true
+  validates :copyright_owner, :presence => :true
+  validates :picture_file_name, :presence => :true
+  
+
 end
