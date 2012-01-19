@@ -1,5 +1,7 @@
 TheYorker::Application.routes.draw do
 
+  resources :pages
+
   resources :legacy_articles
 
   root :to => 'sections#show', :id => 1

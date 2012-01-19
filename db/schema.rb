@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120119223854) do
+ActiveRecord::Schema.define(:version => 20120119232540) do
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id"
@@ -78,6 +78,14 @@ ActiveRecord::Schema.define(:version => 20120119223854) do
     t.string   "tagline"
     t.text     "body"
     t.datetime "publish_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
