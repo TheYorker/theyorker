@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Old:</b>
+  <%= @legacy_article.old_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @legacy_article.title %>
+</p>
+
+<p>
+  <b>Section:</b>
+  <%= @legacy_article.section_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @legacy_article.user_id %>
+</p>
+
+<p>
+  <b>Potential paths:</b>
+  <%= @legacy_article.potential_paths %>
+</p>
+
+<p>
+  <b>Author email:</b>
+  <%= @legacy_article.author_email %>
+</p>
+
+<p>
+  <b>Byline:</b>
+  <%= @legacy_article.byline %>
+</p>
+
+<p>
+  <b>Tagline:</b>
+  <%= @legacy_article.tagline %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @legacy_article.body %>
+</p>
+
+<p>
+  <b>Publish at:</b>
+  <%= @legacy_article.publish_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_legacy_article_path(@legacy_article) %> |
+<%= link_to 'Back', legacy_articles_path %>

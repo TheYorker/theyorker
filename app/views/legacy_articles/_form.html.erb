@@ -1,0 +1,57 @@
+<%= form_for(@legacy_article) do |f| %>
+  <% if @legacy_article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@legacy_article.errors.count, "error") %> prohibited this legacy_article from being saved:</h2>
+
+      <ul>
+      <% @legacy_article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :old_id %><br />
+    <%= f.number_field :old_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :section_id %><br />
+    <%= f.number_field :section_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :potential_paths %><br />
+    <%= f.text_area :potential_paths %>
+  </div>
+  <div class="field">
+    <%= f.label :author_email %><br />
+    <%= f.text_field :author_email %>
+  </div>
+  <div class="field">
+    <%= f.label :byline %><br />
+    <%= f.text_field :byline %>
+  </div>
+  <div class="field">
+    <%= f.label :tagline %><br />
+    <%= f.text_field :tagline %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :publish_at %><br />
+    <%= f.datetime_select :publish_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

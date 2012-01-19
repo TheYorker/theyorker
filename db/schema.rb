@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120118163535) do
+ActiveRecord::Schema.define(:version => 20120119223854) do
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id"
@@ -65,6 +65,21 @@ ActiveRecord::Schema.define(:version => 20120118163535) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.text     "picture_meta"
+  end
+
+  create_table "legacy_articles", :force => true do |t|
+    t.integer  "old_id"
+    t.string   "title"
+    t.integer  "section_id"
+    t.integer  "user_id"
+    t.text     "potential_paths"
+    t.string   "author_email"
+    t.string   "byline"
+    t.string   "tagline"
+    t.text     "body"
+    t.datetime "publish_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "privilege_lists", :force => true do |t|

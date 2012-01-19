@@ -1,5 +1,7 @@
 TheYorker::Application.routes.draw do
 
+  resources :legacy_articles
+
   root :to => 'sections#show', :id => 1
 
   match 'logout' => 'sessions#destroy', :as => :logout

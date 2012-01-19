@@ -60,7 +60,11 @@ class ArticlesController < ApplicationController
   end
 
   def find_article
-    @article = Article.find(params[:id])
+    if Integer(params[:id]) >= 10000
+      @article = Article.find(params[:id])
+    else
+      @article = LegacyArticle.find_by_old_id(params[:id])
+    end
   end
 
   def is_owner

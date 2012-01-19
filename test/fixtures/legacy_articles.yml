@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  old_id: 1
+  title: MyString
+  section_id: 1
+  user_id: 1
+  potential_paths: MyText
+  author_email: MyString
+  byline: MyString
+  tagline: MyString
+  body: MyText
+  publish_at: 2012-01-19 22:38:54
+
+two:
+  old_id: 1
+  title: MyString
+  section_id: 1
+  user_id: 1
+  potential_paths: MyText
+  author_email: MyString
+  byline: MyString
+  tagline: MyString
+  body: MyText
+  publish_at: 2012-01-19 22:38:54
