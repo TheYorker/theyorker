@@ -495,7 +495,8 @@ input#section_name {
 	         max-width: 110%;
          } // img 
 
-         .main_image {
+
+         .image_container, .main_image {
 	         font-family: 'Open Sans', sans-serif;
 	         font-size: 90%;
 	         float: right;
@@ -515,6 +516,12 @@ input#section_name {
 	             margin: auto;
                  overflow: visible;
              } // .image_caption 
+         } // .image_container, .main_image
+
+         .main_image {
+             img {
+	             max-width: 300px
+             } // img 
          } // .main_image 
 
          
