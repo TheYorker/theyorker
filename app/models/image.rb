@@ -1,8 +1,9 @@
 class Image < ActiveRecord::Base
-  has_attached_file :picture, :styles => {:headline => '800x500',
+  has_attached_file :picture, :styles => {:headline => "800x500",
                                           :medium => '300x300',
                                           :large_thumb => '150x150',
-                                          :small_thumb => '50x50'}
+                                          :small_thumb => '50x50'},
+                              :processors => [:padder]
 
   validates :title, :presence => :true
   validates :copyright_owner, :presence => :true
