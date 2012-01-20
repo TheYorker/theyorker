@@ -514,6 +514,11 @@ input#section_name {
              } // .image_caption 
          } // .image_container, .main_image
 
+
+         .image_container img {
+             max-width: 100%;
+         } // .image_container img
+
          .main_image {
              img {
 	             max-width: 300px
