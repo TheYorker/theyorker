@@ -80,13 +80,13 @@ class Section < ActiveRecord::Base
     self.children.each do |s|
       articles += s.latest_articles_from_children
     end
-    articles.sort! { |a,b| a.publish_at <=> b.publish_at }
+    articles.sort! { |a,b| b.publish_at <=> a.publish_at }
     articles[0,limit] || []
   end
 
   def latest_articles_from_children_by_rank(limit=5)
     articles = self.latest_articles_from_children(limit)
-    articles.sort! { |a,b| a.rank <=> b.rank }
+    articles.sort! { |a,b| b.rank <=> a.rank }
     articles[0,limit] || []
   end
 
