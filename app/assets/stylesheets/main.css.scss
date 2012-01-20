@@ -871,13 +871,14 @@ input#section_name {
 } // .articles_list a 
 
 .article_entry {
-    overflow: auto;
+    overflow: hidden;
     margin-top: 6px;
     margin-bottom: 6px;
     color: black;
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
     font-size: 82.5%;
+    border-radius: 12px;
     .article_image {
         border-right: 1px solid #ddd;
         padding-right: 6px;
@@ -921,7 +922,7 @@ input#section_name {
 
 .article_entry:hover {
     background-color: $background_shading;
-    border-radius: 12px;    
+    border-radius: 12px;
 } // .article_entry:hover 
 
 /*--- Breadcrumbs ---*/
