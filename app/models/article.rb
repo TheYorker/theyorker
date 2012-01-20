@@ -51,8 +51,11 @@ class Article < ActiveRecord::Base
   end
 
   def self.latest_published_by_section(section, limit=5)
-    Article.where(:section_id => section.id,
-                  :visibility => 3).where("publish_at <= ?", Time.now).limit(limit)
+    Article
+      .where(:section_id => section.id,
+             :visibility => 3).where("publish_at <= ?", Time.now)
+      .order('publish_at DESC')
+      .limit(limit)
   end
 
   def related_articles(limit=5)
