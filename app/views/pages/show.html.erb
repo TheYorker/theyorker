@@ -5,5 +5,5 @@
 </h2>
 
 <div class="body">
-  <%= @page.body %>
+  <%= render_sanitized_markdown(@page.body) %>
 </div>
