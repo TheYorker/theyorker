@@ -17,6 +17,13 @@
     <%= f.text_area :editor_comments %>
   </div>
 
+  
+  <% if @article.published? %>
+    <%= render :partial => 'property_fields',
+               :locals => {:f => f,
+                           :article => @article} %>
+  <% end %>
+
   <%= hidden_field :review, :value => 'review' %>
 
   <% if @article.published? %>

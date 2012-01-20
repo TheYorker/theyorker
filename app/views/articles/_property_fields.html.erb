@@ -1,0 +1,16 @@
+<div class="field">
+  <%= f.label :publish_at, "Publication Time:" %><br/>
+  <%= f.datetime_select :publish_at %>
+</div>
+
+<div class="field">
+  <%= f.label :importance, "Importance:" %><br/>
+  <%= f.select :importance, options_for_select(1..10, article.importance) %>
+</div>
+
+<% if current_user.toplevel_editor? %>
+  <div class="field">
+    <%= f.label :featuredness, "Featuredness:" %><br/>
+    <%= f.select :featuredness, options_for_select(1..10, article.featuredness) %>
+  </div>
+<% end %>
