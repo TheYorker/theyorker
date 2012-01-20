@@ -1,0 +1,116 @@
+
+  <% if article.errors.any? %>
+    <div class="error_messages">
+      <h3>Form is invalid</h3>
+      <ul>
+        <% for message in article.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render :partial => 'article_image_select',
+             :locals => {:article => article} %>
+
+  <div class="field">
+    <%= f.label :title, "Headline:" %><br/>
+    <%= f.text_field :title %>
+    <span class="title_character_count"></span>
+    <%= javascript_tag do %>
+      jQuery(function() {
+        var handler = function() {
+          var chars = $('input#article_title').val().length;
+          var remaining = 60-chars;
+          if (remaining < 0) {
+            $('.title_character_count').css('color', 'red');
+            $('input#article_title').css('border', '2px solid red');
+          } else {
+            $('.title_character_count').css('color', 'black');
+            $('input#article_title').css('border', '');
+          }
+          $('.title_character_count').text(chars.toString());
+        };
+        $('input#article_title').change(handler);
+        $('input#article_title').keyup(handler);
+        handler();
+      });
+    <% end %>
+  </div>
+
+  <%= f.hidden_field :image_id %>
+
+  <div class="field">
+    <%= f.label :section_id, "Section:" %><br/>
+    <%= f.select :section_id, all_sections_as_text_paths_with_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :byline, "Byline:" %><br/>
+    <%= f.text_field :byline, :value => article.byline || (current_user ? current_user.name : "") %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tagline, "Tagline/Summary:" %><br/>
+    <%= f.text_field :tagline %>
+  </div>
+
+  <div class="field">
+      <%= f.label :body, "Article Text:" %><br/>
+  </div>
+
+  <div class="body_edit">
+
+    <div class="field">
+      <%= f.text_area :body %>
+    </div>
+    <!-- this should really be dynamic -->
+    <div class="edit_sidebar">
+      
+      <div class="toolbar">
+        <div class="green_button">
+          <%= link_to "Insert Image", "/images?layout=false", :class => "embed_image" %>
+        </div>
+        <script type="text/javascript">
+          $(document).ready(function() {
+          $('a.embed_image').colorbox({iframe:true, width: "80%", height: "80%"});
+          })
+        </script>
+      </div>
+
+      <h5>Quick Guide to Markdown</h5>
+      <table>
+        <tr>
+          <td><tt>This is a heading<br/>
+              =================</tt>
+          </td>
+          <td><h3>This is a heading</h3></td>
+        </tr>
+        <tr>
+          <td><tt>This is a lower heading<br/>
+              -----------------------</tt>
+          </td>
+          <td><h4>This is a lower heading</h4></td>
+        </tr>
+        <tr>
+          <td><tt>This is some _italic text_</tt></td>
+          <td>This is some <i>italic text</i></td>
+        </tr>
+        <tr>
+          <td><tt>This is some **bold text**</tt></td>
+          <td>This is some <b>bold text</b></td>
+        </tr>
+        <tr>
+          <td><tt>This is a [link to google](http://www.google.com)</tt></td>
+          <td>This is a <a href="http://www.google.com">link to google</a></td>
+        </tr>
+      </table>
+
+    </div>
+    
+  </div>
+
+  <div class="field">
+    <%= f.label :tag, "Tags:" %><br/>
+    <%= f.text_field :tag %>
+  </div>
