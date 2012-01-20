@@ -99,6 +99,10 @@ class Article < ActiveRecord::Base
     self.image ? self.image.picture.url(:headline) : 'ylogo_headline.png'
   end
 
+  def headline_image_width
+    self.image ? self.image.picture.width(:headline) : '80%';
+  end
+
   def medium_image
     self.image ? self.image.picture.url(:medium) : 'ylogo_medium.png'
   end
