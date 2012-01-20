@@ -104,7 +104,61 @@
           <td><tt>This is a [link to google](http://www.google.com)</tt></td>
           <td>This is a <a href="http://www.google.com">link to google</a></td>
         </tr>
+        <tr>
+          <td>
+            <tt>
+              You can make bulleted lists with:<br/><br/> 
+              - Hyphens (-)<br/> 
+              - Asterisks (*)<br/> 
+              - Plus signs (+)<br/>
+            </tt>
+          </td>
+          <td>
+            <ul>
+              <li>Hyphens (-)</li>
+              <li>Asterisks (*)</li>
+              <li>Plus signs (+)</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <tt>
+              You can make numbered lists using numbers followed by full stops:<br/><br/> 
+              1. First<br/> 
+              2. Second<br/> 
+              3. Third<br/>
+            </tt>
+          </td>
+          <td>
+            <ol>
+              <li>First</li>
+              <li>Second</li>
+              <li>Third</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+Leave a blank line to start a new paragraph.
+
+Like this.
+            </pre>
+          </td>
+          <td>
+            <p>
+              Leave a blank line to start a new paragraph.
+            </p>
+            <p>
+              Like this.
+            </p>
+          </td>
+        </tr>
       </table>
+      <%= link_to "Longer Guide to Markdown",
+          "http://daringfireball.net/projects/markdown/syntax",
+          :target => 'Blank' %>
 
     </div>
     

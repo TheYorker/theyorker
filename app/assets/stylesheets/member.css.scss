@@ -226,7 +226,7 @@ input#section_name {
 }
 
 .body_edit {
-    overflow: auto;
+    overflow: auto
 }
 
 .body_edit .field {
@@ -235,8 +235,8 @@ input#section_name {
 
 .body_edit .edit_sidebar {
     float: left;
-    width: 40%;
-    min-width: 20em;
+    width: 48%;
+    min-width: 25em;
 }
 
 .edit_sidebar .toolbar {
@@ -249,6 +249,7 @@ input#section_name {
     border-style: solid;
     border-color: gray;
     border-collapse: collapse;
+    table-layout: auto;
 }
 
 .edit_sidebar table tr td {
