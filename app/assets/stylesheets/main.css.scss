@@ -516,9 +516,14 @@ input#section_name {
          } // .image_container, .main_image
 
 
-         .image_container img {
-             max-width: 100%;
-         } // .image_container img
+         .image_container {
+             img {
+                 max-width: 100%;
+             } // img
+             .image_caption {
+                 max-width: 100%;
+             } // .image_caption
+         } // .image_container
 
          .main_image {
              img {
