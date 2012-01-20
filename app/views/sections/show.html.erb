@@ -7,7 +7,7 @@
         <% if a %>
           <li>
             <%= image_tag a.headline_image %>
-            <div style="max-width:<%= a.headline_image_width * 0.8 %>"><h2><%= link_to a.title, canonical_article_path(a) %></h2></div>
+            <div style="max-width:<%= a.headline_image_width * 0.7 %>"><h2><%= link_to a.title, canonical_article_path(a) %></h2></div>
           </li>
         <% end %>
       <% end %>
