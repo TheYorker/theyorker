@@ -18,6 +18,8 @@ module ArticlesHelper
       return ""
     end
 
+    input.force_encoding('UTF-8')
+
     config = Sanitize::Config::RELAXED
     youtube_transformer = lambda do |env|
       node      = env[:node]
