@@ -38,7 +38,7 @@ end
 
 gem 'pg'
 
-gem 'bluecloth'
+gem 'bluecloth', '2.0.7'
 
 gem 'sanitize'
 
