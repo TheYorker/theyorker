@@ -38,7 +38,13 @@ end
 
 gem 'pg'
 
-gem 'bluecloth'
+group :production, :test, :development do
+  gem 'bluecloth'
+end
+
+group :demo do
+  gem 'bluecloth', :git => 'git://github.com/davidrmorris/bluecloth.git'
+end
 
 gem 'sanitize'
 
