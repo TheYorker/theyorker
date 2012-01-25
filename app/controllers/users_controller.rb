@@ -16,6 +16,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if @user.update_attributes(params[:user])
+      flash.notice = "Update succeeded"
+    else
+      flash.notice = "Update failed"
+    end
+    redirect_to user_path(@user)
+  end
+
   def login
     @user = User.new
   end
