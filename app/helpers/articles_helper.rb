@@ -14,14 +14,17 @@ module ArticlesHelper
   end
 
   def render_sanitized_markdown(input)
+    # this is horrible
+    # it needs the following refactorings:
+    # - saner approach to encoding than sprinkling `.encode('UTF-8')` everywhere
+    # - better approach to sanitization
 
     begin
-
       if !input
         return ""
       end
 
-      input.force_encoding('UTF-8')
+      input.encode!('UTF-8')
 
       config = Sanitize::Config::RELAXED
       youtube_transformer = lambda do |env|
@@ -60,12 +63,14 @@ module ArticlesHelper
       config[:attributes]['div'] = ['style']
 
       template = ERB.new(input)
+      expanded = template.result(binding).encode('UTF-8')
 
-      html = Sanitize.clean(BlueCloth.new(template.result(binding)).to_html, config)
+      html = Sanitize.clean(BlueCloth.new(expanded).to_html, config)
       # increase heading levels of markdown output by 2
-      return html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
+      result = html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
+      result.encode('UTF-8')
     rescue
-      return "Unable to render page"
+      "Unable to render page"
     end
 
   end
