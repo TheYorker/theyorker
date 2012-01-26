@@ -1,4 +1,4 @@
-set :stages, ['beta', 'production']
+set :stages, ['beta', 'staging', 'production']
 require 'capistrano/ext/multistage'
 
 set :application, "theyorker.co.uk"
