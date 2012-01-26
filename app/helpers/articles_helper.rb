@@ -62,9 +62,10 @@ module ArticlesHelper
       config[:attributes][:all] += ['class']
       config[:attributes]['div'] = ['style']
 
-      template = ERB.new(input).encode('UTF-8')
+      template = ERB.new(input)
+      expanded = template.result(binding).encode('UTF-8')
 
-      html = Sanitize.clean(BlueCloth.new(template.result(binding)).to_html, config)
+      html = Sanitize.clean(BlueCloth.new(expanded).to_html, config)
       # increase heading levels of markdown output by 2
       result = html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
       result.encode('UTF-8')
