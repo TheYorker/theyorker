@@ -1,6 +1,7 @@
 common: &common
     adapter: postgresql
     username: <%= ENV['USER'] %>
+    encoding: utf-8
 
 development:
     <<: *common
