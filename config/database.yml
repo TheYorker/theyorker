@@ -15,6 +15,10 @@ production:
     <<: *common
     database: yorker_production
 
+staging:
+    <<: *common
+    databse: yorker_staging
+
 # this is a special environment using sqlite, for people without
 # package managers
 demo:
