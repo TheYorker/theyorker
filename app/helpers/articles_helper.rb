@@ -24,7 +24,7 @@ module ArticlesHelper
         return ""
       end
 
-      input.encode!('UTF-8')
+      input = ensure_utf8(input)
 
       config = Sanitize::Config::RELAXED
       youtube_transformer = lambda do |env|
@@ -63,12 +63,12 @@ module ArticlesHelper
       config[:attributes]['div'] = ['style']
 
       template = ERB.new(input)
-      expanded = template.result(binding).encode('UTF-8')
+      expanded = ensure_utf8(template.result(binding))
 
       html = Sanitize.clean(BlueCloth.new(expanded).to_html, config)
       # increase heading levels of markdown output by 2
       result = html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
-      result.encode('UTF-8')
+      ensure_utf8(result)
     rescue
       "Unable to render page"
     end

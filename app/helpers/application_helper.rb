@@ -11,6 +11,25 @@ module ApplicationHelper
     BlueCloth.new(text).to_html.html_safe
   end
 
+  def ensure_utf8(text)
+    # Converting ASCII-8BIT to UTF-8 based domain-specific guesses
+    if text.is_a? String
+      begin
+        # Try it as UTF-8 directly
+        cleaned = text.dup.force_encoding('UTF-8')
+        unless cleaned.valid_encoding?
+          # Some of it might be old Windows code page
+          cleaned = text.encode( 'UTF-8', 'Windows-1252' )
+        end
+        text = cleaned
+      rescue EncodingError
+        # Force it to UTF-8, throwing out invalid bits
+        text.encode!( 'UTF-8', invalid: :replace, undef: :replace )
+      end
+    end
+    text
+  end
+
   def number_to_picture(number)
     case number
     when 1
