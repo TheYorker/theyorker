@@ -61,14 +61,14 @@ module ArticlesHelper
     config[:attributes][:all] += ['class']
     config[:attributes]['div'] = ['style']
 
-      template = ERB.new(input)
-      expanded = ensure_utf8(template.result(binding))
-
-      html = Sanitize.clean(BlueCloth.new(expanded).to_html, config)
-      # increase heading levels of markdown output by 2
-      result = html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
-      ensure_utf8(result)
-
+    template = ERB.new(input)
+    expanded = ensure_utf8(template.result(binding))
+    
+    html = Sanitize.clean(ensure_utf8(BlueCloth.new(expanded).to_html), config)
+    # increase heading levels of markdown output by 2
+    result = html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
+    ensure_utf8(result)
+    
   end
 
   
