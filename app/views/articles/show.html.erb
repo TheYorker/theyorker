@@ -93,3 +93,7 @@
              :locals => {:article => @article} %>
 
 <% end %>
+
+<% content_for :titlebar do %>
+  <%= @article.title %> - 
+<% end %>
