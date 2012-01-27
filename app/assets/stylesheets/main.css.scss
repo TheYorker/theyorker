@@ -40,15 +40,13 @@ h3 {
     font-family: 'Open Sans', sans-serif;
     color: White;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 16px;
     width: 100%;
     height: auto;
+    padding: 3px;
     background: $yorker-orange;
     border-radius: 0px;
-    position: relative;
-    padding: 5px 0px 5px 0px; 
-    top: -16px;
-} // h3 
+} // h3
 
 p  {
     font-family: 'Open Sans', sans-serif;
@@ -275,6 +273,21 @@ a img {
         height: auto;
         border: 0px solid black;
         border-radius: 0px;
+
+
+        * h3 {
+            font-family: 'Open Sans', sans-serif;
+            color: White;
+            font-weight: normal;
+            font-size: 14px;
+            width: 100%;
+            height: auto;
+            background: $yorker-orange;
+            border-radius: 0px;
+            position: relative;
+            padding: 5px 0px 5px 0px; 
+            top: -16px;
+        } // h3 
 
 
         .adspace1 img {
