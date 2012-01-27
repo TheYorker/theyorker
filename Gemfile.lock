@@ -57,6 +57,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.17.2)
+    minitest (2.11.0)
     multi_json (1.0.3)
     nokogiri (1.5.0)
     paperclip (2.4.5)
@@ -134,6 +135,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   execjs
   jquery-rails
+  minitest
   paperclip
   paperclip-meta
   pg

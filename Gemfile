@@ -30,6 +30,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem 'minitest'
 end
 
 group :demo do
