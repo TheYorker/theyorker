@@ -8,8 +8,8 @@ development:
     database: yorker_development
 
 test:
-    <<: *common
-    database: yorker_test
+    adapter: sqlite3
+    database: db/yorker_test.sqlite3
 
 production:
     <<: *common
