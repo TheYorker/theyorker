@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120119232540) do
+ActiveRecord::Schema.define(:version => 20120131155622) do
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id"
@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20120119232540) do
     t.boolean  "member"
     t.boolean  "admin",           :default => false
     t.boolean  "suspended",       :default => false
+    t.boolean  "active",          :default => true
   end
 
 end
