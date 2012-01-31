@@ -12,4 +12,10 @@ describe Article do
     article.should have(1).errors_on :title
   end
 
+  it "should have a section" do
+    article = Article.new
+    article.should_not be_valid
+    article.should have(1).errors_on :section_id
+  end
+
 end

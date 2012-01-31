@@ -11,9 +11,7 @@ class Article < ActiveRecord::Base
 
   belongs_to :image
 
-  validates :user_id, :presence => true
-
-  validates :title, :presence => true
+  validates :user_id, :title, :section_id, :presence => true
 
   #  featured articles
   def self.featured(limit=5)
