@@ -6,13 +6,22 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
 
-  validates_presence_of :password, :on => :create
-  validates_presence_of :password_confirmation, :on => :create
+  validates :password, :password_confirmation, :presence => :true, 
+                                               :if       => :active
 
+  before_validation :ensure_password_digest_if_inactive
 
   has_many :articles
   has_many :editors
   has_many :sections, :through => :editors
+
+  def password_ok(password)
+    begin
+      self.authenticate(password)
+    rescue
+      false
+    end
+  end
 
   def draft_articles
     Article.draft_for_user(self)
@@ -42,6 +51,14 @@ class User < ActiveRecord::Base
   def unsuspend
     self.suspended = false
     self.save
+  end
+
+  protected
+  
+  def ensure_password_digest_if_inactive
+    if !active
+      self.password_digest = '0'
+    end
   end
 
 end

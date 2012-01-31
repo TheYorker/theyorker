@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       return
     end
 
-    if user && user.authenticate(params[:password])
+    if user && user.password_ok(params[:password])
       session[:user_id] = user.id
       user.update_attributes(:member => PrivilegeList.member?(user.email))
       user.update_attributes(:admin => PrivilegeList.admin?(user.email))
