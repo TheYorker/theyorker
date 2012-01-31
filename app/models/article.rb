@@ -13,6 +13,8 @@ class Article < ActiveRecord::Base
 
   validates :user_id, :presence => true
 
+  validates :title, :presence => true
+
   #  featured articles
   def self.featured(limit=5)
     recent = Section.find(1).latest_articles_from_children(limit*5)
