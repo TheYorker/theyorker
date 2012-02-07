@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_filter :admin_access, :only => ['admin', 'suspend', 'unsuspend']
-  before_filter :find_user, :except => ['create', 'login', 'index']
+  before_filter :find_user, :except => ['create', 'login', 'index', 'email_search']
 
   layout :member_layout
 
@@ -65,6 +65,12 @@ class UsersController < ApplicationController
   def unsuspend
     @user.unsuspend
     redirect_to user_path(@user)
+  end
+
+  def email_search
+    user = User.find_by_email(params[:email])
+    @userdata = { id: user.id, email: user.email, name: user.name} 
+    render :xml => @userdata
   end
 
   private

@@ -21,6 +21,9 @@ TheYorker::Application.routes.draw do
     end
   end
 
+
+  match 'users/email_search' => 'users#email_search'
+
   resources :users do
     member do
       get 'sections'
@@ -32,6 +35,7 @@ TheYorker::Application.routes.draw do
   match 'users/:id/dashboard' => 'users#dashboard'
   match 'users/:id/suspend' => 'users#suspend'
   match 'users/:id/unsuspend' => 'users#unsuspend'
+  
 
   # post "articles/:id/comments"
 
