@@ -117,16 +117,20 @@
 
 <%= javascript_tag do %>
   (function() {
+  var escape_quotes = function(str) {
+  return str.replace(/"/g, "\\\"");
+  }
+
   /* man, this is ugly. */
   var medium_handler = function() {
-    $('.medium_caption_here').text($('input#medium_caption').val());
+    $('.medium_caption_here').text(escape_quotes($('input#medium_caption').val()));
   };
   $('input#medium_caption').change(medium_handler);
   $('input#medium_caption').keyup(medium_handler);
   medium_handler();
 
   var large_handler = function() {
-    $('.large_caption_here').text($('input#large_caption').val());
+    $('.large_caption_here').text(escape_quotes($('input#large_caption').val()));
   };
   $('input#large_caption').change(large_handler);
   $('input#large_caption').keyup(large_handler);
