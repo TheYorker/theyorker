@@ -6,6 +6,6 @@
 
 <div class="preview">
   <h2><%= @article.title %></h2>
-  <%= render_sanitized_markdown(@article.body) %>
+  <%= render_unsafe_markdown(@article.body) %>
 </div>
 

@@ -1,14 +1,10 @@
 module ApplicationHelper
-  
+
   def canonical_article_path(article)
     s = article.section
     path = s.fullpath.map(&:name)[1..-1]
     path << article.id
     '/' + path.join('/').downcase.sub(/\s/, '')
-  end
-
-  def markdown(text)
-    BlueCloth.new(text).to_html.html_safe
   end
 
   def ensure_utf8(text)
@@ -30,19 +26,48 @@ module ApplicationHelper
     text
   end
 
-  def render_sanitized_markdown(input)
-    # this is horrible
-    # it needs the following refactorings:
-    # - better approach to sanitization
-
+  def render_safe_markdown(input)
     begin                       # we want to cope with crud in production
-
-      if !input
-        return ""
+      unsafe_render(input).html_safe
+    rescue Exception
+      if Rails.env.production?
+        return "Unable to render page"
+      else
+        raise
       end
+    end
+  end
 
-      input = ensure_utf8(input)
+  def render_unsafe_markdown(input)
+    begin                       # we want to cope with crud in production
+      sanitize(unsafe_render(input))
+    rescue Exception
+      if Rails.env.production?
+        return "Unable to render page"
+      else
+        raise
+      end
+    end
 
+  end
+
+  def unsafe_render(input)
+    expanded = expand_inline_erb(input)
+    html = markdown(expanded)
+    demote_headers(html, 2)
+  end
+  
+  def expand_inline_erb(input)
+    template = ERB.new(input)
+    ensure_utf8(template.result(binding))
+  end
+
+  def markdown(input)
+    ensure_utf8(BlueCloth.new(input).to_html)
+  end
+
+  def sanitize(input)
+    
       config = Sanitize::Config::RELAXED
       youtube_transformer = lambda do |env|
         node      = env[:node]
@@ -79,37 +104,11 @@ module ApplicationHelper
       config[:attributes][:all] += ['class']
       config[:attributes]['div'] = ['style']
 
-      template = ERB.new(input)
-      expanded = ensure_utf8(template.result(binding))
-      
-      html = Sanitize.clean(ensure_utf8(BlueCloth.new(expanded).to_html), config)
-      # increase heading levels of markdown output by 2
-      result = html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
-
-      return ensure_utf8(result)
-      
-    rescue Exception
-      if Rails.env.production?
-        return "Unable to render page"
-      else
-        raise
-      end
-    end
-
+      Sanitize.clean(input, config).html_safe
   end
 
-
-  def number_to_picture(number)
-    case number
-    when 1
-      'yone_small.png'
-    when 2
-      'ytwo_small.png'
-    when 3
-      'ythree_small.png'
-    else
-      'ylogo_thumb.png'
-    end
+  def demote_headers(input, level)
+    result = input.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+level}>"}
   end
-  
+
 end

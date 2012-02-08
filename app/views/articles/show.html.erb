@@ -21,7 +21,7 @@
 
 
   <div class="body">
-    <%= render_sanitized_markdown(@article.body) %>
+    <%= render_unsafe_markdown(@article.body) %>
     <%#= markdown(@article.body) %>
   </div>
 
