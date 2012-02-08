@@ -35,7 +35,7 @@ module ApplicationHelper
     # it needs the following refactorings:
     # - better approach to sanitization
 
-    begin
+    begin                       # we want to cope with crud in production
 
       if !input
         return ""
@@ -88,7 +88,7 @@ module ApplicationHelper
 
       return ensure_utf8(result)
       
-    rescue
+    rescue Exception
       if Rails.env.production?
         return "Unable to render page"
       else
