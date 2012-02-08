@@ -85,16 +85,16 @@ module ApplicationHelper
       html = Sanitize.clean(ensure_utf8(BlueCloth.new(expanded).to_html), config)
       # increase heading levels of markdown output by 2
       result = html.gsub(/<(\/?)h([0-7])>/) {"<#$1h#{$2.to_i+2}>"}.html_safe
-      ensure_utf8(result)
+
+      return ensure_utf8(result)
       
     rescue
       if Rails.env.production?
-        "Unable to render page"
+        return "Unable to render page"
       else
         raise
       end
     end
-
 
   end
 
