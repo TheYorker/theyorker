@@ -52,6 +52,9 @@ module ApplicationHelper
   end
 
   def unsafe_render(input)
+    if !input
+      input = ""
+    end
     expanded = expand_inline_erb(input)
     html = markdown(expanded)
     demote_headers(html, 2)
