@@ -73,7 +73,7 @@ class UsersController < ApplicationController
   def email_search
     user = User.find_by_email(params[:email])
     @userdata = { id: user.id, email: user.email, name: user.name} 
-    render :xml => @userdata
+    render :json => @userdata
   end
 
   private
