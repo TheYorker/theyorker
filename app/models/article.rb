@@ -23,31 +23,31 @@ class Article < ActiveRecord::Base
   # article types for users
 
   def self.draft_for_user(user)
-    Article.where(:user_id => user.id, :visibility => 1)
+    Article.where(:user_id => user.id, :visibility => 1).order('updated_at DESC')
   end
   
   def self.review_for_user(user)
-    Article.where(:user_id => user.id, :visibility => 2)
+    Article.where(:user_id => user.id, :visibility => 2).order('updated_at DESC')
   end
   
   def self.published_for_user(user)
-    Article.where(:user_id => user.id, :visibility => 3)
+    Article.where(:user_id => user.id, :visibility => 3).order('updated_at DESC')
   end
 
   # article types for sections
 
   def self.review_for_section(section)
-    Article.where(:section_id => section.id, :visibility => 2)
+    Article.where(:section_id => section.id, :visibility => 2).order('updated_at DESC')
   end
   
   def self.queued_for_section(section)
     Article.where(:section_id => section.id,
-                  :visibility => 3).where("publish_at > ?", Time.now)
+                  :visibility => 3).where("publish_at > ?", Time.now).order('updated_at DESC')
   end
 
   def self.published_for_section(section)
     Article.where(:section_id => section.id,
-                  :visibility => 3).where("publish_at <= ?", Time.now)
+                  :visibility => 3).where("publish_at <= ?", Time.now).order('publish_at DESC')
   end
 
   def self.latest_published_by_section(section, limit=5)

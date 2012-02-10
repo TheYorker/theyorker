@@ -34,6 +34,9 @@ class SectionsController < ApplicationController
 
   def edit
     @section = Section.find(params[:id])
+    @review_articles = @section.review_articles.paginate :page => params[:review_page], :per_page => 10
+    @queued_articles = @section.queued_articles.paginate :page => params[:queued_page], :per_page => 10
+    @published_articles = @section.published_articles.paginate :page => params[:published_page], :per_page => 10
     render :layout => 'member'
   end
 

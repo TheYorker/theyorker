@@ -55,3 +55,5 @@ gem 'texticle', '~> 2.0', :require => 'texticle/rails'
 group :development, :test do
   gem 'rspec-rails'
 end
+
+gem 'will_paginate'

@@ -4,24 +4,25 @@
 
     <h3>Draft Articles</h3>
     <ul>
-      <% @user.draft_articles.each do |a| %>
+      <% @draft_articles.each do |a| %>
         <li>
           <%= link_to a.title, edit_article_path(a) %>
         </li>
       <% end %>
     </ul>
-
+    <%= will_paginate @draft_articles, :param_name => :draft_page %>
   </div>
 
   <div class="review_articles display_area">
     <h3>Articles Under Review</h3>
     <ul>
-      <% @user.review_articles.each do |a| %>
+      <% @review_articles.each do |a| %>
         <li>
           <%= link_to a.title, edit_article_path(a) %>
         </li>
       <% end %>
     </ul>
+    <%= will_paginate @review_articles, :param_name => :draft_page %>
   </div>
 
 
@@ -29,13 +30,13 @@
     <h3>Published Articles</h3>
 
     <ul>
-      <% @user.published_articles.each do |a| %>
+      <% @published_articles.each do |a| %>
         <li>
           <%= link_to a.title, edit_article_path(a) %>
         </li>
       <% end %>
     </ul>
-
+    <%= will_paginate @published_articles, :param_name => :published_page %>
   </div>
 
 </div>

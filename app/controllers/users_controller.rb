@@ -52,6 +52,9 @@ class UsersController < ApplicationController
   end
 
   def articles
+    @draft_articles = @user.draft_articles.paginate :page => params[:draft_page], :per_page => 10
+    @review_articles = @user.review_articles.paginate :page => params[:review_page], :per_page => 10
+    @published_articles = @user.published_articles.paginate :page => params[:published_page], :per_page => 10
   end
 
   def admin
