@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :admin_access, :except => ['create', 'show', 'update']
+  before_filter :admin_access, :except => ['create', 'show', 'update', 'login']
   before_filter :find_user, :except => ['create', 'login', 'index', 'email_search']
 
   layout :member_layout
