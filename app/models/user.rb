@@ -6,9 +6,6 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
 
-  validates :password, :password_confirmation, :presence => :true, 
-                                               :if       => :active
-
   before_validation :ensure_password_digest_if_inactive
 
   has_many :articles
