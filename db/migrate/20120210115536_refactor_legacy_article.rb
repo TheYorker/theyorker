@@ -1,4 +1,4 @@
-class AddUserIdToLegacyArticle < ActiveRecord::Migration
+class RefactorLegacyArticle < ActiveRecord::Migration
   def change
     change_table :legacy_articles do |t|
       t.remove :potential_paths

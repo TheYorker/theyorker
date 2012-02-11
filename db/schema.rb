@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120131155622) do
+ActiveRecord::Schema.define(:version => 20120210115536) do
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id"
@@ -72,8 +72,6 @@ ActiveRecord::Schema.define(:version => 20120131155622) do
     t.string   "title"
     t.integer  "section_id"
     t.integer  "user_id"
-    t.text     "potential_paths"
-    t.string   "author_email"
     t.string   "byline"
     t.string   "tagline"
     t.text     "body"
@@ -81,6 +79,8 @@ ActiveRecord::Schema.define(:version => 20120131155622) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "legacy_articles", ["old_id"], :name => "index_legacy_articles_on_old_id"
 
   create_table "pages", :force => true do |t|
     t.string   "title"
