@@ -1,6 +1,8 @@
 class LegacyArticlesController < ApplicationController
 
-  before_filter :admin_access
+  # easiest way to allow programmatic upload
+  skip_before_filter :verify_authenticity_token, :only => [:create]
+  before_filter :admin_access, :except => [:create]
 
   # GET /legacy_articles
   # GET /legacy_articles.json
