@@ -1,45 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="article">
 
-<p>
-  <b>Old:</b>
-  <%= @legacy_article.old_id %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @legacy_article.title %>
-</p>
-
-<p>
-  <b>Section:</b>
-  <%= @legacy_article.section_id %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @legacy_article.user_id %>
-</p>
-
-<p>
-  <b>Byline:</b>
-  <%= @legacy_article.byline %>
-</p>
-
-<p>
-  <b>Tagline:</b>
-  <%= @legacy_article.tagline %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @legacy_article.body %>
-</p>
-
-<p>
-  <b>Publish at:</b>
-  <%= @legacy_article.publish_at %>
-</p>
+  <div class="header">
+    <div class="authorpic">
+      <%= image_tag 'authorpic.png' %>
+      <div class="author">
+        <%= link_to @legacy_article.byline, user_path(@legacy_article.user) %>
+      </div>
+    </div>
+    <h2>
+      <%= @legacy_article.title %>
+    </h2>
+    <div class="date">
+      <%= @legacy_article.date_string %>
+    </div>
+  </div>
 
 
-<%= link_to 'Edit', edit_legacy_article_path(@legacy_article) %> |
-<%= link_to 'Back', legacy_articles_path %>
+  <div class="body">
+    <%= render_unsafe_markdown(@legacy_article.body) %>
+  </div>
+
+</div>
+
+
+<% content_for :sidebar do %>
+
+  <%#= render :partial => 'articles/sidebar',
+             :locals => {:article => @legacy_article} %>
+
+<% end %>
+
+<% content_for :titlebar do %>
+  <%= @legacy_article.title %> - 
+<% end %>
