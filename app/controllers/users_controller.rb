@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
-  before_filter :admin_access, :except => ['create', 'show', 'update', 'login']
+  before_filter :admin_access, :except => ['create', 'show', 'update', 'login', 'articles', 'sections', 'edit']
   before_filter :find_user, :except => ['create', 'login', 'index', 'email_search']
+  before_filter :self_only, :except => ['create', 'login', 'index', 'email_search', 'suspend']
 
   layout :member_layout
 
@@ -17,10 +18,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user != @user
-      render_403
-    end
-      
     if @user.update_attributes(params[:user])
       flash.notice = "Update succeeded"
     else
@@ -41,10 +38,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if current_user != @user
-      render_403
-      return true
-    end
   end
 
   def index
@@ -96,6 +89,10 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def self_only
+    return (current_user == @user) || render_403
   end
 
 end
