@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :admin_access, :only => ['admin', 'suspend', 'unsuspend']
+  before_filter :admin_access, :except => ['create', 'show', 'update']
   before_filter :find_user, :except => ['create', 'login', 'index', 'email_search']
 
   layout :member_layout
@@ -17,6 +17,10 @@ class UsersController < ApplicationController
   end
 
   def update
+    if current_user != @user
+      render_403
+    end
+      
     if @user.update_attributes(params[:user])
       flash.notice = "Update succeeded"
     else
@@ -30,13 +34,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user && current_user != @user
+    if current_user != @user
       render :layout => "application"
       return true
     end
   end
 
   def edit
+    if current_user != @user
+      render_403
+      return true
+    end
   end
 
   def index

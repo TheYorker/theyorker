@@ -7,8 +7,18 @@ class LegacyArticlesController < ApplicationController
   # GET /legacy_articles
   # GET /legacy_articles.json
   def index
-    @legacy_articles = LegacyArticle.all
-
+    if params[:q]
+      @legacy_articles = LegacyArticle
+        .search(params[:q])
+        .sort('publish_at DESC')
+        .paginate(:page => params[:page], :per_page => 15)
+    else
+      @legacy_articles = LegacyArticle
+        .all
+        .sort('publish_at DESC')
+        .paginate(:page => params[:page], :per_page => 15)
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @legacy_articles }
