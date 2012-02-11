@@ -26,6 +26,14 @@ class ArticlesController < ApplicationController
   end
 
   def show
+
+    # THIS IS A HACK:
+    # forward requests with an id of less than 10000 to legacy_articles
+    if Integer(params[:id]) < 10000
+      redirect_to legacy_article_path(@article)
+      return
+    end
+    
     render :layout => "application"
   end
   
