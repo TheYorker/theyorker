@@ -55,6 +55,10 @@ class Section < ActiveRecord::Base
     end
   end
 
+  def leaf?
+    return self.children == []
+  end
+
   def number_for_review
     review_articles.length
   end
