@@ -2,6 +2,7 @@ class ImagesController < ApplicationController
   
   layout :choose_layout
   before_filter :flag_nolayout
+  before_filter :member_access
 
   def new
     @image = Image.new
