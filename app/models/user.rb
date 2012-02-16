@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
     Article.review_for_user(self)
   end
 
+  def private_published_articles
+    Article.private_published_for_user(self)
+  end
+
   def published_articles
     Article.published_for_user(self)
   end

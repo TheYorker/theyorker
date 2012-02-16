@@ -30,8 +30,15 @@ class Article < ActiveRecord::Base
     Article.where(:user_id => user.id, :visibility => 2).order('updated_at DESC')
   end
   
-  def self.published_for_user(user)
+  def self.private_published_for_user(user)
     Article.where(:user_id => user.id, :visibility => 3).order('updated_at DESC')
+  end
+
+  def self.published_for_user(user)
+    Article
+      .where(:user_id => user.id, :visibility => 3)
+      .where("publish_at < ?", Time.now)
+      .order('updated_at DESC')
   end
 
   # article types for sections
