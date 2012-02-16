@@ -1,8 +1,11 @@
 class LegacyArticlesController < ApplicationController
 
+  layout :choose_layout
+
   # easiest way to allow programmatic upload
   skip_before_filter :verify_authenticity_token, :only => [:create]
-  before_filter :admin_access, :except => [:create]
+  before_filter :admin_access, :except => [:create, :show, :index]
+  before_filter :member_access, :except => [:create, :show]
 
   # GET /legacy_articles
   # GET /legacy_articles.json
@@ -14,7 +17,6 @@ class LegacyArticlesController < ApplicationController
         .paginate(:page => params[:page], :per_page => 15)
     else
       @legacy_articles = LegacyArticle
-        .all
         .order('publish_at DESC')
         .paginate(:page => params[:page], :per_page => 15)
     end
@@ -95,4 +97,17 @@ class LegacyArticlesController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  private
+
+  def choose_layout
+    case action_name
+    when 'show'
+      'application'
+    else
+      'member'
+    end
+  end
+
+
 end
