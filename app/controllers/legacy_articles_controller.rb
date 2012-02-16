@@ -10,12 +10,12 @@ class LegacyArticlesController < ApplicationController
     if params[:q]
       @legacy_articles = LegacyArticle
         .search(params[:q])
-        .sort('publish_at DESC')
+        .order('publish_at DESC')
         .paginate(:page => params[:page], :per_page => 15)
     else
       @legacy_articles = LegacyArticle
         .all
-        .sort('publish_at DESC')
+        .order('publish_at DESC')
         .paginate(:page => params[:page], :per_page => 15)
     end
     
