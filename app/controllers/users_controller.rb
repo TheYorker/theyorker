@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-  before_filter :admin_access, :except => ['create', 'show', 'update', 'login', 'articles', 'sections', 'edit']
+  before_filter :admin_access, :except => ['create', 'show', 'update', 'login', 'articles', 'sections', 'edit', 'email_search']
   before_filter :find_user, :except => ['create', 'login', 'index', 'email_search']
-  before_filter :self_only, :except => ['create', 'login', 'index', 'email_search', 'suspend']
+  before_filter :self_only, :except => ['create', 'login', 'show', 'index', 'email_search', 'suspend']
 
   layout :member_layout
 
