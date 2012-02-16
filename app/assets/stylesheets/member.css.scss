@@ -312,3 +312,17 @@ input#section_name {
         border: 1px solid #999;
     } // .embed_code
 } // .embed_config
+
+/*--- Legacy Articles ---*/
+
+.legacy_articles_list {
+    width: 100%;
+    tr {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 3px;
+        td {
+            vertical-align: top;
+            border: inherit;
+        }
+    }
+} // .legacy_articles_list

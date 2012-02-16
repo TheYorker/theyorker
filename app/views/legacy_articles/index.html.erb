@@ -1,35 +1,30 @@
-<h1>Listing legacy_articles</h1>
+<h2>Legacy Articles</h1>
 
-<table>
+<%= form_tag legacy_articles_path(), :method => 'get' do %>
+<p>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "Search", :name => nil %>
+  <%= link_to "Show All", legacy_articles_path %>
+</p>
+<% end %>
+
+<table class="legacy_articles_list">
   <tr>
-    <th>Old</th>
-    <th>Title</th>
-    <th>Section</th>
-    <th>User</th>
-    <th>Byline</th>
-    <th>Tagline</th>
-    <th>Publish at</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <td><b>Id</b></td>
+    <td><b>Title</b></td>
+    <td><b>Byline</b></td>
+    <td><b>Tagline</b></td>
+    <td><b>Published At</b></td>
   </tr>
 
 <% @legacy_articles.each do |legacy_article| %>
   <tr>
     <td><%= legacy_article.old_id %></td>
-    <td><%= legacy_article.title %></td>
-    <td><%= legacy_article.section_id %></td>
-    <td><%= legacy_article.user_id %></td>
+    <td><%= link_to legacy_article.title, legacy_article %></td>
     <td><%= legacy_article.byline %></td>
     <td><%= legacy_article.tagline %></td>
     <td><%= legacy_article.publish_at %></td>
-    <td><%= link_to 'Show', legacy_article %></td>
-    <td><%= link_to 'Edit', edit_legacy_article_path(legacy_article) %></td>
-    <td><%= link_to 'Destroy', legacy_article, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Legacy article', new_legacy_article_path %>
+<%= will_paginate @legacy_articles %>
