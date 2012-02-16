@@ -2,10 +2,6 @@
   <%= @user.name %>
 </h2>
 
-<div class="user_email">
-  <%= mail_to @user.email %>
-</div>
-
 <% if @user == current_user %>
 
   <% if @user.member? %>
@@ -25,6 +21,10 @@
 <% elsif current_user && current_user.admin? %>
 
   <hr/>
+
+  <div class="user_email">
+    <%= mail_to @user.email %>
+  </div>
 
   <div class="suspend_control">
     <% if @user.suspended? %>
