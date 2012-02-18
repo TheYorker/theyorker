@@ -15,11 +15,12 @@ class Section < ActiveRecord::Base
         results.unshift(s)
       end
     end        
-    results
+    results.sort! {|a,b| a.rank <=> b.rank }
+    return results
   end
 
   def children
-    Section.find_all_by_parent_id(id)
+    Section.find_all_by_parent_id(id, :order => 'rank ASC')
   end
   
   def descendants
