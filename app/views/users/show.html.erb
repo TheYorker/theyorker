@@ -18,6 +18,10 @@
     <%= link_to "Change Password", edit_user_path(@user) %>
   </div>
 
+  <div class="legacy_articles_link">
+    <%= link_to "Legacy Articles", legacy_articles_path %>
+  </div>
+
 <% elsif current_user && current_user.admin? %>
 
   <hr/>
