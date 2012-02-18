@@ -2,14 +2,6 @@
   <%= @user.name %>
 </h2>
 
-<h3>Articles</h3>
-
-<% @articles.each do |a| %>
-  <%= render :partial => 'shared/article_entry', :locals => {:article => a} %>
-<% end %>
-
-<%= will_paginate @articles %>
-
 <% if @user == current_user %>
 
   <% if @user.member? %>
@@ -43,3 +35,11 @@
   </div>
 
 <% end %>
+
+<h3>Articles</h3>
+
+<% @articles.each do |a| %>
+  <%= render :partial => 'shared/article_entry', :locals => {:article => a} %>
+<% end %>
+
+<%= will_paginate @articles %>
