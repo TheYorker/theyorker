@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
   belongs_to :article
   belongs_to :user
 
-  def self.recent(limit=5)
+  def self.recent(limit=10)
     Comment.order('created_at DESC').where("hidden = ? OR ?", false, nil).limit(limit)
   end
 
